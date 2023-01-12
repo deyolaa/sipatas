@@ -40,23 +40,18 @@
                             <!-- Name input-->
                             <div class="form-floating mb-3">
                                 <input class="form-control" id="name" type="text" placeholder="Enter your name..." data-sb-validations="required" />
-                                <label for="name">Nama Sekolah/Universitas</label>
+                                <label for="name">Nama</label>
                                 <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
                             </div>
                             <div class="form-floating mb-3">
-                                <input class="form-control" id="name" type="text" placeholder="Enter your name..." data-sb-validations="required" />
-                                <label for="name">Kejuruan/Jurusan</label>
+                                <input class="form-control" id="nim" type="text" placeholder="Enter your nim..." data-sb-validations="required" />
+                                <label for="nim">NIM</label>
                                 <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
                             </div>
                             <div class="form-floating mb-3">
-                                <input class="form-control" id="name" type="text" placeholder="Enter your name..." data-sb-validations="required" />
-                                <label for="name">Nama Ketua Kelompok Magang</label>
+                                <input class="form-control" id="name" type="text" placeholder="Enter your nomor magang..." data-sb-validations="required" />
+                                <label for="name">Nomor Magang</label>
                                 <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
-                            </div>
-                            <div class="form-floating mb-3">
-                                <textarea class="form-control" id="message" type="text" placeholder="Enter your message here..." style="height: 10rem" data-sb-validations="required"></textarea>
-                                <label for="message">Nama Semua Anggota Kelompok *(jika ada) </label>
-                                <div class="invalid-feedback" data-sb-feedback="message:required">A message is required.</div>
                             </div>
             
                             <!-- Phone number input-->
@@ -69,26 +64,14 @@
                             <!-- Message input-->
                             <div class="form-floating mb-3">
                                 <textarea class="form-control" id="message" type="text" placeholder="Enter your message here..." style="height: 10rem" data-sb-validations="required"></textarea>
-                                <label for="message">Tujuan Magang</label>
+                                <label for="message">Logbook Kegiatan</label>
                                 <div class="invalid-feedback" data-sb-feedback="message:required">A message is required.</div>
                             </div>
 
-                            <!-- Tanggal masuk dan keluar-->
-                            <div>
-                                <label class="text-white mb-3" for="tglmulai">Tanggal Mulai Magang &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-                                <input type="date" class="tglmulai" id="tglmulai" data-sb-validations="required" />
-                                <div class="invalid-feedback" data-sb-feedback="message:required">A message is required. /div>
-                            </div>
-                            <div>
-                                <label class="text-white mb-3" for="tglselesai">Tanggal Selesai Magang &nbsp;&nbsp;&nbsp;</label>
-                                <input type="date" class="tglselesai" id="tglselesai" data-sb-validations="required" />
-                                <div class="invalid-feedback" data-sb-feedback="message:required">A message is required. /div>
-                            </div>
-
-                            <!-- input surat -->
+                            <!-- uploas bukti foto -->
                             <div class="text-white" >
                                 <form class="mb-3" action="proses.php" method="post" enctype="multipart/form-data">
-                                    <p>Upload Surat Permohonan <input type='file' name='file' /></p>
+                                    <p>Upload Bukti Foto <input type='file' name='file' /></p>
                                 </form>
                             </div>
 
