@@ -1,4 +1,46 @@
-<html>
+<?php
+    session_start();
+
+    include 'sipatas/db/config.php';
+    if (isset($_POST['loginAdmin'])){
+        $id_admin   = $_POST['id_admin'];
+        $password   = $_POST['password'];
+        $err = '';
+        if($id_karyawan == '' or $password == ''){
+            $err .= "<li>Silakan masukkan id_karyawan dan juga password.</li>";
+            header("location:loginAdmin.php");
+        }else{
+            $sql1 = "select * from karyawan where id_admin = '$id_admin'";
+            $result = pg_query($conn, $sql1);
+            $sql2 = pg_fetch_array($result);
+            $role = $sql2['id_admin'];
+        }   
+
+        if($sql2['id_admin'] == ''){
+            $err .= "<li>id_admin <b>$id_admin</b> tidak tersedia.</li>";
+            header("location:loginAdmin.php");
+        }elseif($sql2['password'] != md5($password)){
+            $err .= "<li>Password yang dimasukkan tidak sesuai.</li>";
+            header("location:loginAdmin.php");
+        }
+
+        if(empty($err)){
+            $_SESSION['session_id_admin'] = $id_admin; //server
+            $_SESSION['session_password'] = md5($password);
+            $_SESSION['role'] = $role;
+            if ($_SESSION['role'] == 'admin1'){
+                header("location:01APengSapi.php");
+            }else if ($_SESSION['role'] == 'admin2'){
+                header("location:02AMagang.php");
+            }else if ($_SESSION['role'] == 'admin3'){
+                header("location:03ATamu.php");
+            }
+        }
+    }
+?>
+
+<!DOCTYPE html>
+<html lang="en">
     <head>
         <title>SIPATAS</title>
         <link href="css/styles.css" rel="stylesheet" />
@@ -41,7 +83,11 @@
                                 <label for="name">Password</label>
                                 <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
                             </div>
-                            <div class="d-grid"><button class="btn btn-primary btn-lg" href="03DashboardTamu.html" id="submitButton" type="submit">Submit</button></div>
+                            <div style="margin-top:10px" class="form-group">
+                            <div class="col-sm-12 controls">
+                                <input type="submit" name="login" class="btn btn-success" value="Login"/>
+                            </div>
+                            </div>
                             <a class="btn btn-outline-light btn-lg px-4" href="03ATamu.html">Admin Tamu</a>
                             <a class="btn btn-outline-light btn-lg px-4" href="02AMagang.html">Admin Magang</a>
                             <a class="btn btn-outline-light btn-lg px-4" href="01APengSapi.html">Admin Pembelian</a>
