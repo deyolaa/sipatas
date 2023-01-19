@@ -9,7 +9,8 @@ include('config.php');
     if (isset($_POST['login'])){
         $id_admin   = $_POST['id_admin'];
         $password   = $_POST['password'];
-        if ($id_karyawan == '' or $password == '') {
+        $err = '';
+        if ($id_admin == '' or $password == '') {
             $err .= "<li>Silakan masukkan id_admin dan juga password.</li>";
         }
         if(empty($err)){
