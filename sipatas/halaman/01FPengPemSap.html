@@ -2,7 +2,8 @@
     <head>
         <title>SIPATAS</title>
         <link href="css/styles.css" rel="stylesheet" />
-    </head>
+      
+        </head>
     <body background="img/sipatasbg.png">
         <!-- NAVIGATION BAR -->
         <nav class="navbar navbar-expand-lg navbar-dark">
@@ -57,6 +58,76 @@
                                 <div class="invalid-feedback" data-sb-feedback="phone:required">A phone number is required.</div>
                             </div>
 
+                           
+
+                            <div class="mb-3">
+                                <label class="text-white" for="Jenis Sapi">Jenis Sapi</label>
+                                <select id="jenis_sapi">
+                                    <option value="">Silahkan Pilih Jenis Sapi yg anda Inginkan</option>
+                                   <optgroup label="Simmental Jantan">
+                                         <option value="Simmental Jantan Calon Bibit 3-6 Bulan">Simmental Jantan Calon Bibit 3-6 Bulan</option>
+                                         <option value="Simmental Jantan Calon Bibit >6-9 Bulan">Simmental Jantan Calon Bibit >6-9 Bulan</option>
+                                         <option value="Simmental Jantan Calon Bibit >9-12 Bulan">Simmental Jantan Calon Bibit>9-12 Bulan</option>
+                                         <option value="Simmental Jantan Calon Bibit >12-18 Bulan">Simmental Jantan Calon Bibit >12-18 Bulan</option>
+                                         <option value="Simmental Jantan Bibit >18-24 Bulan">Simmental Jantan Bibit >18-24 Bulan</option>
+                                         <option value="Simmental Jantan Bibit >24-36 Bulan">Simmental Jantan Bibit >24-36 Bulan</option>
+                                         <option value="Simmental Jantan Bibit >=36 Bulan">Simmental Jantan Bibit >36 Bulan</option>
+                                   </optgroup>
+                                        
+                                   <optgroup label="Simmental Betina">
+                                        <option value="Simmental Betina Calon Bibit >6-9 Bulan">Simmental Betina Calon Bibit >6-9 Bulan</option>
+                                        <option value="Simmental Betina Calon Bibit >9-12 Bulan">Simmental Betina Calon Bibit>9-12 Bulan</option>
+                                        <option value="Simmental Betina Calon Bibit >12-18 Bulan">Simmental Betina Calon Bibit >12-18 Bulan</option>
+                                        <option value="Simmental Betina Calon Bibit >18-24 Bulan">Simmental Betina Calon Bibit >18-24 Bulan</option>
+                                        <option value="Simmental Betina Bibit >24 Bulan">Simmental Betina Bibit >24 Bulan</option>
+                                   </optgroup>
+                                   
+                                  <optgroup label="Limousin Jantan">
+                                        <option value="Limousin Jantan Calon Bibit 3-6 Bulan">Limousin Jantan Calon Bibit 3-6 Bulan</option>
+                                        <option value="Limousin Jantan Calon Bibit >6-9 Bulan">Limousin Jantan Calon Bibit >6-9 Bulan</option>
+                                        <option value="Limousin Jantan Calon Bibit >9-12 Bulan">Limousin Jantan Calon Bibit>9-12 Bulan</option>
+                                        <option value="Limousin Jantan Calon Bibit >12-18 Bulan">Limousin Jantan Calon Bibit >12-18 Bulan</option>
+                                        <option value="Limousin Jantan Bibit >18-24 Bulan">Limousin Jantan Bibit >18-24 Bulan</option>
+                                        <option value="Limousin Jantan Bibit >24-36 Bulan">Limousin Jantan Bibit >24-36 Bulan</option>
+                                        <option value="Limousin Jantan Bibit >=36 Bulan">Limousin Jantan Bibit >36 Bulan</option>
+                                 </optgroup>
+                               
+                                <optgroup label="Limousin Betina">
+                               
+                                          <option value="Limousin Betina Calon Bibit >6-9 Bulan">Limousin Betina Calon Bibit >6-9 Bulan</option>
+                                          <option value="Limousin Betina Calon Bibit >9-12 Bulan">Limousin Betina Calon Bibit>9-12 Bulan</option>
+                                          <option value="Limousin Betina Calon Bibit >12-18 Bulan">Limousin Betina Calon Bibit >12-18 Bulan</option>
+                                          <option value="Limousin Betina Calon Bibit >18-24 Bulan">Limousin Betina Calon Bibit >18-24 Bulan</option>
+                                          <option value="Limousin Betina Bibit >24 Bulan">Limousin Betina Bibit >24 Bulan</option>
+
+                                 </optgroup>
+
+                                 <optgroup label="Pesisir Jantan">
+                                    <option value="Pesisir Jantan Calon Bibit 3-6 Bulan">Pesisir Jantan Calon Bibit 3-6 Bulan</option>
+                                    <option value="Pesisir Jantan Calon Bibit >6-9 Bulan">Pesisir Jantan Calon Bibit >6-9 Bulan</option>
+                                    <option value="Pesisir Jantan Calon Bibit >9-12 Bulan">Pesisir Jantan Calon Bibit>9-12 Bulan</option>
+                                    <option value="Pesisir Jantan Calon Bibit >12-18 Bulan">Pesisir Jantan Calon Bibit >12-18 Bulan</option>
+                                    <option value="Pesisir Jantan Bibit >18-24 Bulan">Pesisir Jantan Bibit >18-24 Bulan</option>
+                                    <option value="Pesisir Jantan Bibit >24-36 Bulan">Pesisir Jantan Bibit >24-36 Bulan</option>
+                                    <option value="Pesisir Jantan Bibit >=36 Bulan">Pesisir Jantan Bibit >=36 Bulan</option>
+                                 </optgroup>
+                           
+                                 <optgroup label="Pesisir Betina">
+                           
+                                      <option value="Pesisir Betina Calon Bibit >6-9 Bulan">Pesisir Betina Calon Bibit >6-9 Bulan</option>
+                                      <option value="Pesisir Betina Calon Bibit >9-12 Bulan">Pesisir Betina Calon Bibit>9-12 Bulan</option>
+                                      <option value="Pesisir Betina Calon Bibit >12-18 Bulan">Pesisir Betina Calon Bibit >12-18 Bulan</option>
+                                      <option value="Pesisir Betina Calon Bibit >18-24 Bulan">Pesisir Betina Calon Bibit >18-24 Bulan</option>
+                                      <option value="Pesisir Betina Bibit >24 Bulan">Pesisir Betina Bibit >24 Bulan</option>
+
+                             </optgroup>
+                                </select>
+                            </div>
+
+
+                            
+                
+<!-- 
                             <div class="form-floating mb-3">
                                 <input class="form-control" id="phone" type="tel" placeholder="(123) 456-7890" data-sb-validations="required" />
                                 <label for="phone">Jenis Sapi</label>
@@ -67,7 +138,7 @@
                                 <input class="form-control" id="phone" type="tel" placeholder="(123) 456-7890" data-sb-validations="required" />
                                 <label for="phone">Bibit /Calon Bibit </label>
                                 
-                            </div>
+                            </div> -->
 
 
                             <!-- Message input-->
