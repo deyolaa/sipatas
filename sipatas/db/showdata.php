@@ -2,7 +2,11 @@
 
 	$kode = $_POST['kode'];
 
+<<<<<<< HEAD
 	include 'config.php';
+=======
+	include 'koneksi.php';
+>>>>>>> 88016f231b27e1e8e7c8782abf95d6fdae9ec18a
 	date_default_timezone_set("Asia/Jakarta");	
 
 		$query = mysqli_query($con, "SELECT hitung_jam_masuk,jenis FROM tb_daftar_parkir WHERE kode = '$kode'");
