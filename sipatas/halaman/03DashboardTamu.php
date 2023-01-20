@@ -78,7 +78,7 @@
                             </table>
 
                             <div class="my-5 d-grid gap-4 d-sm-flex justify-content-sm-center">
-                                <a class="btn btn-outline-light btn-lg px-4" href="03Fpengajuan.html">Pengajuan Kunjungan</a>
+                                <a class="btn btn-outline-light btn-lg px-4" href="03Fpengajuan.php">Pengajuan Kunjungan</a>
                                 <a class="btn btn-outline-light btn-lg px-4" href="03BukuTamu.html">Buku Tamu</a>
                             </div>
                         </div>
