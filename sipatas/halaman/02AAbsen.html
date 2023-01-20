@@ -27,12 +27,12 @@
     
                 <!-- Nav Item - Charts -->
                 <li class="nav-item">
-                    <a class="nav-link" href="02AMagang.html">
+                    <a class="nav-link" href="02AMagang.php">
                         <i class="bi bi-house"></i>
                     <span>Beranda</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="02APermohonan.html">
+                    <a class="nav-link" href="02APermohonan.php">
                         <i class="bi bi-envelope"></i>
                     <span>Permohonan Magang</span></a>
                 </li>

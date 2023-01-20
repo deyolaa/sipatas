@@ -12,69 +12,97 @@ include('config.php');
         $err = '';
         if ($id_admin == '' or $password == '') {
             $err .= "<li>Silakan masukkan id_admin dan juga password.</li>";
-        }
-        if(empty($err)){
+            header("location:loginAdmin.php");
+        }else{
             $sql1 = "select * from login where id_admin = '$id_admin'";
             $result = mysqli_query($con, $sql1);
             $sql2 = mysqli_fetch_array($result);
-            if($sql2['password'] != md5($password)){
-                $err .= "<li>akun tidak ditemukan.</li>";
-            }
-        }
-        if(empty($err)){
-            $_SESSION['id_admin'] = $id_admin; //server
+            $role = $sql2['kode_admin'];
+        } 
+
+        if($sql2['id_admin'] == ''){
+            $err .= "<li>id_admin <b>$id_admin</b> tidak tersedia.</li>";
             header("location:loginAdmin.php");
-            exit();
-            
+        }elseif($sql2['password'] != md5($password)){
+            $err .= "<li>Password yang dimasukkan tidak sesuai.</li>";
+            header("location:loginAdmin.php");
+        }
+
+        
+        if(empty($err)){
+            $_SESSION['session_id_admin'] = $id_admin; //server
+            $_SESSION['session_password'] = md5($password);
+            $_SESSION['role'] = $role;
+            if ($_SESSION['role'] == '001'){
+                header("location:halaman/01APengSapi.php");
+            }else if ($_SESSION['role'] == '002'){
+                header("location:halaman/02AMagang.php");
+            } else if ($_SESSION['role'] == '003') {
+            header("location:halaman/03ATamu.php");
+            }
         }
     }
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
-    <head>
+<head>
+        <meta charset="UTF-8">
         <title>SIPATAS</title>
         <link href="halaman/css/styles.css" rel="stylesheet" />
     </head>
-    <body background="img/sipatasbg.png">
+    <body background="halaman/img/sipatasbg.png">
         <!-- NAVIGATION BAR -->
         <nav class="navbar navbar-expand-lg navbar-dark">
             <div class="container px-5">
-                <img src="img/peternakan.png" height="60px" align="left"/> 
-                <img src="img/PKH.png" height="60px" align="left"/> 
-                <img src="img/bptu.png" height="60px" align="left"/>               
+                <img src="halaman/img/peternakan.png" height="60px" align="left"/> 
+                <img src="halaman/img/PKH.png" height="60px" align="left"/> 
+                <img src="halaman/img/bptu.png" height="60px" align="left"/>               
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                    
-                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="HomePage.html">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="Contact.html">Contact</a></li>
+                        <li class="nav-item"><a class="nav-link" href="halaman/HomePage.php">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="halaman/About.php">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="halaman/Contact.php">Contact</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../sipatas/loginAdmin.php">Admin</a></li>
                     </ul>
                 </div>
             </div>
         </nav>
-        <section >
-            <div class="container px-5 my-5 px-5">
-                <div  class="text-center mb-5">
-                    <h2 class="fw-bolder text-white">Login</h2>
-                    <?php
-                    if($err){
-                        echo"<ul>$err</ul>";
-                    }
-                    ?>
-                    <p class="lead mb-0 text-white">Silahkan masukkan username dan password anda, Selamat Bekerja</p>
-                </div>
-                    <div id="app">
-                        <form action="" method="post">
-                            <input type="text" name="id_admin" class="input" placeholder="isikan id_admin..." /><br /><br />
+        <section >    
+        <div class="container px-5 ">
+            <div class="row gx-5 justify-content-center">
+                <div class="col-lg-6 text-center my-5">
+                    <div class="display-5 fw-bolder text-white mb-2">ADMIN LOGIN</div>
+                    <p class="lead text-white-50 mb-1">Masukkan id dan password anda</p>
+            </div>      
+                <div style="padding-center:20px" class="panel-body center" >            
+                    <form id="loginform" class="form-horizontal " action="" method="post" role="form">       
+                        <div class="form-group form-animate-text" style=" !important;">
+                            <label class="text-white">ID Admin</label>
+                            <input type="text" name="id_admin" class="input" placeholder="isikan id_admin..." /><br /><br />    
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                            
+                        </div>
+                        <div class="form-group form-animate-text" style="margin-top:20px !important;">
+                            <label class="text-white">Password</label>
                             <input type="password" name="password" class="input" placeholder="isikan password..." /><br /><br />
-                            <input type="submit" name="login" value="Masuk ke sistem" />
-                        </form>
-                    </div>
-            </div>
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                        </div>
+                        
+                        <input class="submit btn btn-success col-md-5 col-sm-5" style="margin-top: 20px;" type="submit" value="Login" name="login">
+
+                    </form>    
+                </div>                    
+            </div>  
+        </div>
+    </div>    
+        
+        
+        
         </section>
         <footer>
-            <div class="container px-5"><p class="m-7 text-center text-white">Copyright &copy; Sistem Informasi Unand</p></div>
+            <div class="container px-5 my-5"><p class="m-7 text-center text-white">Copyright &copy; Sistem Informasi Unand</p></div>
         </footer>
     </body>
 </html>

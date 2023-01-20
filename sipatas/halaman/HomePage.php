@@ -14,9 +14,10 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                         <li class="nav-item"><a class="nav-link active" aria-current="page" href="#!">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="02APermohonan.php">Permohonan Magang</a></li>
-                        <li class="nav-item"><a class="nav-link" href="02AAbsen.html">Absensi Peserta</a></li>
-                        <li class="nav-item"><a class="nav-link" href="HomePage.php">Logout</a></li>
+                        <li class="nav-item"><a class="nav-link" href="04IKM.html">IKM</a></li>
+                        <li class="nav-item"><a class="nav-link" href="About.html">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="Contact.html">Contact</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../loginAdmin.php">Admin</a></li>
                     </ul>
                 </div>
             </div>
@@ -26,12 +27,12 @@
                 <div class="row gx-5 justify-content-center">
                     <div class="col-lg-6">
                         <div class="text-center my-5">
-                            <h1 class="display-5 fw-bolder text-white mb-2">SIPATAS Admin Tamu</h1>
-                            <p class="lead text-white-50 mb-4">Selamat datang admin, ini adalah halaman pengelolaan magang BPTU HPT Padang Mengatas</p>
+                            <h1 class="display-5 fw-bolder text-white mb-2">SIPATAS</h1>
+                            <p class="lead text-white-50 mb-4">Dalam upaya untuk memberikan pelayanan terbaik kepada masyarakat maka BPTU HPT Padang Mengatas membuat sistem layanan informasi yang disebut dengan SIPATAS, yang memuat terkait dengan :</p>
                             <div class="d-grid gap-3 d-sm-flex justify-content-sm-center">
-                                <a class="btn btn-outline-light btn-lg px-4" href="02APermohonan.html">Permohonan Magang</a>
-                                <a class="btn btn-outline-light btn-lg px-4" href="02AAbsen.html">Absensi Peserta Magang</a>
-                               
+                                <a class="btn btn-outline-light btn-lg px-4" href="02DashboardMagang.html">Magang</a>
+                                <a class="btn btn-outline-light btn-lg px-4" href="01DashboardPengPembelian.html">Pembelian Sapi</a>
+                                <a class="btn btn-outline-light btn-lg px-4" href="03DashboardTamu.html">Kunjungan</a>
                             </div>
                         </div>
                     </div>
