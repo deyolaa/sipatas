@@ -32,7 +32,7 @@
                             <div class="d-grid gap-3 d-sm-flex justify-content-sm-center">
                                 <a class="btn btn-outline-light btn-lg px-4" href="02DashboardMagang.html">Magang</a>
                                 <a class="btn btn-outline-light btn-lg px-4" href="01DashboardPengPembelian.html">Pembelian Sapi</a>
-                                <a class="btn btn-outline-light btn-lg px-4" href="03DashboardTamu.html">Kunjungan</a>
+                                <a class="btn btn-outline-light btn-lg px-4" href="../Tamu/03DashboardTamu.php">Kunjungan</a>
                             </div>
                         </div>
                     </div>

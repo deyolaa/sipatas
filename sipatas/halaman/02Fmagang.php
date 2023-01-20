@@ -3,6 +3,56 @@
         <title>SIPATAS</title>
         <link href="css/styles.css" rel="stylesheet" />
     </head>
+
+<?php
+    include "../config.php";
+
+    session_start();
+
+    if (isset($_POST['kirim'])) {
+        $emailmg = $_POST['emailmg'];
+        $asalmg = $_POST['asalmg'];
+        $jurusanmg = $_POST['jurusanmg'];
+        $perwakilanmg = $_POST['perwakilanmg'];
+        $anggotamg = $_POST['anggotamg'];
+        $nomormg = $_POST['nomormg'];
+        $tujuanmg = $_POST['tujuanmg'];
+        $mulaimg = $_POST['mulaimg'];
+        $selesaimg = $_POST['selesaimg'];
+        $suratmg = $_POST['suratmg'];
+
+        $sql = "SELECT * FROM permohonan_magang WHERE emailmg='$emailmg'";
+            $result = pg_query($con, $sql);
+            if (pg_num_rows($result) > 0) {
+                ?>
+                 <div class="alert alert-danger alert-dismissible fade show">
+                     <a href="" onClick="self.close()">
+                        <button type="button" class="close" data-dismiss="alert">&times;</button>
+                     </a>
+                     <strong>Kategori telah ada</strong>
+                 </div>
+                 <?php
+            }else{
+                //proses simpan
+                    $sql1 = "INSERT INTO kategori (kode_kategori, nama_kategori) 
+                            VALUES ('$kode_kategori','$nama_kategori')";
+                    $result = pg_query($conn, $sql1);
+                    ?>
+                    <div class="alert alert-danger alert-dismissible fade show">
+                    <a href="" onClick="self.close()">
+                        <button type="button" class="close" data-dismiss="alert">&times;</button>
+                     </a>
+                     <strong>Kategori berhasil ditambahkan</strong>
+                 </div>
+                 <?php
+            }
+
+    }
+
+ ?>
+
+
+
     <body background="img/sipatasbg.png">
         <!-- NAVIGATION BAR -->
         <nav class="navbar navbar-expand-lg navbar-dark">
@@ -106,7 +156,7 @@
                             <!-- an error submitting the form-->
                             <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
                             <!-- Submit Button-->
-                            <div class="d-grid"><button class="btn btn-primary btn-lg" id="submitButton" type="submit">Submit</button></div>
+                            <div class="d-grid"><button class="btn btn-primary btn-lg" id="submitButton" type="submit" value="kirim">Submit</button></div>
                         </form>
                     </div>
                 </div>

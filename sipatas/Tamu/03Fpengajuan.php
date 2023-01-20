@@ -29,21 +29,21 @@
 <html>
     <head>
         <title>SIPATAS</title>
-        <link href="css/styles.css" rel="stylesheet" />
+        <link href="../halaman/css/styles.css" rel="stylesheet" />
     </head>
-    <body background="img/sipatasbg.png">
+    <body background="../halaman/img/sipatasbg.png">
         <!-- NAVIGATION BAR -->
         <nav class="navbar navbar-expand-lg navbar-dark">
             <div class="container px-5">
-                <img src="img/peternakan.png" height="60px" align="left"/> 
-                <img src="img/PKH.png" height="60px" align="left"/> 
-                <img src="img/bptu.png" height="60px" align="left"/>               
+                <img src="../halaman/img/peternakan.png" height="60px" align="left"/> 
+                <img src="../halaman/img/PKH.png" height="60px" align="left"/> 
+                <img src="../halaman/img/bptu.png" height="60px" align="left"/>               
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                        <li class="nav-item"><a class="nav-link" href="03DashboardTamu.html">Back</a></li>
-                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="HomePage.html">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="Contact.html">Contact</a></li>
+                        <li class="nav-item"><a class="nav-link" href="03DashboardTamu.php">Back</a></li>
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="../halaman/HomePage.php">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../halaman/Contact.html">Contact</a></li>
                     </ul>
                 </div>
             </div>
