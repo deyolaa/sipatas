@@ -29,42 +29,54 @@
                 </div>
                 <div class="row gx-5 justify-content-center">
                     <div class="col-lg-6">
-                        <form id="contactForm" data-sb-form-api-token="API_TOKEN">
-                            <!-- Email address input-->
-                            <div class="form-floating mb-3">
-                                <input class="form-control" id="nama" type="text" placeholder="name@example.com" data-sb-validations="required,email" />
-                                <label for="email">Nama Anda</label>
+                    <?php
+                            include "../config.php";
+
+                            if (isset($_POST['simpan'])) {
+                                $nama_tamu = $_POST['nama_tamu'];
+                                $instansi_tamu = $_POST['instansi_tamu'];
+                                $whatsapp_tamu = $_POST['whatsapp_tamu'];
+                                $tgl_tamu = $_POST['tgl_tamu'];
+                                $kritik_tamu = $_POST['kritik_tamu'];
                                 
+
+                                $sql1 = "INSERT INTO `tamu`(`id_tamu`, `nama_tamu`, `instansi_tamu`, `whatsapp_tamu`, `tgl_tamu`, `kritik_tamu`) VALUES ('','$nama_tamu','$instansi_tamu','$whatsapp_tamu','$tgl_tamu','$kritik_tamu')"; 
+
+                                $result = mysqli_query($con,$sql1);
+
+                                
+                            }
+        
+                        ?>
+                        <form action="" method="POST" class="parent" id="contactForm" >
+                            <div class="form-grup">
+                                <table >
+                                            <div class="form-floating mb-3">
+                                                <input type="text" class="form-control"  name="nama_tamu"
+                                                placeholder="instansi" required>
+                                                <label for="floatingInput">Nama Anda</label>
+                                            </div>
+                                            <div class="form-floating mb-3">
+                                                <input type="text" class="form-control" placeholder="Nama Perwakilan" name="instansi_tamu" required>
+                                                <label for="floatingInput">Nama Instansi</label>
+                                            </div>
+                                            <div class="form-floating mb-3">
+                                                <input type="text" class="form-control" placeholder="No Whatsapp" name="whatsapp_tamu" required>
+                                                <label for="floatingInput">No. Whatsapp</label>
+                                            </div>
+                                            <div class="form-floating mb-3">
+                                                <textarea class="form-control" name="kritik_tamu" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
+                                                <label for="floatingTextarea2">Kritik dan Saran</label>
+                                            </div>
+                                            <div class="form-floating mb-3">
+                                                <input type="date" class="form-control"  name="tgl_tamu" required>
+                                                <label for="floatingInput">Tanggal Kunjungan</label>
+                                            </div>
+    
+                                </table>
+                                <input type="submit"  class="btn btn-primary btn-lg " name="simpan" value="Simpan">
                             </div>
-                            <!-- Name input-->
-                            <div class="form-floating mb-3">
-                                <input class="form-control" id="name" type="text" placeholder="Enter your name..." data-sb-validations="required" />
-                                <label for="name">Nama Instansi</label>
-                                <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
-                            </div>
-                           
-                            <!-- Email address input-->
-                        
-                            <!-- Phone number input-->
-                            <div class="form-floating mb-3">
-                                <input class="form-control" id="phone" type="tel" placeholder="(123) 456-7890" data-sb-validations="required" />
-                                <label for="phone">No Whatsapp</label>
-                                <div class="invalid-feedback" data-sb-feedback="phone:required">A phone number is required.</div>
-                            </div>
-                            <div>
-                                <label class="text-white mb-3" for="tglmulai">Tanggal Kunjungan &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-                                <input type="date" class="tglmulai" id="tglmulai" data-sb-validations="required" />
-                                <div class="invalid-feedback" data-sb-feedback="message:required">A message is required. /div>
-                            </div>
-                            <!-- Message input-->
-                            <div class="form-floating mb-3">
-                                <textarea class="form-control" id="message" type="text" placeholder="Enter your message here..." style="height: 10rem" data-sb-validations="required"></textarea>
-                                <label for="message">Kritik dan Saran</label>
-                                <div class="invalid-feedback" data-sb-feedback="message:required">A message is required.</div>
-                            </div>
-                            
-                            <div class="d-grid"><button class="btn btn-primary btn-lg " id="submitButton" type="submit">Submit</button></div>
-                        </form>
+                        </form>              
                     </div>
                 </div>
             </div>

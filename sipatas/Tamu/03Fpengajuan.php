@@ -30,7 +30,7 @@
 
                 </div>
                 <div class="row gx-5 justify-content-center">
-                    <div class="col-lg-6">
+                    <div class="container px-5 ">
                         <?php
                             include "../config.php";
 
@@ -47,10 +47,12 @@
                                 $sql1 = "INSERT INTO kunjungan (id_pengajuan, email_kun, instansi_kun, nama_kun, whatsapp_kun, tujuan_kun, tgl_kun, waktu_kun, surat_kun) VALUES (NULL,'$email_kun','$instansi_kun','$nama_kun','$whatsapp_kun','$tujuan_kun','$tgl_kun','$waktu_kun','$surat_kun')"; 
 
                                 $result = mysqli_query($con,$sql1);
+
+                                
                             }
         
                         ?>
-                        <div class="row gx-5 justify-content-center">
+                        <div class=" row gx-5 justify-content-center">
                             <div class="col-lg-6 text-center my-5">
                                 <form action="" method="POST" class="parent" id="contactForm" >
                                     <div class="form-grup">
@@ -73,8 +75,8 @@
                                                 <label for="floatingInput">No. Whatsapp</label>
                                             </div>
                                             <div class="form-floating mb-3">
-                                                <input type="text" class="form-control" placeholder="tujuan" name="tujuan_kun" required>
-                                                <label for="floatingInput">Tujuan Kunjungan</label>
+                                                <textarea class="form-control" name="tujuan_kun" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
+                                                <label for="floatingTextarea2">Tujuan Kunjungan</label>
                                             </div>
                                             <div class="form-floating mb-3">
                                                 <input type="date" class="form-control"  name="tanggal_kun" required>
@@ -89,7 +91,7 @@
                                                 <label for="floatingInput">Upload Surat</label>
                                             </div>
                                         </table>
-                                        <input type="submit"  class="tombol-kuning" name="simpan" value="Simpan">
+                                        <input type="submit"  class="btn btn-primary btn-lg " name="simpan" value="Simpan">
                                     </div>
                                 </form>
                             </div>
