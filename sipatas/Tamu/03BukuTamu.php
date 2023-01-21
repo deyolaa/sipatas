@@ -61,7 +61,7 @@
                                                 <label for="floatingInput">Nama Instansi</label>
                                             </div>
                                             <div class="form-floating mb-3">
-                                                <input type="text" class="form-control" placeholder="No Whatsapp" name="whatsapp_tamu" required>
+                                                <input type="number" class="form-control" placeholder="No Whatsapp" name="whatsapp_tamu"  required>
                                                 <label for="floatingInput">No. Whatsapp</label>
                                             </div>
                                             <div class="form-floating mb-3">

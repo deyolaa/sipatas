@@ -71,7 +71,7 @@
                                                 <label for="floatingInput">Nama Perwakilan</label>
                                             </div>
                                             <div class="form-floating mb-3">
-                                                <input type="text" class="form-control" placeholder="No Whatsapp" name="nomor_kun" required>
+                                                <input type="number" class="form-control" placeholder="No Whatsapp" name="nomor_kun" required>
                                                 <label for="floatingInput">No. Whatsapp</label>
                                             </div>
                                             <div class="form-floating mb-3">
