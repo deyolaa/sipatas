@@ -73,11 +73,11 @@
                           <span class="navbar-toggler-icon"></span>
                         </button>
                         <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-                          <a class="navbar-brand fw-bolder" href="02APermohonan.html">Buku Tamu BPTU HPT Padang Mengatas</a>
+                          <a class="navbar-brand fw-bolder" href="#">Buku Tamu BPTU HPT Patas</a>
                           <ul class="navbar-nav mr-auto mt-2 mt-lg-0"></ul>
-                          <form class="form-inline my-2 mr-auto mx-5">
-                            <input class="form-control mr-sm-2 me-2" type="search" placeholder="Search" aria-label="Search" >
-                            <button class=" btn btn-outline-success" type="submit">Search</button>
+                          <form class="form-inline my-2 my-lg-0">
+                            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
                           </form>
                         </div>
                     </nav>

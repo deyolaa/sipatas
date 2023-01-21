@@ -64,7 +64,7 @@
                 <div id="content" class="col-md-9  col-lg-10 px-md-4 mb-5">
             
                     <!-- Topbar -->
-                    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                    <nav class="nnavbar navbar-expand-lg navbar-light bg-light my-2">
                         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
                           <span class="navbar-toggler-icon"></span>
                         </button>
@@ -80,7 +80,7 @@
             
 
             <!-- Table-->
-            <h5 class="text-black mx-5 mb-3">List Pengajuan Kunjungan</h5>
+            <h5 class="text-black mY-3">List Pengajuan Kunjungan</h5>
                     <div class="table-responsive">
                     <table class="table table-sm"  id="dataTable" width="100%" cellspacing="0">
                         
