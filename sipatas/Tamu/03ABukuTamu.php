@@ -124,7 +124,7 @@
                         ?>
                     
                     </table>  
-                    <a type="button" href="03CTBukuTamu.html" class="btn btn-primary"><i class="bi bi-printer"></i>  Cetak Laporan</a>
+                    <a type="button" href="03CTBukuTamu.php" class="btn btn-primary"><i class="bi bi-printer"></i>  Cetak Laporan</a>
                 </div> 
             </div> 
         </div>

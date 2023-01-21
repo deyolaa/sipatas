@@ -1,4 +1,7 @@
-
+<?php
+    include "../config.php";
+  
+?>
 
 
 
@@ -6,9 +9,9 @@
 <html>
     <head>
         <title>SIPATAS</title>
-        <link href="css/styles.css" rel="stylesheet" />
+        <link href="../halaman/css/styles.css" rel="stylesheet" />
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
-        <link href="./css/sb-admin-2.min.css" rel="stylesheet">
+        <link href="../halaman/css/sb-admin-2.min.css" rel="stylesheet">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
         
     </head>
@@ -37,35 +40,39 @@
             <!-- Table-->
             <h5 class="text-black mx-5 mb-3">Laporan Pengajuan Kunjungan BPTU HPT Padang Mengatas</h5>
                     <div class="table-responsive">
-                        <table class="table table-striped table-sm table-bordered"  id="dataTable" width="100%" cellspacing="0">
-                            <thead>
-                                <tr>
-                                    <th>ID Kunjungan</th>
-                                    <th>email</th>
-                                    <th>Asal Instansi</th>
-                                    <th>Tanggal Kunjungan</th>
-                                    
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>0001</td>
-                                    <td>suryabunda@gmail.com</td>
-                                    <td>PT. Bunda Surya</td>
-                                    <td>23-03-2023</td>
-                                    
-                                </tr>
-                                <tr>
-                                    <td>0002</td>
-                                    <td>jayaabadi@gmail.com</td>
-                                    <td>PT. Jaya Abadi</td>
-                                    <td>04-02-2023</td>
-                                    
-                                </tr>
-                            </tbody>
-                        </table> 
+                    <table class="table table-sm"  id="dataTable" width="100%" cellspacing="0">
                         
-                       
+                        <thead>
+                            <tr>
+                                <th class="text-center">ID Pengajuan</th>
+                                <th>Instansi</th>
+                                <th>Tujuan</th>
+                                <th>Tanggal Kunjungan</th>
+                              
+                            </tr>
+                        </thead>
+
+                        <?php
+                            $sql1 = "SELECT * FROM kunjungan";
+                            $result = mysqli_query($con, $sql1);
+                            while ($row= mysqli_fetch_assoc($result)){
+                        ?>
+
+                        <tbody>
+                            <tr>
+                                <td class="text-center"><?php echo $row['id_pengajuan'];?></td>
+                                <td><?php echo $row['instansi_kun'];?></td>
+                                <td><?php echo $row['tujuan_kun'];?></td>
+                                <td><?php echo $row['tgl_kun'];?></td>
+                               
+                            </tr>                
+                        </tbody>
+                        <?php
+
+                            }
+                        ?>
+                    
+                    </table>   
                     </div> 
                 </div>   
             </div> 

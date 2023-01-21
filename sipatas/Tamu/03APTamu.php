@@ -120,7 +120,7 @@
                         ?>
                     
                     </table>   
-                        <a type="button" href="03CTPengajuan.html" class="btn btn-primary"><i class="bi bi-printer"></i>  Cetak Laporan</a>
+                        <a type="button" href="03CTPengajuan.php" class="btn btn-primary"><i class="bi bi-printer"></i>  Cetak Laporan</a>
                     </div> 
                 </div>   
             </div> 
