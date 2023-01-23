@@ -82,7 +82,9 @@
             <!-- Table-->
             <h5 class="text-black mY-3">List Pengajuan Kunjungan</h5>
                     <div class="table-responsive">
-                    <table class="table table-sm"  id="dataTable" width="100%" cellspacing="0">
+                        <a type="button" href="03CTPengajuan.php" class="btn btn-primary"><i class="bi bi-printer"></i>  Cetak Laporan</a>
+                        <a type="button" href="03Aexcelpengajuan.php" class="btn btn-success"><i class="bi bi-file-earmark-excel"></i></i> Export to Excel</a>
+                    <table class="table table-sm my-2"   width="100%" cellspacing="0">
                         
                         <thead>
                             <tr>
@@ -120,9 +122,10 @@
                         ?>
                     
                     </table>   
-                        <a type="button" href="03CTPengajuan.php" class="btn btn-primary"><i class="bi bi-printer"></i>  Cetak Laporan</a>
+                       
                     </div> 
                 </div>   
             </div> 
+            
     </body>
 </html>

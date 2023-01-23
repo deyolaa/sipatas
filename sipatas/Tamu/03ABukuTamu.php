@@ -86,7 +86,9 @@
                 <!-- Table-->
                 <h5 class="text-black my-3">List Pengunjung</h5>
                 <div class="table-responsive">
-                        <table class="table table-sm"  id="dataTable" width="100%" cellspacing="0">
+                        <a type="button" href="03CTBukuTamu.php" class="btn btn-primary"><i class="bi bi-printer"></i>  Cetak Laporan</a>
+                        <a type="button" href="03Aexcelbukutamu.php" class="btn btn-success"><i class="bi bi-file-earmark-excel"></i></i> Export to Excel</a>
+                        <table class="table table-sm my-2"  id="bukutamu" width="100%" cellspacing="0">
                         
                         <thead>
                             <tr>
@@ -124,10 +126,11 @@
                         ?>
                     
                     </table>  
-                    <a type="button" href="03CTBukuTamu.php" class="btn btn-primary"><i class="bi bi-printer"></i>  Cetak Laporan</a>
+                    
                 </div> 
             </div> 
         </div>
-        </div>                     
+        </div>      
+                  
     </body>
 </html>
