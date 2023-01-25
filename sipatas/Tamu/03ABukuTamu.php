@@ -115,7 +115,7 @@
                                 <td>
                                     <a type="button" class="btn btn-primary" style="background-color: blue;" href="03DetailBukuTamu.php"><i class="bi bi-info-lg"></i></a>
                                     <a type="button" class="btn btn-warning" style="background-color: #E15B29;" href="03EditBukuTamu.html"><i class="bi bi-pencil-square"></i></a>
-                                    <a type="button" onclick="return confirm('Anda yakin menghapus data barang ini ?')" href=""class="btn btn-danger"><i class="bi bi-trash-fill"></i></a>
+                                    <a type="button" onclick="return confirm('Anda yakin menghapus data tamu ini ?')" href="03HapusBukuTamu.php?id_tamu=<?= $row['id_tamu'] ?>" class="btn btn-danger"><i class="bi bi-trash-fill"></i></a>
                                         
                                 </td>
                             </tr>                
