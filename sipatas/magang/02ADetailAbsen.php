@@ -1,11 +1,16 @@
+<?php
+    include "../config.php";
+    $id_magang = $_GET['id_magang'];
+?>
+
 <html>
     <head>
         <title>SIPATAS</title>
-        <link href="css/styles.css" rel="stylesheet" />
+        <link href="../halaman/css/styles.css" rel="stylesheet" />
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
-        <link href="./css/sb-admin-2.min.css" rel="stylesheet">
+        <link href="../halaman/css/sb-admin-2.min.css" rel="stylesheet">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
-        
+
     </head>
     <body  style="background-color: white;">
 
@@ -13,7 +18,7 @@
         <div id="wrapper">
             <ul class="navbar-nav bg-black sidebar sidebar-dark accordion">
                 <a class="my-2 sidebar-brand d-flex align-items-center justify-content-center">
-                    <img src="img/bptu.png" height="60px" /> 
+                    <img src="../halaman/img/bptu.png" height="60px" /> 
                     
                 </a>
 
@@ -70,45 +75,54 @@
                         </div>
                     </nav>
             
+                    <?php
+                        $sql3 = "SELECT * FROM absenmg WHERE id_magang = '$id_magang'" ;
+                        $result = $con->query($sql3);
+                        while ($row= mysqli_fetch_assoc($result)){
+                    ?>
                     <!-- Table-->
-                    <h5 class="text-black my-3">Logbook harian</h5>
+                    <h5 class="text-black my-3">Logbook harian <?php echo $row['namaabs']?></h5>
                     <div class="table-responsive">
                         <table class="table table-bordered text-black"  id="dataTable" width="100%" cellspacing="0">
                                 
                                 <tr>
                                     <th>Tanggal</th>
-                                    <td>23/Maret/2023</td>
+                                    <td><?php echo $row['tglabs']; ?></td>
                                 </tr>
                             
                                 <tr>
                                     <th>Nama</th>
-                                    <td>Deyola Fadwa Shifana</td>
+                                    <td><?php echo $row['namaabs']; ?></td>
                                 </tr>
                             
                                 <tr>
                                     <th>Asal Sekolah/Universitas</th>
-                                    <td>Universitas Andalas</td>
+                                    <td><?php echo $row['asalabs']; ?></td>
                                 </tr>
 
                                 <tr>
                                     <th>Pembimbing Lapangan</th>
-                                    <td>....</td>
+                                    <td><?php echo $row['pembimbingabs']; ?></td>
                                 </tr>
 
                                 <tr>
                                     <th>Bidang (Hari ini)</th>
-                                    <td>....</td>
+                                    <td><?php echo $row['bidangabs']; ?></td>
                                 </tr>
 
                                 <tr>
                                     <th>Output</th>
-                                    <td>....</td>
+                                    <td><?php echo $row['outputabs']; ?></td>
                                 </tr>
 
                                 <tr>
                                     <th>Bukti Foto</th>
-                                    <td></td>
+                                    <td><?php echo $row['buktiabs']; ?></td>
                                 </tr>
+
+                                <?php
+                                  }
+                                ?>
                         </table>
                         <a type="button" href="02CTAbsen.html" class="btn btn-primary"><i class="bi bi-printer"></i>  Cetak Absen</a>
                 </div>   
