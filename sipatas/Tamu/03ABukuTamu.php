@@ -75,14 +75,12 @@
                         <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
                           <a class="navbar-brand fw-bolder" href="#">Buku Tamu BPTU HPT Patas</a>
                           <ul class="navbar-nav mr-auto mt-2 mt-lg-0"></ul>
-                          <form class="form-inline my-2 my-lg-0">
-                            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                          </form>
+                          
                         </div>
                     </nav>
                 
 
+                   
                 <!-- Table-->
                 <h5 class="text-black my-3">List Pengunjung</h5>
                 <div class="table-responsive">
@@ -99,12 +97,12 @@
                                 <th>Action</th>
                             </tr>
                         </thead>
-
                         <?php
                             $sql1 = "SELECT * FROM tamu";
                             $result = mysqli_query($con, $sql1);
                             while ($row= mysqli_fetch_assoc($result)){
                         ?>
+                      
 
                         <tbody>
                             <tr>
@@ -113,9 +111,9 @@
                                 <td><?php echo $row['instansi_tamu'];?></td>
                                 <td><?php echo $row['tgl_tamu'];?></td>
                                 <td>
-                                    <a type="button" class="btn btn-primary" style="background-color: blue;" href="03DetailBukuTamu.php"><i class="bi bi-info-lg"></i></a>
+                                    <a type="button" class="btn btn-primary" style="background-color: blue;" onclick="location.href='03DetailBukuTamu.php?id_tamu=<?php echo $row['id_tamu'];?> ';"><i class="bi bi-info-lg"></i></a>
                                     <a type="button" class="btn btn-warning" style="background-color: #E15B29;" href="03EditBukuTamu.html"><i class="bi bi-pencil-square"></i></a>
-                                    <a type="button" onclick="return confirm('Anda yakin menghapus data barang ini ?')" href=""class="btn btn-danger"><i class="bi bi-trash-fill"></i></a>
+                                    <a type="button" onclick="return confirm('Anda yakin menghapus data tamu ini ?')" href="03HapusBukuTamu.php?id_tamu=<?= $row['id_tamu'] ?>" class="btn btn-danger"><i class="bi bi-trash-fill"></i></a>
                                         
                                 </td>
                             </tr>                
