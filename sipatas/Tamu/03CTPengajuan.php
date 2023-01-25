@@ -44,8 +44,11 @@
                         
                         <thead>
                             <tr>
-                                <th class="text-center">ID Pengajuan</th>
+                                
+                                <th>Email</th>
                                 <th>Instansi</th>
+                                <th>Perwakilan</th>
+                                <th>No WhatsApp</th>
                                 <th>Tujuan</th>
                                 <th>Tanggal Kunjungan</th>
                               
@@ -60,8 +63,11 @@
 
                         <tbody>
                             <tr>
-                                <td class="text-center"><?php echo $row['id_pengajuan'];?></td>
+                                
+                                <td><?php echo $row['email_kun'];?></td>
                                 <td><?php echo $row['instansi_kun'];?></td>
+                                <td><?php echo $row['nama_kun'];?></td>
+                                <td><?php echo $row['whatsapp_kun'];?></td>
                                 <td><?php echo $row['tujuan_kun'];?></td>
                                 <td><?php echo $row['tgl_kun'];?></td>
                                

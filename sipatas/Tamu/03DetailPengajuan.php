@@ -1,6 +1,6 @@
 <?php
     include "../config.php";
-  
+    $id_pengajuan = $_GET['id_pengajuan'];
 ?>
 
 <html>
@@ -50,9 +50,9 @@
                 </li>
                 <hr class="sidebar-divider d-none d-md-block">
                 <li class="nav-item">
-                    <a class="nav-link" href="../loginAdmin.php">
+                    <a class="nav-link" href="03APTamu.php">
                         <i class="bi bi-door-closed"></i>
-                    <span>Logout</span></a>
+                    <span>Back</span></a>
                 </li>
 
                 
@@ -64,65 +64,75 @@
                 <div id="content" class="col-md-9  col-lg-10 px-md-4 mb-5">
             
                     <!-- Topbar -->
-                    <nav class="nnavbar navbar-expand-lg navbar-light bg-light my-2">
+                    <nav class="navbar navbar-expand-lg navbar-light bg-light">
                         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
                           <span class="navbar-toggler-icon"></span>
                         </button>
                         <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
                           <a class="navbar-brand fw-bolder" href="#">Pengajuan Kunjungan BPTU HPT Patas</a>
                           <ul class="navbar-nav mr-auto mt-2 mt-lg-0"></ul>
-                          
+                         
                         </div>
                     </nav>
             
 
-            <!-- Table-->
-            <h5 class="text-black mY-3">List Pengajuan Kunjungan</h5>
-                    <div class="table-responsive">
-                        <a type="button" href="03CTPengajuan.php" class="btn btn-primary"><i class="bi bi-printer"></i>  Cetak Laporan</a>
-                        <a type="button" href="03Aexcelpengajuan.php" class="btn btn-success"><i class="bi bi-file-earmark-excel"></i></i> Export to Excel</a>
-                    <table class="table table-sm my-2"   width="100%" cellspacing="0">
-                        
-                        <thead>
-                            <tr>
-                                <th class="text-center">ID Pengajuan</th>
-                                <th>Instansi</th>
-                                <th>Tujuan</th>
-                                <th>Tanggal Kunjungan</th>
-                                <th>Action</th>
-                            </tr>
-                        </thead>
-
-                        <?php
-                            $sql1 = "SELECT * FROM kunjungan";
-                            $result = mysqli_query($con, $sql1);
-                            while ($row= mysqli_fetch_assoc($result)){
-                        ?>
-
-                        <tbody>
-                            <tr>
-                                <td class="text-center"><?php echo $row['id_pengajuan'];?></td>
-                                <td><?php echo $row['instansi_kun'];?></td>
-                                <td><?php echo $row['tujuan_kun'];?></td>
-                                <td><?php echo $row['tgl_kun'];?></td>
-                                <td>
-                                    <a type="button" class="btn btn-primary" style="background-color: blue;" onclick="location.href='03DetailPengajuan.php?id_pengajuan=<?php echo $row['id_pengajuan'];?> ';"><i class="bi bi-info-lg"></i></a>
-                                    <a type="button" class="btn btn-warning" style="background-color: #E15B29;" href="03EditBukuTamu.html"><i class="bi bi-pencil-square"></i></a>
-                                    <a type="button" onclick="return confirm('Anda yakin menghapus data pengajuan ini ?')" href="03HapusPengajuan.php?id_pengajuan=<?= $row['id_pengajuan'] ?>"class="btn btn-danger"><i class="bi bi-trash-fill"></i></a
-                                        
-                                </td>
-                            </tr>                
-                        </tbody>
-                        <?php
+            
+                     
+                    <?php
+                        $sql6 = "SELECT * FROM kunjungan WHERE id_pengajuan = '$id_pengajuan'" ;
+                        $result = $con->query($sql6);
+                        while ($row= mysqli_fetch_assoc($result)){
+                    ?>
+                    <h5 class="text-black my-3">Detail Pengajuan <?php echo $row['instansi_kun']?></h5>
+                    <table class="table text-black table-sm table-bordered mx-3"  id="dataTable" width="100%" cellspacing="0">
+                    
+                                <tr>   
+                                    <th>ID</th>
+                                    <td><?php echo $row['id_pengajuan']?></td>
+                                    </tr>
+                                <tr>
+                                    <th>Email</th>
+                                    <td><?php echo $row['email_kun']; ?></td>
+                                    </tr>
+                                <tr>
+                                    <th>Nama Instansi</th>
+                                    <td><?php echo $row['instansi_kun']; ?></td>
+                                    </tr>
+                                <tr>
+                                <tr>
+                                    <th>Nama Perwakilan</th>
+                                    <td><?php echo $row['nama_kun']; ?></td>
+                                    </tr>
+                                <tr>
+                                    <th>No. WhatsApp</th>
+                                    <td><?php echo $row['whatsapp_kun']; ?></td>
+                                    </tr>
+                                <tr>
+                                <tr>
+                                    <th>Tujuan Kunjungan</th>
+                                    <td><?php echo $row['tujuan_kun']; ?></td>
+                                    </tr>
+                                <tr>
+                                    <th>Jadwal Kunjungan</th>
+                                    <td><?php echo $row['tgl_kun']; ?></td>
+                                    </tr>
+                                <tr>
+                                    <th>Waktu Kunjungan</th>
+                                    <td><?php echo $row['waktu_kun']; ?></td>
+                                    </tr>
+                                <tr>
+                                    <th>Surat Kunjungan</th>
+                                    <td><?php echo $row['surat_kun']; ?></td>
+                                    </tr>
+                                
+                            </tbody>
+                            <?php
 
                             }
                         ?>
-                    
-                    </table>   
-                       
-                    </div> 
+                        </table>
+              
                 </div>   
             </div> 
-            
     </body>
 </html>
