@@ -27,25 +27,25 @@
     
                 <!-- Nav Item - Charts -->
                 <li class="nav-item">
-                    <a class="nav-link" href="02AMagang.html">
+                    <a class="nav-link" href="02AMagang.php">
                         <i class="bi bi-house"></i>
                     <span>Beranda</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="02APermohonan.html">
+                    <a class="nav-link" href="02APermohonan.php">
                         <i class="bi bi-envelope"></i>
                     <span>Permohonan Magang</span></a>
                 </li>
     
                 <!-- Nav Item - Tables -->
                 <li class="nav-item">
-                    <a class="nav-link" href="02AAbsen.html">
+                    <a class="nav-link" href="02AAbsen.php">
                         <i class="bi bi-book"></i>
                     <span>Absensi Magang</span></a>
                 </li>
                 <hr class="sidebar-divider d-none d-md-block">
                 <li class="nav-item">
-                    <a class="nav-link" href="loginAdmin.html">
+                    <a class="nav-link" href="../loginAdmin.php">
                         <i class="bi bi-door-closed"></i>
                     <span>Logout</span></a>
                 </li>
@@ -64,28 +64,55 @@
                           <span class="navbar-toggler-icon"></span>
                         </button>
                         <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-                          <a class="navbar-brand fw-bolder" href="#">Permohonan Magang BPTU HPT Patas</a>
+                          <a class="navbar-brand fw-bolder" href="#">Absensi Peserta Magang BPTU HPT Padang Mengatas</a>
                           <ul class="navbar-nav mr-auto mt-2 mt-lg-0"></ul>
                          
                         </div>
                     </nav>
             
-                    <h5 class="text-black mx-5 mb-3 my-3">Detail Permohonan Magang</h5>
-                    <h6 class="text-black mx-5 mb-5 fw-bolder">ID Pengajuan      : </h4>
-                    <h6 class="text-black mx-5 mb-5 fw-bolder">Email            : </h4>
-                    <h6 class="text-black mx-5 mb-5 fw-bolder">Nama Sekolah/Universitas       : </h4>
-                    <h6 class="text-black mx-5 mb-5 fw-bolder">Nama Perwakilan          : </h4>
-                    <h6 class="text-black mx-5 mb-5 fw-bolder">Noma Semua Anggota     : </h4>
-                    <h6 class="text-black mx-5 mb-5 fw-bolder">WhatsApp   : </h4>
-                    <h6 class="text-black mx-5 mb-5 fw-bolder">Tujuan Magang  : </h4>
-                    <h6 class="text-black mx-5 mb-5 fw-bolder">Tanggal Mulai    : </h4>
-                    <h6 class="text-black mx-5 mb-5 fw-bolder">Tanggal Selesai : </h4>
-                    <h6 class="text-black mx-5 mb-5 fw-bolder">Surat : </h4>
-                    <a type="button" class="btn btn-primary mx-5 " style="background-color: rgb(0, 0, 0);" href="02APermohonan.html">Kembali</a>
-            
-              
+                    <!-- Table-->
+                    <h5 class="text-black my-3">Logbook harian</h5>
+                    <div class="table-responsive">
+                        <table class="table table-bordered text-black"  id="dataTable" width="100%" cellspacing="0">
+                                
+                                <tr>
+                                    <th>Tanggal</th>
+                                    <td>23/Maret/2023</td>
+                                </tr>
+                            
+                                <tr>
+                                    <th>Nama</th>
+                                    <td>Deyola Fadwa Shifana</td>
+                                </tr>
+                            
+                                <tr>
+                                    <th>Asal Sekolah/Universitas</th>
+                                    <td>Universitas Andalas</td>
+                                </tr>
+
+                                <tr>
+                                    <th>Pembimbing Lapangan</th>
+                                    <td>....</td>
+                                </tr>
+
+                                <tr>
+                                    <th>Bidang (Hari ini)</th>
+                                    <td>....</td>
+                                </tr>
+
+                                <tr>
+                                    <th>Output</th>
+                                    <td>....</td>
+                                </tr>
+
+                                <tr>
+                                    <th>Bukti Foto</th>
+                                    <td></td>
+                                </tr>
+                        </table>
+                        <a type="button" href="02CTAbsen.html" class="btn btn-primary"><i class="bi bi-printer"></i>  Cetak Absen</a>
                 </div>   
             </div> 
-            </div> 
+            </div>
     </body>
 </html>

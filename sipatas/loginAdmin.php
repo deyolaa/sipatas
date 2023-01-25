@@ -36,9 +36,9 @@ include('config.php');
             if ($_SESSION['role'] == '001'){
                 header("location:halaman/01APengSapi.php");
             }else if ($_SESSION['role'] == '002'){
-                header("location:halaman/02AMagang.php");
+                header("location:magang/02AMagang.php");
             } else if ($_SESSION['role'] == '003') {
-            header("location:halaman/03ATamu.php");
+            header("location:Tamu/03ATamu.php");
             }
         }
     }
