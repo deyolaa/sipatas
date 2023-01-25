@@ -77,7 +77,7 @@
                     ?>
                     <h5 class="text-black my-3">Permohonan Magang <?php echo $row['asalmg']?></h5>
                     <table class="table table-striped table-sm table-bordered mx-3"  id="dataTable" width="100%" cellspacing="0">
-                    
+                        <tbody>
                                 <tr>   
                                     <th>ID</th>
                                     <td><?php echo $row['id_magang']?></td>
@@ -120,15 +120,13 @@
                                     </tr>
                                 <tr>
                                     <th>Surat</th>
-                                    <td><?php echo $row['suratmg']; ?></td>
-                                    </tr>
-                            </tbody>
-                            <?php
+                                    <td><a type="button" class="btn btn-primary" style="background-color: blue;" onclick="location.href='02DownloadFilePermohonan.php?url=<?php echo $row['suratmg'];?>">Download Surat</a></td>
+                                </tr>
 
-                            }
-                        ?>
-                        </table>
-                    </div>   
+                            <?php }
+                            ?>
+                        </tbody>
+                    </table>
                 </div>
             </div> 
         </div> 

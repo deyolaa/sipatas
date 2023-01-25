@@ -77,8 +77,9 @@
             <!-- Table-->
             <h5 class="text-black my-3">List Permohonan Magang</h5>
                     <div class="table-responsive">
-
-                        <table class="table table-striped table-sm table-bordered"  id="dataTable" width="100%" cellspacing="0">
+                    <a type="button" href="02CetakPermohonan.php" class="btn btn-primary"><i class="bi bi-printer"></i>  Cetak Laporan</a>
+                    <a type="button" href="02ExcelPermohonan.php" class="btn btn-success"><i class="bi bi-file-earmark-excel"></i></i> Export to Excel</a>
+                        <table class="table table-striped table-sm table-bordered my-3"  id="dataTable" width="100%" cellspacing="0">
                             <thead>
                                 <tr>
                                     <th>ID</th>
@@ -105,6 +106,7 @@
                                     <td><?php echo $row['selesaimg'];?></td>
                                     <td>
                                         <a type="button" class="btn btn-primary" style="background-color: blue;" onclick="location.href='02ADetailPermohonan.php?id_magang=<?php echo $row['id_magang'];?> ';" ><i class="bi bi-info-lg"></i></a>
+                                        <a type="button" class="btn btn-warning" style="background-color: #E15B29;" href="02AEditPermohonan.php"><i class="bi bi-pencil-square"></i></a>
                                         <a type="button" onclick="return confirm('Anda yakin menghapus data barang ini ?')" href=""class="btn btn-danger"><i class="bi bi-trash-fill"></i></a>
                                     </td>
                                 
