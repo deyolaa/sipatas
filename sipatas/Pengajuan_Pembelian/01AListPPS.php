@@ -1,9 +1,9 @@
 <html>
     <head>
         <title>SIPATAS</title>
-        <link href="css/styles.css" rel="stylesheet" />
+        <link href="../halaman/css/styles.css" rel="stylesheet" />
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
-        <link href="./css/sb-admin-2.min.css" rel="stylesheet">
+        <link href="../halaman/css/sb-admin-2.min.css" rel="stylesheet">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
         
     </head>
@@ -13,7 +13,7 @@
         <div id="wrapper">
             <ul class="navbar-nav bg-black sidebar sidebar-dark accordion">
                 <a class="my-2 sidebar-brand d-flex align-items-center justify-content-center">
-                    <img src="img/bptu.png" height="60px" /> 
+                    <img src="../halaman/img/bptu.png" height="60px" /> 
                     
                 </a>
 

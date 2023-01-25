@@ -1,68 +1,90 @@
 <html>
     <head>
         <title>SIPATAS</title>
-        <link href="css/styles.css" rel="stylesheet" />
+        <link href="../halaman/css/styles.css" rel="stylesheet" />
       
         </head>
-    <body background="img/sipatasbg.png">
+    <body background="../halaman/img/sipatasbg.png">
         <!-- NAVIGATION BAR -->
         <nav class="navbar navbar-expand-lg navbar-dark">
             <div class="container px-5">
-                <img src="img/peternakan.png" height="60px" align="left"/> 
-                <img src="img/PKH.png" height="60px" align="left"/> 
-                <img src="img/bptu.png" height="60px" align="left"/>               
+                <img src="../halaman/img/peternakan.png" height="60px" align="left"/> 
+                <img src="../halaman/img/PKH.png" height="60px" align="left"/> 
+                <img src="../halaman/img/bptu.png" height="60px" align="left"/>               
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                        <li class="nav-item"><a class="nav-link" href="01DashboardPengPembelian.html">Back</a></li>
-                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="HomePage.html">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="Contact.html">Contact</a></li>
+                        <li class="nav-item"><a class="nav-link" href="01DashboardPengPembelian.php">Back</a></li>
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="../halaman/HomePage.php">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../halaman/Contact.php">Contact</a></li>
                     </ul>
                 </div>
             </div>
         </nav>
-        <section >
+      
             <div class="container px-5 my-5 px-5">
                 <div class="text-center mb-5">
                     
-                    <h2 class="fw-bolder text-white">Form Pengajuan Pembelian Sapi</h2>
+                    <h2 class="display-5 fw-bolder text-white mb-2">Form Pengajuan Pembelian Sapi</h2>
                     <p class="lead mb-0 text-white">Silahkan isi form ini dengan Data yang benar</p>
+              
                 </div>
                 <div class="row gx-5 justify-content-center">
-                    <div class="col-lg-6">
-                        <form id="contactForm" data-sb-form-api-token="API_TOKEN">
-                            <!-- Email address input-->
-                            <div class="form-floating mb-3">
-                                <input class="form-control" id="email" type="email" placeholder="name@example.com" data-sb-validations="required,email" />
-                                <label for="email">Email</label>
-                                <div class="invalid-feedback" data-sb-feedback="email:required">An email is required.</div>
-                                <div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div>
-                            </div>
-                            <!-- Name input-->
-                            <div class="form-floating mb-3">
-                                <input class="form-control" id="name" type="text" placeholder="Enter your name..." data-sb-validations="required" />
-                                <label for="name">Nama Instansi</label>
-                                <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
-                            </div>
-                            <div class="form-floating mb-3">
-                                <input class="form-control" id="name" type="text" placeholder="Enter your name..." data-sb-validations="required" />
-                                <label for="name">Nama Perwakilan Instansi</label>
-                                <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
-                            </div>
-                            <!-- Email address input-->
+                    <div class="container px-5">
                         
-                            <!-- Phone number input-->
-                            <div class="form-floating mb-3">
-                                <input class="form-control" id="phone" type="tel" placeholder="(123) 456-7890" data-sb-validations="required" />
-                                <label for="phone">No Whatsapp</label>
-                                <div class="invalid-feedback" data-sb-feedback="phone:required">A phone number is required.</div>
-                            </div>
 
-                           
+                    <?php
+                            include "../config.php";
 
-                            <div class="mb-3">
+                            if (isset($_POST['simpan'])) {
+                                $email_pengajuan = $_POST['email_pengajuan'];
+                                $instansi_pengajuan = $_POST['instansi_pengajuan'];
+                                $nama_pengajuan = $_POST['nama_pengajuan'];
+                                $nomor_pengajuan = $_POST['nomor_pengajuan'];
+                                $sapi_pengajuan = $_POST['sapi_pengajuan'];
+                                $jumlah_pengajuan = $_POST['jumlah_pengajuan'];
+                                $alasan_pengajuan = $_POST['alasan_pengajuan'];
+                                $surat_pengajuan = $_POST['surat_pengajuan'];
+
+                                $sql1 = "INSERT INTO pengajuan_sapi (id_pengajuan, email_pengajuan, instansi_pengajuan, nama_pengajuan, nomor_pengajuan, sapi_pengajuan, jumlah_pengajuan, alasan_pengajuan, surat_pengajuan) VALUES (NULL,'$email_pengajuan','$instansi_pengajuan','$nama_pengajuan','$nomor_pengajuan','$sapi_pengajuan','$jumlah_pengajuan','$alasan_pengajuan','$surat_pengajuan')"; 
+
+                                $result = mysqli_query($con,$sql1);
+
+                                
+                            }
+        
+                        ?>
+
+
+
+
+
+                    <div class=" row gx-5 justify-content-center">
+                            <div class="col-lg-6 text-center my-5">
+                                <form action="" method="POST" class="parent" id="contactForm" >
+                                    <div class="form-grup">
+                                        <table >
+                                            <div class="form-floating mb-3 ">
+                                                <input type="email" class="form-control" placeholder="name@example.com" name="email_pengajuan" required>
+                                                <label for="floatingInput">Email</label>
+                                            </div>
+                                            <div class="form-floating mb-3">
+                                                <input type="text" class="form-control"  name="instansi_pengajuan"
+                                                placeholder="instansi" required>
+                                                <label for="floatingInput">Nama Instansi</label>
+                                            </div>
+                                            <div class="form-floating mb-3">
+                                                <input type="text" class="form-control" placeholder="Nama Perwakilan" name="nama_pengajuan" required>
+                                                <label for="floatingInput">Nama Perwakilan</label>
+                                            </div>
+                                            <div class="form-floating mb-3">
+                                                <input type="number" class="form-control" placeholder="No Telpon/Whatsapp" name="nomor_pengajuan" required>
+                                                <label for="floatingInput">No. Telpon / Whatsapp</label>
+                                            </div>
+
+                                            <div class="mb-3">
                                 <label class="text-white" for="Jenis Sapi">Jenis Sapi</label>
-                                <select id="jenis_sapi">
+                                <select name="sapi_pengajuan">
                                     <option value="">Silahkan Pilih Jenis Sapi yg anda Inginkan</option>
                                    <optgroup label="Simmental Jantan">
                                          <option value="Simmental Jantan Calon Bibit 3-6 Bulan">Simmental Jantan Calon Bibit 3-6 Bulan</option>
@@ -125,47 +147,31 @@
                             </div>
 
 
-                            
-                
-<!-- 
-                            <div class="form-floating mb-3">
-                                <input class="form-control" id="phone" type="tel" placeholder="(123) 456-7890" data-sb-validations="required" />
-                                <label for="phone">Jenis Sapi</label>
-                                <div class="invalid-feedback" data-sb-feedback="phone:required">A phone number is required.</div>
-                            </div>
-
-                            <div class="form-floating mb-3">
-                                <input class="form-control" id="phone" type="tel" placeholder="(123) 456-7890" data-sb-validations="required" />
-                                <label for="phone">Bibit /Calon Bibit </label>
-                                
-                            </div> -->
-
-
-                            <!-- Message input-->
-                            <div class="form-floating mb-3">
-                                <textarea class="form-control" id="message" type="text" placeholder="Enter your message here..." style="height: 10rem" data-sb-validations="required"></textarea>
-                                <label for="message">Alasan Pembelian</label>
-                                <div class="invalid-feedback" data-sb-feedback="message:required">A message is required.</div>
-                            </div>
-                            
-                            <div class="text-white" >
-                                <form class="mb-3" action="proses.php" method="post" enctype="multipart/form-data">
-                                    <p>Upload Surat Pengajuan &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type='file' name='file' /></p>
+                                            <div class="form-floating mb-3">
+                                                <textarea class="form-control" name="jumlah_pengajuan" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
+                                                <label for="floatingTextarea2">Jumlah pengajuan (mis: 2 ekor, 3 ekor dll)</label>
+                                            </div>
+                                            <div class="form-floating mb-3">
+                                                <textarea class="form-control" name="alasan_pengajuan" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
+                                                <label for="floatingTextarea2">Alasan Pengajuan</label>
+                                            </div>
+                                          
+                                            <div class="form-floating mb-3">
+                                                <input type="file" class="form-control"  name="surat_pengajuan" required>
+                                                <label for="floatingInput">Upload Surat</label>
+                                            </div>
+                                        </table>
+                                        <input type="submit"  class="btn btn-primary btn-lg " name="simpan" value="Simpan">
+                                    </div>
                                 </form>
                             </div>
-                            
-                            <div class="d-grid"><button class="btn btn-primary btn-lg disabled" id="submitButton" type="submit">Submit</button></div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </section>
+                        </div>
+                        <footer>
+            <div class="container px-5"><p class="m-7 text-center text-white">Copyright &copy; Sistem Informasi Unand</p></div>
+        </footer>
+                           
 
 
-        <!-- NAVIGATION BAR END -->
-
-        <!-- FOOTER -->
-
-        <!-- FOOTER END -->
+        
     </body>
 </html>
