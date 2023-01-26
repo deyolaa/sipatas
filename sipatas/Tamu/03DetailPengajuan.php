@@ -1,6 +1,6 @@
 <?php
     include "../config.php";
-    $id_magang = $_GET['id_magang'];
+    $id_pengajuan = $_GET['id_pengajuan'];
 ?>
 
 <html>
@@ -10,7 +10,7 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
         <link href="../halaman/css/sb-admin-2.min.css" rel="stylesheet">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
-
+        
     </head>
     <body  style="background-color: white;">
 
@@ -32,27 +32,27 @@
     
                 <!-- Nav Item - Charts -->
                 <li class="nav-item">
-                    <a class="nav-link" href="02AMagang.php">
+                    <a class="nav-link" href="03ATamu.php">
                         <i class="bi bi-house"></i>
                     <span>Beranda</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="02APermohonan.php">
+                    <a class="nav-link" href="03APTamu.php">
                         <i class="bi bi-envelope"></i>
-                    <span>Permohonan Magang</span></a>
+                    <span>Pengajuan</span></a>
                 </li>
     
                 <!-- Nav Item - Tables -->
                 <li class="nav-item">
-                    <a class="nav-link" href="02AAbsen.php">
+                    <a class="nav-link" href="03ABukuTamu.php">
                         <i class="bi bi-book"></i>
-                    <span>Absensi Magang</span></a>
+                    <span>Buku Tamu</span></a>
                 </li>
                 <hr class="sidebar-divider d-none d-md-block">
                 <li class="nav-item">
-                    <a class="nav-link" href="../loginAdmin.php">
+                    <a class="nav-link" href="03APTamu.php">
                         <i class="bi bi-door-closed"></i>
-                    <span>Logout</span></a>
+                    <span>Back</span></a>
                 </li>
 
                 
@@ -69,64 +69,70 @@
                           <span class="navbar-toggler-icon"></span>
                         </button>
                         <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-                          <a class="navbar-brand fw-bolder" href="#">Absensi Peserta Magang BPTU HPT Padang Mengatas</a>
+                          <a class="navbar-brand fw-bolder" href="#">Pengajuan Kunjungan BPTU HPT Patas</a>
                           <ul class="navbar-nav mr-auto mt-2 mt-lg-0"></ul>
                          
                         </div>
                     </nav>
             
+
+            
+                     
                     <?php
-                        $sql3 = "SELECT * FROM absenmg WHERE id_magang = '$id_magang'" ;
-                        $result = $con->query($sql3);
+                        $sql6 = "SELECT * FROM kunjungan WHERE id_pengajuan = '$id_pengajuan'" ;
+                        $result = $con->query($sql6);
                         while ($row= mysqli_fetch_assoc($result)){
                     ?>
-                    <!-- Table-->
-                    <h5 class="text-black my-3">Logbook harian <?php echo $row['namaabs']?></h5>
-                    <div class="table-responsive">
-                        <table class="table table-bordered text-black"  id="dataTable" width="100%" cellspacing="0">
+                    <h5 class="text-black my-3">Detail Pengajuan <?php echo $row['instansi_kun']?></h5>
+                    <table class="table text-black table-sm table-bordered mx-3"  id="dataTable" width="100%" cellspacing="0">
+                    
+                                <tr>   
+                                    <th>ID</th>
+                                    <td><?php echo $row['id_pengajuan']?></td>
+                                    </tr>
+                                <tr>
+                                    <th>Email</th>
+                                    <td><?php echo $row['email_kun']; ?></td>
+                                    </tr>
+                                <tr>
+                                    <th>Nama Instansi</th>
+                                    <td><?php echo $row['instansi_kun']; ?></td>
+                                    </tr>
+                                <tr>
+                                <tr>
+                                    <th>Nama Perwakilan</th>
+                                    <td><?php echo $row['nama_kun']; ?></td>
+                                    </tr>
+                                <tr>
+                                    <th>No. WhatsApp</th>
+                                    <td><?php echo $row['whatsapp_kun']; ?></td>
+                                    </tr>
+                                <tr>
+                                <tr>
+                                    <th>Tujuan Kunjungan</th>
+                                    <td><?php echo $row['tujuan_kun']; ?></td>
+                                    </tr>
+                                <tr>
+                                    <th>Jadwal Kunjungan</th>
+                                    <td><?php echo $row['tgl_kun']; ?></td>
+                                    </tr>
+                                <tr>
+                                    <th>Waktu Kunjungan</th>
+                                    <td><?php echo $row['waktu_kun']; ?></td>
+                                    </tr>
+                                <tr>
+                                    <th>Surat Kunjungan</th>
+                                    <td><?php echo $row['surat_kun']; ?></td>
+                                    </tr>
                                 
-                                <tr>
-                                    <th>Tanggal</th>
-                                    <td><?php echo $row['tglabs']; ?></td>
-                                </tr>
-                            
-                                <tr>
-                                    <th>Nama</th>
-                                    <td><?php echo $row['namaabs']; ?></td>
-                                </tr>
-                            
-                                <tr>
-                                    <th>Asal Sekolah/Universitas</th>
-                                    <td><?php echo $row['asalabs']; ?></td>
-                                </tr>
+                            </tbody>
+                            <?php
 
-                                <tr>
-                                    <th>Pembimbing Lapangan</th>
-                                    <td><?php echo $row['pembimbingabs']; ?></td>
-                                </tr>
-
-                                <tr>
-                                    <th>Bidang (Hari ini)</th>
-                                    <td><?php echo $row['bidangabs']; ?></td>
-                                </tr>
-
-                                <tr>
-                                    <th>Output</th>
-                                    <td><?php echo $row['outputabs']; ?></td>
-                                </tr>
-
-                                <tr>
-                                    <th>Bukti Foto</th>
-                                    <td><?php echo $row['buktiabs']; ?></td>
-                                </tr>
-
-                                <?php
-                                  }
-                                ?>
+                            }
+                        ?>
                         </table>
-                        <a type="button" href="02CTAbsen.html" class="btn btn-primary"><i class="bi bi-printer"></i>  Cetak Absen</a>
+              
                 </div>   
             </div> 
-            </div>
     </body>
 </html>

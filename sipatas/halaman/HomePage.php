@@ -47,8 +47,9 @@
                             <h1 class="display-5 fw-bolder text-white mb-2">SIPATAS</h1>
                             <p class="lead text-white-50 mb-4">Dalam upaya untuk memberikan pelayanan terbaik kepada masyarakat maka BPTU HPT Padang Mengatas membuat sistem layanan informasi yang disebut dengan SIPATAS, yang memuat terkait dengan :</p>
                             <div class="d-grid gap-3 d-sm-flex justify-content-sm-center">
-                                <a class="btn btn-outline-light btn-lg px-4" href="02DashboardMagang.html">Magang</a>
+                                <a class="btn btn-outline-light btn-lg px-4" href="../magang/02DashboardMagang.php">Magang</a>
                                 <a class="btn btn-outline-light btn-lg px-4" href="../Pengajuan_Pembelian/01DashboardPengPembelian.php">Pembelian Sapi</a>
+>>>>>>> f2d87308f992816c0e59f9cf9964794ef85a1702
                                 <a class="btn btn-outline-light btn-lg px-4" href="../Tamu/03DashboardTamu.php">Kunjungan</a>
                             </div>
                         </div>

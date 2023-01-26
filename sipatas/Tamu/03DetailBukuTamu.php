@@ -1,3 +1,10 @@
+<?php
+    include "../config.php";
+    $id_tamu = $_GET['id_tamu'];
+?>
+
+
+
 <html>
     <head>
         <title>SIPATAS</title>
@@ -27,25 +34,25 @@
     
                 <!-- Nav Item - Charts -->
                 <li class="nav-item">
-                    <a class="nav-link" href="03ATamu.html">
+                    <a class="nav-link" href="03ATamu.php">
                         <i class="bi bi-house"></i>
                     <span>Beranda</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="03APTamu.html">
+                    <a class="nav-link" href="03APTamu.php">
                         <i class="bi bi-envelope"></i>
                     <span>Pengajuan</span></a>
                 </li>
     
                 <!-- Nav Item - Tables -->
                 <li class="nav-item">
-                    <a class="nav-link" href="03ABukuTamu.html">
+                    <a class="nav-link" href="03ABukuTamu.php">
                         <i class="bi bi-book"></i>
                     <span>Buku Tamu</span></a>
                 </li>
                 <hr class="sidebar-divider d-none d-md-block">
                 <li class="nav-item">
-                    <a class="nav-link" href="03ABukuTamu.html">
+                    <a class="nav-link" href="03ABukuTamu.php">
                         <i class="bi bi-door-closed"></i>
                     <span>Back</span></a>
                 </li>
@@ -72,15 +79,46 @@
             
 
            
-                    <h5 class="text-black mx-5 mb-5 ">Detail Data Pengunjung</h5>
-                    <h6 class="text-black mx-5 mb-5 fw-bolder">ID Pengunjung      : </h4>
-                    <h6 class="text-black mx-5 mb-5 fw-bolder">Nama               : </h4>
-                    <h6 class="text-black mx-5 mb-5 fw-bolder">No.Whatsapp        : </h4>
-                    <h6 class="text-black mx-5 mb-5 fw-bolder">Instansi           : </h4>
-                    <h6 class="text-black mx-5 mb-5 fw-bolder">Tgl Kunjungan      : </h4>
-                    <h6 class="text-black mx-5 mb-5 fw-bolder">Kritik dan saran   : </h4>
-                        <a type="button" class="btn btn-primary" style="background-color: blue;" href="03ABukuTamu.html">Kembali</a>
-            
+                    
+                    <?php
+                        $sql5 = "SELECT * FROM tamu WHERE id_tamu = '$id_tamu'" ;
+                        $result = $con->query($sql5);
+                        while ($row= mysqli_fetch_assoc($result)){
+                    ?>
+                    <h5 class="text-black my-3">Detail Buku Tamu <?php echo $row['nama_tamu']?></h5>
+                    <table class="table table-striped table-sm table-bordered mx-3"  id="dataTable" width="100%" cellspacing="0">
+                    
+                                <tr>   
+                                    <th>ID</th>
+                                    <td><?php echo $row['id_tamu']?></td>
+                                    </tr>
+                                <tr>
+                                    <th>Nama</th>
+                                    <td><?php echo $row['nama_tamu']; ?></td>
+                                    </tr>
+                                <tr>
+                                    <th>Nama Instansi</th>
+                                    <td><?php echo $row['instansi_tamu']; ?></td>
+                                    </tr>
+                                <tr>
+                                    <th>No. WhatsApp</th>
+                                    <td><?php echo $row['whatsapp_tamu']; ?></td>
+                                    </tr>
+                                <tr>
+                                    <th>Jadwal Kunjungan</th>
+                                    <td><?php echo $row['tgl_tamu']; ?></td>
+                                    </tr>
+                                <tr>
+                                    <th>Kritik Tamu</th>
+                                    <td><?php echo $row['kritik_tamu']; ?></td>
+                                    </tr>
+                                
+                            </tbody>
+                            <?php
+
+                            }
+                        ?>
+                        </table>
               
                 </div>   
             </div> 

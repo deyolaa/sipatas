@@ -45,7 +45,9 @@
                                 <th class="text-center">ID Pengunjung</th>
                                 <th>Nama</th>
                                 <th>Instansi</th>
+                                <th>No.Whatsapp</th>
                                 <th>Tanggal Kunjungan</th>
+                                <th>Kritik dan Saran</th>
                                 
                             </tr>
                         </thead>
@@ -60,8 +62,10 @@
                             <tr>
                                 <td class="text-center"><?php echo $row['id_tamu'];?></td>
                                 <td><?php echo $row['nama_tamu'];?></td>
+                                <td><?php echo $row['whatsapp_tamu'];?></td>
                                 <td><?php echo $row['instansi_tamu'];?></td>
                                 <td><?php echo $row['tgl_tamu'];?></td>
+                                <td><?php echo $row['kritik_tamu'];?></td>
                                
                             </tr>                
                         </tbody>

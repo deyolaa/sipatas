@@ -71,10 +71,7 @@
                         <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
                           <a class="navbar-brand fw-bolder" href="#">Pengajuan Kunjungan BPTU HPT Patas</a>
                           <ul class="navbar-nav mr-auto mt-2 mt-lg-0"></ul>
-                          <form class="form-inline my-2 my-lg-0">
-                            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                          </form>
+                          
                         </div>
                     </nav>
             
@@ -109,9 +106,9 @@
                                 <td><?php echo $row['tujuan_kun'];?></td>
                                 <td><?php echo $row['tgl_kun'];?></td>
                                 <td>
-                                    <a type="button" class="btn btn-primary" style="background-color: blue;" href="03DetailBukuTamu.php"><i class="bi bi-info-lg"></i></a>
+                                    <a type="button" class="btn btn-primary" style="background-color: blue;" onclick="location.href='03DetailPengajuan.php?id_pengajuan=<?php echo $row['id_pengajuan'];?> ';"><i class="bi bi-info-lg"></i></a>
                                     <a type="button" class="btn btn-warning" style="background-color: #E15B29;" href="03EditBukuTamu.html"><i class="bi bi-pencil-square"></i></a>
-                                    <a type="button" onclick="return confirm('Anda yakin menghapus data barang ini ?')" href=""class="btn btn-danger"><i class="bi bi-trash-fill"></i></a>
+                                    <a type="button" onclick="return confirm('Anda yakin menghapus data pengajuan ini ?')" href="03HapusPengajuan.php?id_pengajuan=<?= $row['id_pengajuan'] ?>"class="btn btn-danger"><i class="bi bi-trash-fill"></i></a
                                         
                                 </td>
                             </tr>                
