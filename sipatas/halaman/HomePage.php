@@ -27,12 +27,12 @@
                         <li class="nav-item"><a class="nav-link" href="../loginAdmin.php">Admin</a></li>
                         <div class="mb-4">
                         <div class="dropdown">
-        <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown">Dropdown</a>
-        <div class="dropdown-menu">
-            <a href="#" class="dropdown-item">Sejarah</a>
-            <a href="#" class="dropdown-item">Another action</a>
-        </div>
-    </div>
+                    <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown">Dropdown</a>
+                    <div class="dropdown-menu">
+                        <a href="#" class="dropdown-item">Sejarah</a>
+                        <a href="#" class="dropdown-item">Another action</a>
+                    </div>
+                </div>
                     </ul>
                 </div>
             </div>
@@ -49,7 +49,6 @@
                             <div class="d-grid gap-3 d-sm-flex justify-content-sm-center">
                                 <a class="btn btn-outline-light btn-lg px-4" href="../magang/02DashboardMagang.php">Magang</a>
                                 <a class="btn btn-outline-light btn-lg px-4" href="../Pengajuan_Pembelian/01DashboardPengPembelian.php">Pembelian Sapi</a>
->>>>>>> f2d87308f992816c0e59f9cf9964794ef85a1702
                                 <a class="btn btn-outline-light btn-lg px-4" href="../Tamu/03DashboardTamu.php">Kunjungan</a>
                             </div>
                         </div>

@@ -16,7 +16,7 @@
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                         <li class="nav-item"><a class="nav-link" href="01DashboardPengPembelian.php">Back</a></li>
                         <li class="nav-item"><a class="nav-link active" aria-current="page" href="../halaman/HomePage.php">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="../halaman/Contact.php">Contact</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../halaman/Contact.html">Contact</a></li>
                     </ul>
                 </div>
             </div>

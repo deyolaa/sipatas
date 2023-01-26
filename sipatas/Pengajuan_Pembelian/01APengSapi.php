@@ -45,7 +45,7 @@
                 </li>
                 <hr class="sidebar-divider d-none d-md-block">
                 <li class="nav-item">
-                    <a class="nav-link" href="loginAdmin.php">
+                    <a class="nav-link" href="../loginAdmin.php">
                         <i class="bi bi-door-closed"></i>
                     <span>Logout</span></a>
                 </li>
