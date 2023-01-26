@@ -1,3 +1,7 @@
+<?php
+include "../config.php";
+?>
+
 <html>
     <head>
         <title>SIPATAS</title>
@@ -27,25 +31,25 @@
     
                 <!-- Nav Item - Charts -->
                 <li class="nav-item">
-                    <a class="nav-link" href="01APengSapi.html">
+                    <a class="nav-link" href="01APengSapi.php">
                         <i class="bi bi-house"></i>
                     <span>Beranda</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="01AListPPS.html">
+                    <a class="nav-link" href="01AListPPS.php">
                         <i class="bi bi-envelope"></i>
                     <span>Pengajuan</span></a>
                 </li>
     
                 <!-- Nav Item - Tables -->
                 <li class="nav-item">
-                    <a class="nav-link" href="01ListIkm.html">
+                    <a class="nav-link" href="01ListIkm.php">
                         <i class="bi bi-book"></i>
                     <span>List IKM</span></a>
                 </li>
                 <hr class="sidebar-divider d-none d-md-block">
                 <li class="nav-item">
-                    <a class="nav-link" href="loginAdmin.html">
+                    <a class="nav-link" href="../loginAdmin.php">
                         <i class="bi bi-door-closed"></i>
                     <span>Logout</span></a>
                 </li>
@@ -87,36 +91,31 @@
                                     <th>Action</th>
                                 </tr>
                             </thead>
-                            <tbody>
-                                <tr>
-                                    <td>0001</td>
-                                    <td>Surya</td>
-                                    <td>Kelompok Tani Suryaku Jaya</td>
-                                    <td>suryanto@gmail.com</td>
-                                    
 
-                                    <td>
-                                        <a type="button" class="btn btn-primary" style="background-color: blue;" href="01DetailPPS.html"><i class="bi bi-info-lg"></i></a>
-                                        <a type="button" class="btn btn-warning" style="background-color: #E15B29;" href="01EditPPS.html"><i class="bi bi-pencil-square"></i></a>
-                                        <a type="button" onclick="return confirm('Anda yakin menghapus data  ini ?')" href=""class="btn btn-danger"><i class="bi bi-trash-fill"></i></a>
-                                        
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>0002</td>
-                                    <td>Budi</td>
-                                    <td>Polresta Padang</td>
-                                    <td>budiantara@gmail.com</td>
-                                    
-                                    <td>
-                                        <a type="button" class="btn btn-primary" style="background-color: blue;" href="01DetailPPS.html"><i class="bi bi-info-lg"></i></a>
-                                        <a type="button" class="btn btn-warning" style="background-color: #E15B29;" href="01EditPPS"><i class="bi bi-pencil-square"></i></a>
-                                        <a type="button" onclick="return confirm('Anda yakin menghapus data ini ?')" href=""class="btn btn-danger"><i class="bi bi-trash-fill"></i></a>
-                                        
-                                    </td>
-                                </tr>
-                            </tbody>
+                            <?php
+                            $sql1 = "SELECT * FROM pengajuan_sapi";
+                            $result = mysqli_query($con, $sql1);
+                            while ($row= mysqli_fetch_assoc($result)){
+                        ?>
+
+                        <tbody>
+                            <tr>
+                                <td class="text-center"><?php echo $row['id_pengajuan'];?></td>
+                                <td><?php echo $row['nama_pengajuan'];?></td>
+                                <td><?php echo $row['instansi_pengajuan'];?></td>
+                                <td><?php echo $row['email_pengajuan'];?></td>
+                                <td>
+                                    <a type="button" class="btn btn-primary" style="background-color: blue;" onclick="location.href='01DetailPPS.php?id_pengajuan=<?php echo $row['id_pengajuan'];?> ';"><i class="bi bi-info-lg"></i></a>
+                                    <a type="button" class="btn btn-warning" style="background-color: #E15B29;" href="01EditPPS.html"><i class="bi bi-pencil-square"></i></a>
+                                    <a type="button" onclick="return confirm('Anda yakin menghapus data pengajuan ini ?')" href="01HapusPengajuanSapi.php?id_pengajuan=<?= $row['id_pengajuan'] ?>"class="btn btn-danger"><i class="bi bi-trash-fill"></i></a>                                        
+                                </td>
+                            </tr>                
+                        </tbody>
+                        <?php
+                            }
+                        ?>
                         </table>  
+                        </div>
                     </div> 
                 </div>   
             </div> 

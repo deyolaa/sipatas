@@ -47,6 +47,12 @@
                                 $sql1 = "INSERT INTO kunjungan (id_pengajuan, email_kun, instansi_kun, nama_kun, whatsapp_kun, tujuan_kun, tgl_kun, waktu_kun, surat_kun) VALUES (NULL,'$email_kun','$instansi_kun','$nama_kun','$whatsapp_kun','$tujuan_kun','$tgl_kun','$waktu_kun','$surat_kun')"; 
 
                                 $result = mysqli_query($con,$sql1);
+                                if($result){
+                                echo "<script>alert('Data Berhasil Disimpan, Terima kasih');window.location='03DashboardTamu.php';</script>";
+                                } else {
+                                echo mysqli_error($con);
+                                }
+                              
 
                                 
                             }
@@ -91,7 +97,7 @@
                                                 <label for="floatingInput">Upload Surat</label>
                                             </div>
                                         </table>
-                                        <input type="submit"  class="btn btn-primary btn-lg " name="simpan" value="Simpan">
+                                        <input type="submit"  class="btn btn-primary btn-lg " name="simpan" value="Kirim">
                                     </div>
                                 </form>
                             </div>

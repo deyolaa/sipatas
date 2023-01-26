@@ -112,7 +112,7 @@
                                 <td><?php echo $row['tgl_tamu'];?></td>
                                 <td>
                                     <a type="button" class="btn btn-primary" style="background-color: blue;" onclick="location.href='03DetailBukuTamu.php?id_tamu=<?php echo $row['id_tamu'];?> ';"><i class="bi bi-info-lg"></i></a>
-                                    <a type="button" class="btn btn-warning" style="background-color: #E15B29;" href="03EditBukuTamu.html"><i class="bi bi-pencil-square"></i></a>
+                                    <a type="button" class="btn btn-warning" style="background-color: #E15B29;" href="03EditBukuTamu.php?id_tamu=<?= $row['id_tamu'] ?>"><i class="bi bi-pencil-square"></i></a>
                                     <a type="button" onclick="return confirm('Anda yakin menghapus data tamu ini ?')" href="03HapusBukuTamu.php?id_tamu=<?= $row['id_tamu'] ?>" class="btn btn-danger"><i class="bi bi-trash-fill"></i></a>
                                         
                                 </td>

@@ -43,6 +43,11 @@
                                 $sql1 = "INSERT INTO `tamu`(`id_tamu`, `nama_tamu`, `instansi_tamu`, `whatsapp_tamu`, `tgl_tamu`, `kritik_tamu`) VALUES ('','$nama_tamu','$instansi_tamu','$whatsapp_tamu','$tgl_tamu','$kritik_tamu')"; 
 
                                 $result = mysqli_query($con,$sql1);
+                                if($result){
+                                    echo "<script>alert('Data Berhasil Disimpan, Terima kasih');window.location='03DashboardTamu.php';</script>";
+                                    } else {
+                                    echo mysqli_error($con);
+                                    }
 
                                 
                             }
@@ -74,10 +79,13 @@
                                             </div>
     
                                 </table>
-                                <input type="submit"  class="btn btn-primary btn-lg " name="simpan" value="Simpan">
+                                
+                                <input type="submit"  class="btn btn-primary btn-lg " name="simpan" value="Kirim">
                             </div>
-                        </form>              
+                        </form>  
+            
                     </div>
+                    
                 </div>
             </div>
         </section>

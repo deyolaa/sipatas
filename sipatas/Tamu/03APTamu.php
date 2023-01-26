@@ -107,7 +107,7 @@
                                 <td><?php echo $row['tgl_kun'];?></td>
                                 <td>
                                     <a type="button" class="btn btn-primary" style="background-color: blue;" onclick="location.href='03DetailPengajuan.php?id_pengajuan=<?php echo $row['id_pengajuan'];?> ';"><i class="bi bi-info-lg"></i></a>
-                                    <a type="button" class="btn btn-warning" style="background-color: #E15B29;" href="03EditBukuTamu.html"><i class="bi bi-pencil-square"></i></a>
+                                    <a type="button" class="btn btn-warning" style="background-color: #E15B29;"  href="03EditPengajuan.php?id_pengajuan=<?= $row['id_pengajuan'] ?>"><i class="bi bi-pencil-square"></i></a>
                                     <a type="button" onclick="return confirm('Anda yakin menghapus data pengajuan ini ?')" href="03HapusPengajuan.php?id_pengajuan=<?= $row['id_pengajuan'] ?>"class="btn btn-danger"><i class="bi bi-trash-fill"></i></a
                                         
                                 </td>

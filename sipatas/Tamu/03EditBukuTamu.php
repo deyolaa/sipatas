@@ -34,10 +34,10 @@ $row = mysqli_fetch_array ($sql7);
 
 </head>
 
-<body>
+<body background="../halaman/img/sipatasbg.png">
 
 
-    <div class="container">
+    <div class="container px-5">
 
         <!-- Outer Row -->
         <div class=" d-flex justify-content-center">
@@ -52,7 +52,7 @@ $row = mysqli_fetch_array ($sql7);
                             <div class="col-lg 6">
                                 <div class="p-5">
                                     <div class="text-center">
-                                        <h1 class="h4 text-gray-900 mb-4">EDIT DATA TAMU (<?php echo $row['id_tamu']?>) </h1>
+                                        <h1 class="h4 text-gray-900 mb-4">Edit Data Tamu (<?php echo $row['id_tamu']?>) </h1>
                                     </div>
                                     
                                     <form class="user" method="POST">
@@ -77,13 +77,11 @@ $row = mysqli_fetch_array ($sql7);
                                                 <br>
                                         </div>
                                         
-                                        <!-- <a href="antrian/indexcost.php" class="btn btn-primary btn-user btn-block">
-                                            Ambil Antrian
-                                        </a> -->
-                                        <input class="btn btn-danger" type="submit" name="simpan" value="simpan">
+                                       
+                                        <input class="btn btn-danger " type="submit" name="simpan" value="Simpan">
                                         <hr>
                                         <div class="text-center">
-                                            <a class="small text-danger" href="barangadmin.php">Back</a>
+                                            <a class="small text-danger" href="03ABukuTamu.php">Kembali</a>
                                         </div>
                                     </form>
                                 </div>
@@ -122,15 +120,9 @@ $row = mysqli_fetch_array ($sql7);
 
 
 
-    <!-- Bootstrap core JavaScript-->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Core plugin JavaScript-->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-
-    <!-- Custom scripts for all pages-->
-    <script src="js/sb-admin-2.min.js"></script>
+    <footer>
+            <div class="container px-5"><p class="m-7 text-center text-white">Copyright &copy; Sistem Informasi Unand</p></div>
+        </footer>
 
 </body>
 
