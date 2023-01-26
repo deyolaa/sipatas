@@ -1,50 +1,137 @@
+<!-- HALAMAN UNTUK EDIT STOK BARANG ADMIN -->
+
+<?php
+include '../config.php'; 
+
+$kode = $_GET['id_tamu'];
+$sql7 = mysqli_query($con, "SELECT * from tamu where id_tamu='$kode'");
+$row = mysqli_fetch_array ($sql7);
+
+?>
+
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Page Title</title>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
-    <script src='main.js'></script>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>SIPATAS</title>
+
+    <!-- Custom fonts for this template-->
+    <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="../halaman/css/sb-admin-2.min.css" rel="stylesheet">
+
 </head>
+
 <body>
 
-        <?php
-            include "../config.php";
 
-            if (isset($_POST['simpan'])) {
-                $email_kun = $_POST['email_kun'];
-                $instansi_kun = $_POST['instansi_kun'];
-                $nama_kun = $_POST['nama_kun'];
-                $whatsapp_kun = $_POST['nomor_kun'];
-                $tujuan_kun = $_POST['tujuan_kun'];
-                $tgl_kun = $_POST['tanggal_kun'];
-                $waktu_kun = $_POST['waktu_kun'];
-                $surat_kun = $_POST['surat_kun'];
+    <div class="container">
 
-                $sql1 = "INSERT INTO kunjungan (id_pengajuan, email_kun, instansi_kun, nama_kun, whatsapp_kun, tujuan_kun, tgl_kun, waktu_kun, surat_kun) VALUES (NULL,'$email_kun','$instansi_kun','$nama_kun','$whatsapp_kun','$tujuan_kun','$tgl_kun','$waktu_kun','$surat_kun')"; 
+        <!-- Outer Row -->
+        <div class=" d-flex justify-content-center">
 
-                $result = mysqli_query($con,$sql1);
-            }
-        
-        ?>
+            <div class="col-xl-5 col-lg 1 col-md-15">
 
-    <form action="" method="POST" class="parent" style="margin-left:100px">
-        <div class="form-grup">
-            <table class="isian" >
-                <tr class="baris"><td>email</td> <td><input type="text" name="email_kun" required></td> </tr>
-                <tr class="baris"><td>nama Instansi</td> <td><input type="text" name="instansi_kun" required></td> </tr>
-                <tr class="baris"><td>Nama</td> <td><input type="text" name="nama_kun" required></td> </tr>
-                <tr class="baris"><td>whatsapp</td> <td><input type="number" name="whatsapp_kun" required></td> </tr>
-                <tr class="baris"><td>tujuan</td> <td><input type="text" name="tujuan_kun" required></td> </tr>
-                <tr class="baris"><td>tanggal</td> <td><input type="date" name="tgl_kun" required></td> </tr>
-                <tr class="baris"><td>waktu</td> <td><input type="time" name="waktu_kun" required></td> </tr>
-                <tr class="baris"><td>surat</td> <td><input type="file" name="surat_kun" required></td> </tr>
-            </table>
-            <input type="submit"  class="tombol-kuning" name="simpan" value="Simpan">
+                <div class="card o-hidden border-1 shadow-lg my-5 bg-gray-200">
+                    <div class="card-body p-1">
+                        <!-- Nested Row within Card Body -->
+                        <div class="row">
+
+                            <div class="col-lg 6">
+                                <div class="p-5">
+                                    <div class="text-center">
+                                        <h1 class="h4 text-gray-900 mb-4">EDIT DATA TAMU (<?php echo $row['id_tamu']?>) </h1>
+                                    </div>
+                                    
+                                    <form class="user" method="POST">
+                                        <div class="form-group">
+                                            <input name="id_tamu" type="text" class="form-control form-control-user"
+                                                id="exampleInputEmail" aria-describedby="id_tamus" placeholder="id_tamu" readonly value="<?php echo $row['id_tamu']?>">
+                                            <br>    
+                                            <input name="nama_tamu" type="text" class="form-control form-control-user"
+                                                id="exampleInputEmail" aria-describedby="nama_tamu" placeholder="Name" value="<?php echo $row['nama_tamu']?>">
+                                                <br>    
+                                            <input name="instansi_tamu" type="text" class="form-control form-control-user"
+                                                id="exampleInputEmail" aria-describedby="merkHelp" placeholder="Instansi" value="<?php echo $row['instansi_tamu']?>">
+                                                <br>
+                                            <input name="whatsapp_tamu" type="number" class="form-control form-control-user"
+                                                id="exampleInputEmail" aria-describedby="jumlahHelp" placeholder="nomor" value="<?php echo $row['whatsapp_tamu']?>">
+                                                <br>     
+                                            <input name="tgl_tamu" type="date" class="form-control form-control-user"
+                                                id="exampleInputEmail" aria-describedby="tanggal" placeholder="tanggal" readonly value="<?php echo $row['tgl_tamu']?>">
+                                                <br>
+                                            <input name="kritik_tamu" type="text" class="form-control form-control-user"
+                                                id="exampleInputEmail" aria-describedby="kritik" placeholder="kritik" readonly value="<?php echo $row['kritik_tamu']?>">
+                                                <br>
+                                        </div>
+                                        
+                                        <!-- <a href="antrian/indexcost.php" class="btn btn-primary btn-user btn-block">
+                                            Ambil Antrian
+                                        </a> -->
+                                        <input class="btn btn-danger" type="submit" name="simpan" value="simpan">
+                                        <hr>
+                                        <div class="text-center">
+                                            <a class="small text-danger" href="barangadmin.php">Back</a>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
-    </form>
-    
+
+        
+
+    </div>
+     
+    <?php
+    if (isset($_POST['simpan'])) {
+        $id_tamu = $_POST['id_tamu'];
+        $nama_tamu      = $_POST['nama_tamu'];
+        $instansi_tamu        = $_POST['instansi_tamu'];
+        $whatsapp_tamu      = $_POST["whatsapp_tamu"];
+        
+
+    $sql8 = mysqli_query($con, "UPDATE tamu SET nama_tamu='$nama_tamu' , instansi_tamu='$instansi_tamu' , whatsapp_tamu='$whatsapp_tamu' 
+    WHERE id_tamu='$id_tamu' ");
+
+    if ($sql8) {
+        echo "<script>alert('Data berhasil diedit');window.location='03ABukuTamu.php';</script>";
+    } else {
+        echo mysqli_error($con);
+    }
+
+    }?>
+
+    </div>
+
+
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin-2.min.js"></script>
+
 </body>
+
 </html>
