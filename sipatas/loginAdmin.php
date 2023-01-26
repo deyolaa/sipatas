@@ -34,7 +34,7 @@ include('config.php');
             $_SESSION['session_password'] = md5($password);
             $_SESSION['role'] = $role;
             if ($_SESSION['role'] == '001'){
-                header("location:halaman/01APengSapi.php");
+                header("location:Pengajuan_Pembelian/01APengSapi.php");
             }else if ($_SESSION['role'] == '002'){
                 header("location:magang/02AMagang.php");
             } else if ($_SESSION['role'] == '003') {
