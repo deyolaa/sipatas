@@ -84,6 +84,7 @@
                                     <th>Nama</th>
                                     <th>Instansi / Organisasi</th>
                                     <th>Telepon</th>
+                                    <th>Umur</th>
 
                                     <th>Action</th>
                                 </tr>
@@ -100,11 +101,12 @@
                                 <td><?php echo $row['nama_ikm'];?></td>
                                 <td><?php echo $row['instansi_ikm'];?></td>
                                 <td><?php echo $row['nomor_ikm'];?></td>
+                                <td><?php echo $row['umur_ikm'];?></td>
                                 
                                 <td>
                                 <a type="button" class="btn btn-primary" style="background-color: blue;" onclick="location.href='01DetailIKM.php?id_ikm=<?php echo $row['id_ikm'];?> ';"><i class="bi bi-info-lg"></i></a>
-                                    <a type="button" class="btn btn-warning" style="background-color: #E15B29;" href="03EditBukuTamu.html"><i class="bi bi-pencil-square"></i></a>
-                                    <a type="button" onclick="return confirm('Anda yakin menghapus data pengajuan ini ?')" href="01HapusListIKM.php?id_ikm=<?= $row['id_ikm'] ?>"class="btn btn-danger"><i class="bi bi-trash-fill"></i></a>                                        
+                                <a type="button" class="btn btn-warning" style="background-color: #E15B29;"  href="01EditIKM.php?id_ikm=<?= $row['id_ikm'] ?>"><i class="bi bi-pencil-square"></i></a>
+                                <a type="button" onclick="return confirm('Anda yakin menghapus data pengajuan ini ?')" href="01HapusListIKM.php?id_ikm=<?= $row['id_ikm'] ?>"class="btn btn-danger"><i class="bi bi-trash-fill"></i></a>                                        
                                         
                                 </td>
                             </tr>                

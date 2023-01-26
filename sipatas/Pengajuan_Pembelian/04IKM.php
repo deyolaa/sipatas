@@ -37,6 +37,7 @@
                                 $nama_ikm = $_POST['nama_ikm'];
                                 $instansi_ikm = $_POST['instansi_ikm'];
                                 $nomor_ikm = $_POST['nomor_ikm'];
+                                $umur_ikm = $_POST['umur_ikm'];
                                 $jeniskelamin_ikm=$_POST['jeniskelamin_ikm'];
                                 $pendidikan_ikm=$_POST['pendidikan_ikm'];
                                 $pekerjaan_ikm=$_POST['pekerjaan_ikm'];
@@ -58,7 +59,8 @@
                                 
                                 
 
-                                $sql1 = "INSERT INTO db_ikm (id_ikm, nama_ikm, instansi_ikm, nomor_ikm, jeniskelamin_ikm, pendidikan_ikm, pekerjaan_ikm, pertanyaan1, pertanyaan2, pertanyaan3, pertanyaan4, pertanyaan5, pertanyaan6, pertanyaan7, pertanyaan8, pertanyaan9, pertanyaan10, pertanyaan11, pertanyaan12, pertanyaan13, pertanyaan14, kritik_ikm) VALUES (NULL,'$nama_ikm','$instansi_ikm','$nomor_ikm','$jeniskelamin_ikm','$pendidikan_ikm','$pekerjaan_ikm','$pertanyaan1','$pertanyaan2','$pertanyaan3','$pertanyaan4','$pertanyaan5','$pertanyaan6','$pertanyaan7','$pertanyaan8','$pertanyaan9','$pertanyaan10','$pertanyaan11','$pertanyaan12','$pertanyaan13','$pertanyaan14','$kritik_ikm')"; 
+                                $sql1 = "INSERT INTO db_ikm (id_ikm, nama_ikm, instansi_ikm, nomor_ikm, umur_ikm, jeniskelamin_ikm, pendidikan_ikm, pekerjaan_ikm, pertanyaan1, pertanyaan2, pertanyaan3, pertanyaan4, pertanyaan5, pertanyaan6, pertanyaan7, pertanyaan8, pertanyaan9, pertanyaan10, pertanyaan11, pertanyaan12, pertanyaan13, pertanyaan14, kritik_ikm)
+                                         VALUES (NULL,'$nama_ikm','$instansi_ikm','$nomor_ikm','$umur_ikm','$jeniskelamin_ikm','$pendidikan_ikm','$pekerjaan_ikm','$pertanyaan1','$pertanyaan2','$pertanyaan3','$pertanyaan4','$pertanyaan5','$pertanyaan6','$pertanyaan7','$pertanyaan8','$pertanyaan9','$pertanyaan10','$pertanyaan11','$pertanyaan12','$pertanyaan13','$pertanyaan14','$kritik_ikm')"; 
 
                                 $result = mysqli_query($con,$sql1);
 
@@ -81,6 +83,10 @@
                                             <div class="form-floating mb-3">
                                                 <input type="number" class="form-control" placeholder="No Whatsapp" name="nomor_ikm"  required>
                                                 <label for="floatingInput">No. Whatsapp</label>
+                                            </div>
+                                            <div class="form-floating mb-3">
+                                                <input type="number" class="form-control" placeholder="Umur" name="umur_ikm"  required>
+                                                <label for="floatingInput">Umur</label>
                                             </div>
 
                                             <div class="text-white mb-3">
