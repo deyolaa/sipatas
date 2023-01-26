@@ -71,62 +71,16 @@
                     </nav>
                     
                     <?php
-                        $sql3 = "SELECT * FROM permohonan_magang WHERE id_magang = '$id_magang'" ;
+                        $sql3 = "SELECT suratmg FROM permohonan_magang WHERE id_magang = '$id_magang'" ;
                         $result = $con->query($sql3);
-                        while ($row= mysqli_fetch_assoc($result)){
-                    ?>
-                    <h5 class="text-black my-3">Permohonan Magang <?php echo $row['asalmg']?></h5>
-                    <table class="table table-striped table-sm table-bordered mx-3" id="dataTable" width="100%" cellspacing="0">
-                        <tbody>
-                                <tr>   
-                                    <th>ID</th>
-                                    <td><?php echo $row['id_magang']?></td>
-                                    </tr>
-                                <tr>
-                                    <th>email</th>
-                                    <td><?php echo $row['emailmg']; ?></td>
-                                    </tr>
-                                <tr>
-                                    <th>Nama Sekolah/Universitas</th>
-                                    <td><?php echo $row['asalmg']; ?></td>
-                                    </tr>
-                                <tr>
-                                    <th>Jurusan</th>
-                                    <td><?php echo $row['jurusanmg']; ?></td>
-                                    </tr>
-                                <tr>
-                                    <th>Nama Perwakilan</th>
-                                    <td><?php echo $row['perwakilanmg']; ?></td>
-                                    </tr>
-                                <tr>
-                                    <th>Nama Semua Anggota</th>
-                                    <td><?php echo $row['anggotamg']; ?></td>
-                                    </tr>
-                                <tr>
-                                    <th>WhatsApp</th>
-                                    <td><?php echo $row['nomormg']; ?></td>
-                                    </tr>
-                                <tr>
-                                    <th>Tujuan Magang</th>
-                                    <td><?php echo $row['tujuanmg']; ?></td>
-                                    </tr>
-                                <tr>
-                                    <th>Tanggal Mulai</th>
-                                    <td><?php echo $row['mulaimg']; ?></td>
-                                    </tr>
-                                <tr>
-                                    <th>Tanggal Selesai</th>
-                                    <td><?php echo $row['selesaimg']; ?></td>
-                                    </tr>
-                                <tr>
-                                    <th>Surat</th>
-                                    <td><button onclick="location.href='02DownloadSurat.php?suratmg=<?php echo $row['suratmg'];?> ';"> Download PDF</button><br /></td>
-                                </tr>
+                        while ($row = mysqli_fetch_assoc($result)) {
+                        ?>
+                    <h5 class="text-black my-3">Permohonan Magang <?php echo $row['asalmg'] ?></h5>
+                    <embed type="application/pdf" src="<?php echo $row['suratmg']; ?>"  width="300" height="300">
 
-                            <?php }
-                            ?>
-                        </tbody>
-                    </table>
+                        <?php
+                    }
+                        ?>
                 </div>
             </div> 
         </div> 
