@@ -63,7 +63,7 @@ include('config.php');
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                         <li class="nav-item"><a class="nav-link" href="halaman/HomePage.php">Home</a></li>
                         <li class="nav-item"><a class="nav-link" href="halaman/About.php">About</a></li>
-                        <li class="nav-item"><a class="nav-link" href="halaman/Contact.php">Contact</a></li>
+                        <li class="nav-item"><a class="nav-link" href="halaman/Contact.html">Contact</a></li>
                         <li class="nav-item"><a class="nav-link" href="../sipatas/loginAdmin.php">Admin</a></li>
                     </ul>
                 </div>
@@ -76,19 +76,18 @@ include('config.php');
                     <div class="display-5 fw-bolder text-white mb-2">ADMIN LOGIN</div>
                     <p class="lead text-white-50 mb-1">Masukkan id dan password anda</p>
             </div>      
-                <div style="padding-center:20px" class="panel-body center" >            
+                <div  class="panel-body center" >            
                     <form id="loginform" class="form-horizontal " action="" method="post" role="form">       
-                        <div class="form-group form-animate-text" style=" !important;">
-                            <label class="text-white">ID Admin</label>
-                            <input type="text" name="id_admin" class="input" placeholder="isikan id_admin..." /><br /><br />    
-                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                            
-                        </div>
-                        <div class="form-group form-animate-text" style="margin-top:20px !important;">
-                            <label class="text-white">Password</label>
-                            <input type="password" name="password" class="input" placeholder="isikan password..." /><br /><br />
-                            <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                        </div>
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control"  name="id_admin"
+                            placeholder="instansi" required>
+                        <label for="floatingInput">Username</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="password" class="form-control"  name="password"
+                            placeholder="instansi" required>
+                        <label for="floatingInput">Username</label>
+                    </div>
                         
                         <input class="submit btn btn-success col-md-5 col-sm-5" style="margin-top: 20px;" type="submit" value="Login" name="login">
 
