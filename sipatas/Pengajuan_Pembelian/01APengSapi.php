@@ -1,10 +1,10 @@
 <html>
     <head>
         <title>SIPATAS</title>
-        <link href="css/styles.css" rel="stylesheet" />
+        <link href="../halaman/css/styles.css" rel="stylesheet" />
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
-        <link href="./css/sb-admin-2.min.css" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+        <link href="../halaman/css/sb-admin-2.min.css" rel="stylesheet">
+        <link rel="../halaman/stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
         
     </head>
     <body  style="background-color: white;">
@@ -13,7 +13,7 @@
         <div id="wrapper">
             <ul class="navbar-nav bg-black sidebar sidebar-dark accordion">
                 <a class="my-2 sidebar-brand d-flex align-items-center justify-content-center">
-                    <img src="img/bptu.png" height="60px" /> 
+                    <img src="../halaman/img/bptu.png" height="60px" /> 
                     
                 </a>
 
@@ -27,25 +27,25 @@
     
                 <!-- Nav Item - Charts -->
                 <li class="nav-item">
-                    <a class="nav-link" href="01APengSapi.html">
+                    <a class="nav-link" href="01APengSapi.php">
                         <i class="bi bi-house"></i>
                     <span>Beranda</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="01AListPPS.html">
+                    <a class="nav-link" href="01AListPPS.php">
                         <i class="bi bi-envelope"></i>
                     <span>Pengajuan</span></a>
                 </li>
     
                 <!-- Nav Item - Tables -->
                 <li class="nav-item">
-                    <a class="nav-link" href="01listIkm.html">
+                    <a class="nav-link" href="01listIkm.php">
                         <i class="bi bi-book"></i>
                     <span>List IKM</span></a>
                 </li>
                 <hr class="sidebar-divider d-none d-md-block">
                 <li class="nav-item">
-                    <a class="nav-link" href="loginAdmin.html">
+                    <a class="nav-link" href="loginAdmin.php">
                         <i class="bi bi-door-closed"></i>
                     <span>Logout</span></a>
                 </li>

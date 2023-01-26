@@ -1,9 +1,13 @@
+<?php
+    include "../config.php";
+?>
+
 <html>
     <head>
         <title>SIPATAS</title>
-        <link href="css/styles.css" rel="stylesheet" />
+        <link href="../halaman/css/styles.css" rel="stylesheet" />
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
-        <link href="./css/sb-admin-2.min.css" rel="stylesheet">
+        <link href="../halaman/css/sb-admin-2.min.css" rel="stylesheet">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
         
     </head>
@@ -13,7 +17,7 @@
         <div id="wrapper">
             <ul class="navbar-nav bg-black sidebar sidebar-dark accordion">
                 <a class="my-2 sidebar-brand d-flex align-items-center justify-content-center">
-                    <img src="img/bptu.png" height="60px" /> 
+                    <img src="../halaman/img/bptu.png" height="60px" /> 
                     
                 </a>
 
@@ -27,25 +31,25 @@
     
                 <!-- Nav Item - Charts -->
                 <li class="nav-item">
-                    <a class="nav-link" href="01APengSapi.html">
+                    <a class="nav-link" href="01APengSapi.php">
                         <i class="bi bi-house"></i>
                     <span>Beranda</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="01AListPPS.html">
+                    <a class="nav-link" href="01AListPPS.php">
                         <i class="bi bi-envelope"></i>
                     <span>Pengajuan</span></a>
                 </li>
     
                 <!-- Nav Item - Tables -->
                 <li class="nav-item">
-                    <a class="nav-link" href="01listIkm.html">
+                    <a class="nav-link" href="01listIkm.php">
                         <i class="bi bi-book"></i>
                     <span>List IKM</span></a>
                 </li>
                 <hr class="sidebar-divider d-none d-md-block">
                 <li class="nav-item">
-                    <a class="nav-link" href="03APTamu.html">
+                    <a class="nav-link" href="01APengSapi.php">
                         <i class="bi bi-door-closed"></i>
                     <span>Back</span></a>
                 </li>
@@ -79,40 +83,37 @@
                                     <th>ID</th>
                                     <th>Nama</th>
                                     <th>Instansi / Organisasi</th>
+                                    <th>Telepon</th>
 
                                     <th>Action</th>
                                 </tr>
                             </thead>
-                            <tbody>
-                                <tr>
-                                    <td>0001</td>
-                                    <td>Surya</td>
-                                    <td>Kelompok Tani Suryaku Jaya</td>
-          
-                                    
+                            <?php
+                            $sql1 = "SELECT * FROM db_ikm";
+                            $result = mysqli_query($con, $sql1);
+                            while ($row= mysqli_fetch_assoc($result)){
+                        ?>
 
-                                    <td>
+                        <tbody>
+                            <tr>
+                                <td class="text-center"><?php echo $row['id_ikm'];?></td>
+                                <td><?php echo $row['nama_ikm'];?></td>
+                                <td><?php echo $row['instansi_ikm'];?></td>
+                                <td><?php echo $row['nomor_ikm'];?></td>
+                                
+                                <td>
+                                    <a type="button" class="btn btn-primary" style="background-color: blue;" href="03DetailBukuTamu.php"><i class="bi bi-info-lg"></i></a>
+                                    <a type="button" class="btn btn-warning" style="background-color: #E15B29;" href="03EditBukuTamu.html"><i class="bi bi-pencil-square"></i></a>
+                                    <a type="button" onclick="return confirm('Anda yakin menghapus data barang ini ?')" href=""class="btn btn-danger"><i class="bi bi-trash-fill"></i></a>
                                         
-                                        <a type="button" class="btn btn-primary" style="background-color: blue;" href="01DetailIKM.html"><i class="bi bi-info-lg"></i></a>
-                                        <a type="button" class="btn btn-warning" style="background-color: #E15B29;" href="01EditIKM.html"><i class="bi bi-pencil-square"></i></a>
-                                        <a type="button" onclick="return confirm('Anda yakin menghapus data ini ?')" href=""class="btn btn-danger"><i class="bi bi-trash-fill"></i></a>
-                                        
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>0002</td>
-                                    <td>Budi</td>
-                                    <td>Polresta Padang</td>
+                                </td>
+                            </tr>                
+                        </tbody>
+                        <?php
+                            }
+                        ?>
 
-                                    
-                                    <td>
-                                        <a type="button" class="btn btn-primary" style="background-color: blue;" href="01DetailIKM.html"><i class="bi bi-info-lg"></i></a>
-                                        <a type="button" class="btn btn-warning" style="background-color: #E15B29;" href="01EditIKM.html"><i class="bi bi-pencil-square"></i></a>
-                                        <a type="button" onclick="return confirm('Anda yakin menghapus data ini ?')" href=""class="btn btn-danger"><i class="bi bi-trash-fill"></i></a>
-                                        
-                                    </td>
-                                </tr>
-                            </tbody>
+
                         </table>  
               
                 </div>   

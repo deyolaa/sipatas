@@ -1,3 +1,7 @@
+<?php
+include "../config.php";
+?>
+
 <html>
     <head>
         <title>SIPATAS</title>
@@ -87,36 +91,32 @@
                                     <th>Action</th>
                                 </tr>
                             </thead>
-                            <tbody>
-                                <tr>
-                                    <td>0001</td>
-                                    <td>Surya</td>
-                                    <td>Kelompok Tani Suryaku Jaya</td>
-                                    <td>suryanto@gmail.com</td>
-                                    
 
-                                    <td>
-                                        <a type="button" class="btn btn-primary" style="background-color: blue;" href="01DetailPPS.html"><i class="bi bi-info-lg"></i></a>
-                                        <a type="button" class="btn btn-warning" style="background-color: #E15B29;" href="01EditPPS.html"><i class="bi bi-pencil-square"></i></a>
-                                        <a type="button" onclick="return confirm('Anda yakin menghapus data  ini ?')" href=""class="btn btn-danger"><i class="bi bi-trash-fill"></i></a>
+                            <?php
+                            $sql1 = "SELECT * FROM pengajuan_sapi";
+                            $result = mysqli_query($con, $sql1);
+                            while ($row= mysqli_fetch_assoc($result)){
+                        ?>
+
+                        <tbody>
+                            <tr>
+                                <td class="text-center"><?php echo $row['id_pengajuan'];?></td>
+                                <td><?php echo $row['nama_pengajuan'];?></td>
+                                <td><?php echo $row['instansi_pengajuan'];?></td>
+                                <td><?php echo $row['email_pengajuan'];?></td>
+                                <td>
+                                    <a type="button" class="btn btn-primary" style="background-color: blue;" href="01DetailPPS.php"><i class="bi bi-info-lg"></i></a>
+                                    <a type="button" class="btn btn-warning" style="background-color: #E15B29;" href="01EditPPS.html"><i class="bi bi-pencil-square"></i></a>
+                                    <a type="button" onclick="return confirm('Anda yakin menghapus data barang ini ?')" href=""class="btn btn-danger"><i class="bi bi-trash-fill"></i></a>
                                         
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>0002</td>
-                                    <td>Budi</td>
-                                    <td>Polresta Padang</td>
-                                    <td>budiantara@gmail.com</td>
-                                    
-                                    <td>
-                                        <a type="button" class="btn btn-primary" style="background-color: blue;" href="01DetailPPS.html"><i class="bi bi-info-lg"></i></a>
-                                        <a type="button" class="btn btn-warning" style="background-color: #E15B29;" href="01EditPPS"><i class="bi bi-pencil-square"></i></a>
-                                        <a type="button" onclick="return confirm('Anda yakin menghapus data ini ?')" href=""class="btn btn-danger"><i class="bi bi-trash-fill"></i></a>
-                                        
-                                    </td>
-                                </tr>
-                            </tbody>
+                                </td>
+                            </tr>                
+                        </tbody>
+                        <?php
+                            }
+                        ?>
                         </table>  
+                        </div>
                     </div> 
                 </div>   
             </div> 
