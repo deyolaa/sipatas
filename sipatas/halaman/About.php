@@ -2,6 +2,8 @@
     <head>
         <title>SIPATAS</title>
         <link href="css/styles.css" rel="stylesheet" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
     </head>
     <body background="img/sipatasbg.png">
         <!-- NAVIGATION BAR -->
@@ -13,10 +15,23 @@
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                        <li class="nav-item"><a class="nav-link" aria-current="page" href="HomePage.html">Home</a></li>
-                        <li class="nav-item"><a class="nav-link active" href="About.html">About</a></li>
+                        <li class="nav-item"><a class="nav-link" aria-current="page" href="HomePage.php">Home</a></li>
                         <li class="nav-item"><a class="nav-link" href="Contact.html">Contact</a></li>
-                        <li class="nav-item"><a class="nav-link" href="loginAdmin.html">Admin</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../loginAdmin.php">Admin</a></li>
+                        <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
+                            <ul class="navbar-nav">
+                                <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    About
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+                                    <li><a class="dropdown-item" href="About.php">Tentang Kami</a></li>
+                                    <li><a class="dropdown-item" href="Sejarah.php">Sejarah</a></li>
+                                    <li><a class="dropdown-item" href="VisiMisi.php">Visi Misi</a></li>
+                                </ul>
+                                </li>
+                            </ul>
+                            </div>
                     </ul>
                 </div>
             </div>
