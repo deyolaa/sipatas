@@ -100,6 +100,10 @@
                                     <td><?php echo $row['nomor_ikm']; ?></td>
                                     </tr>
                                 <tr>
+                                    <th>Umur</th>
+                                    <td><?php echo $row['umur_ikm']; ?></td>
+                                    </tr>
+                                <tr>
                                     <th>Jenis Kelamin</th>
                                     <td><?php echo $row['jeniskelamin_ikm']; ?></td>
                                     </tr>
