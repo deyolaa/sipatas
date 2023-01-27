@@ -16,7 +16,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                         <li class="nav-item"><a class="nav-link" href="02DashboardMagang.php">Back</a></li>
-                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="../halaman/HomePage.php">Home</a></li>
+                        <li class="nav-item"><a class="nav-link " aria-current="page" href="../halaman/HomePage.php">Home</a></li>
                         <li class="nav-item"><a class="nav-link" href="../halaman/Contact.html">Contact</a></li>
 
                     </ul>
@@ -28,7 +28,7 @@
                 <div class="text-center mb-5">
                     
                     <h2 class="display-5 fw-bolder text-white mb-2">Form Pendaftaran Magang</h2>
-                    <p class="lead text-white-50 mb-4">Silahkan daftarkan diri anda dan jangan lupa untuk melihat persyaratan magang di BPTU HPT Padang Mengatas pada halaman sebelumnya</Main></p>
+                    <p class="lead text-white mb-4 ">Syarat Pendaftaran Magang : <br> Mengisi form dan mengirimkan surat tugas dari Sekolah/Kampus</Main></p>
                 </div>
                 <div class="row gx-5 justify-content-center">
                     <div class="col-lg-6">

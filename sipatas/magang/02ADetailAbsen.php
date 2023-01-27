@@ -43,7 +43,7 @@
                 </li>
     
                 <!-- Nav Item - Tables -->
-                <li class="nav-item">
+                <li class="nav-item active">
                     <a class="nav-link" href="02AAbsen.php">
                         <i class="bi bi-book"></i>
                     <span>Absensi Magang</span></a>

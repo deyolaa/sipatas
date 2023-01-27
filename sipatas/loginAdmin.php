@@ -64,7 +64,7 @@ include('config.php');
                         <li class="nav-item"><a class="nav-link" href="halaman/HomePage.php">Home</a></li>
                         <li class="nav-item"><a class="nav-link" href="halaman/About.php">About</a></li>
                         <li class="nav-item"><a class="nav-link" href="halaman/Contact.html">Contact</a></li>
-                        <li class="nav-item"><a class="nav-link" href="../sipatas/loginAdmin.php">Admin</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="../sipatas/loginAdmin.php">Admin</a></li>
                     </ul>
                 </div>
             </div>

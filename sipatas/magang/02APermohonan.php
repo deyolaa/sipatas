@@ -34,8 +34,8 @@
                         <i class="bi bi-house"></i>
                     <span>Beranda</span></a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="02APermohonan.php">
+                <li class="nav-item active">
+                    <a class="nav-link " href="02APermohonan.php">
                         <i class="bi bi-envelope"></i>
                     <span>Permohonan Magang</span></a>
                 </li>

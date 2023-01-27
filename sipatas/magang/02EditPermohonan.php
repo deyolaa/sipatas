@@ -39,7 +39,7 @@ $row = mysqli_fetch_array ($sql3);
                         <i class="bi bi-house"></i>
                     <span>Beranda</span></a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item active">
                     <a class="nav-link" href="02APermohonan.php">
                         <i class="bi bi-envelope"></i>
                     <span>Permohonan Magang</span></a>

@@ -11,7 +11,7 @@
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="../halaman/HomePage.php">Home</a></li>
+                        <li class="nav-item"><a class="nav-link " aria-current="page" href="../halaman/HomePage.php">Home</a></li>
                         <li class="nav-item"><a class="nav-link" href="../halaman/Contact.html">Contact</a></li>
                     </ul>
                 </div>
@@ -23,7 +23,7 @@
                     <div class="col-lg-6">
                         <div class="text-center my-5">
                             <h1 class="display-5 fw-bolder text-white mb-2">MAGANG</h1>
-                            <p class="lead text-white-50 mb-4">Dalam upaya untuk meningkatkan SDM peternakan BPTU HPT Padang mengatas melakukan kerjasama untuk pelatihan/bimbingan teknis skil peternakan dengan Balai Besar Pelatihan Peternakan Batu, Malang.</p>
+                            <p class="lead text-white-50 mb-4">BPTU HPT PADANG MENGATAS</p>
                             <div class="d-grid gap-3 d-sm-flex justify-content-sm-center">
                                 <a class="btn btn-outline-light btn-lg px-4" href="02Fmagang.php">Pendaftaran Magang</a>
                                 <a class="btn btn-outline-light btn-lg px-4" href="02AbsensiMagang.php">Absensi magang</a>
