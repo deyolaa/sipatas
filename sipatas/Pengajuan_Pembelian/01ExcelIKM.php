@@ -9,54 +9,12 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
         <link href="../halaman/css/sb-admin-2.min.css" rel="stylesheet">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
-        
+        <script src="table2excel.js"></script>
     </head>
     <body  style="background-color: white;">
 
         <!-- SIDEBAR -->
         <div id="wrapper">
-            <ul class="navbar-nav bg-black sidebar sidebar-dark accordion">
-                <a class="my-2 sidebar-brand d-flex align-items-center justify-content-center">
-                    <img src="../halaman/img/bptu.png" height="60px" /> 
-                    
-                </a>
-
-                <hr class="mx-1 sidebar-divider d-none d-md-block">
-    
-                <!-- Heading -->
-                <div class=" sidebar-heading">
-                    Menu Admin
-                </div>
-                
-    
-                <!-- Nav Item - Charts -->
-                <li class="nav-item">
-                    <a class="nav-link" href="01APengSapi.php">
-                        <i class="bi bi-house"></i>
-                    <span>Beranda</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="01AListPPS.php">
-                        <i class="bi bi-envelope"></i>
-                    <span>Pengajuan</span></a>
-                </li>
-    
-                <!-- Nav Item - Tables -->
-                <li class="nav-item">
-                    <a class="nav-link" href="01listIkm.php">
-                        <i class="bi bi-book"></i>
-                    <span>List IKM</span></a>
-                </li>
-                <hr class="sidebar-divider d-none d-md-block">
-                <li class="nav-item">
-                    <a class="nav-link" href="../loginAdmin.php">
-                        <i class="bi bi-door-closed"></i>
-                    <span>Logout</span></a>
-                </li>
-
-                
- 
-            </ul>
             <div id="content-wrapper" class="d-flex flex-column ">
 
                 <!-- Main Content -->
@@ -76,10 +34,9 @@
             
 
                     <h5 class="text-black mx-5 mb-3">List IKM</h5>
-                    <a type="button" href="01CLIkm.php" class="btn btn-primary"><i class="bi bi-printer"></i>  Cetak Laporan</a>
-                    <a type="button" href="01ExcelIKM.php" class="btn btn-success"><i class="bi bi-file-earmark-excel"></i></i> Export to Excel</a>
                     <div class="table-responsive">
-                        <table class="table table-striped table-sm table-bordered"  id="dataTable" width="100%" cellspacing="0">
+                    <button type="button" id="downloadexcel" class="btn btn-success"><i class="bi bi-file-earmark-excel"></i></i>Download Excel</button>
+                        <table class="table table-striped table-sm table-bordered"  id="ikmm" width="100%" cellspacing="0">
                             <thead>
                                 <tr>
                                     <th>ID</th>
@@ -87,8 +44,26 @@
                                     <th>Instansi / Organisasi</th>
                                     <th>Telepon</th>
                                     <th>Umur</th>
+                                    <th>Pendidikan Terakhir</th>
+                                    <th>Pekerjaan</th>
+                                    <th>1</th>
+                                    <th>2</th>
+                                    <th>3</th>
+                                    <th>4</th>
+                                    <th>5</th>
+                                    <th>6</th>
+                                    <th>7</th>
+                                    <th>8</th>
+                                    <th>9</th>
+                                    <th>10</th>
+                                    <th>11</th>
+                                    <th>12</th>
+                                    <th>13</th>
+                                    <th>14</th>
+                                    <th>Kritik & Saran</th>
 
-                                    <th>Action</th>
+
+                                    
                                 </tr>
                             </thead>
                             <?php
@@ -104,13 +79,25 @@
                                 <td><?php echo $row['instansi_ikm'];?></td>
                                 <td><?php echo $row['nomor_ikm'];?></td>
                                 <td><?php echo $row['umur_ikm'];?></td>
+                                <td><?php echo $row['pendidikan_ikm'];?></td>
+                                <td><?php echo $row['pekerjaan_ikm'];?></td>
+                                <td><?php echo $row['pertanyaan1'];?></td>
+                                <td><?php echo $row['pertanyaan2'];?></td>
+                                <td><?php echo $row['pertanyaan3'];?></td>
+                                <td><?php echo $row['pertanyaan4'];?></td>
+                                <td><?php echo $row['pertanyaan5'];?></td>
+                                <td><?php echo $row['pertanyaan6'];?></td>
+                                <td><?php echo $row['pertanyaan7'];?></td>
+                                <td><?php echo $row['pertanyaan8'];?></td>
+                                <td><?php echo $row['pertanyaan9'];?></td>
+                                <td><?php echo $row['pertanyaan10'];?></td>
+                                <td><?php echo $row['pertanyaan11'];?></td>
+                                <td><?php echo $row['pertanyaan12'];?></td>
+                                <td><?php echo $row['pertanyaan13'];?></td>
+                                <td><?php echo $row['pertanyaan14'];?></td>
+                                <td><?php echo $row['kritik_ikm'];?></td>
                                 
-                                <td>
-                                <a type="button" class="btn btn-primary" style="background-color: blue;" onclick="location.href='01DetailIKM.php?id_ikm=<?php echo $row['id_ikm'];?> ';"><i class="bi bi-info-lg"></i></a>
-                                <a type="button" class="btn btn-warning" style="background-color: #E15B29;"  href="01EditIKM.php?id_ikm=<?= $row['id_ikm'] ?>"><i class="bi bi-pencil-square"></i></a>
-                                <a type="button" onclick="return confirm('Anda yakin menghapus data pengajuan ini ?')" href="01HapusListIKM.php?id_ikm=<?= $row['id_ikm'] ?>"class="btn btn-danger"><i class="bi bi-trash-fill"></i></a>                                        
-                                        
-                                </td>
+                               
                             </tr>                
                         </tbody>
                         <?php
@@ -122,5 +109,11 @@
               
                 </div>   
             </div> 
+            <script>
+                 document.getElementById('downloadexcel');addEventListener('click',function () {
+                    var table2excel = new Table2Excel();
+                    table2excel.export(document.querySelectorAll("#ikmm"));
+                })
+        </script>
     </body>
 </html>

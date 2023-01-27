@@ -28,7 +28,7 @@
                             <h1 class="display-5 fw-bolder text-white mb-2">Pembelian Sapi</h1>
                             <p class="lead text-white-50 mb-4">Disini berisi informasi mengenai Jenis Sapi dan Harga Sapi</p>
                             <div class="d-grid gap-3 d-sm-flex justify-content-sm-center">
-                              <img src="../halaman/img/DaftarHargaSapi.png" height="1000"                     
+                              <img src="../halaman/img/DaftarHargaSapi.png" height="1000" >
                             </div>
                         </div>
                     </div>

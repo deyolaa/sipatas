@@ -80,6 +80,8 @@ include "../config.php";
 
             <!-- Table-->
             <h5 class="text-black mx-5 mb-3">List Pengajuan Pembelian</h5>
+            <a type="button" href="01CLPengajuan.php" class="btn btn-primary"><i class="bi bi-printer"></i>  Cetak Laporan</a>
+            <a type="button" href="01ExcelPengajuan.php" class="btn btn-success"><i class="bi bi-file-earmark-excel"></i></i> Export to Excel</a>
                     <div class="table-responsive">
                         <table class="table table-striped table-sm table-bordered"  id="dataTable" width="100%" cellspacing="0">
                             <thead>
