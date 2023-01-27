@@ -120,11 +120,12 @@
                                     </tr>
                                 <tr>
                                     <th>Surat</th>
-                                    <td><button onclick="location.href='02DownloadSurat.php?suratmg=<?php echo $row['suratmg'];?> ';"> Download PDF</button><br /></td>
-                                </tr>
+                                    <td><button onclick="location.href='02DownloadSurat.php?suratmg=<?php echo $row['suratmg'] ?> ';"> Download</button><br /></td>
+                                    </tr>
 
                             <?php }
                             ?>
+                            
                         </tbody>
                     </table>
                 </div>
