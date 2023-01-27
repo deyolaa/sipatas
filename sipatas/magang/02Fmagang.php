@@ -99,7 +99,7 @@
                                                 <label for="floatingInput">Upload Surat</label>
                                             </div>
                                         </table>
-                                        <input type="submit"  class="btn btn-primary btn-lg " name="kirim" value="Simpan">
+                                        <input type="submit"  class="btn btn-primary btn-lg " name="simpan" value="Simpan">
                                     </div>
                                 </form>
                     </div>

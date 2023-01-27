@@ -106,7 +106,7 @@
                                     <td><?php echo $row['selesaimg'];?></td>
                                     <td>
                                         <a type="button" class="btn btn-primary" style="background-color: blue;" onclick="location.href='02ADetailPermohonan.php?id_magang=<?php echo $row['id_magang'];?> ';" ><i class="bi bi-info-lg"></i></a>
-                                        <a type="button" class="btn btn-warning" style="background-color: #E15B29;" href="02AEditPermohonan.php"><i class="bi bi-pencil-square"></i></a>
+                                        <a type="button" class="btn btn-warning" style="background-color: #E15B29;" href="02EditPermohonan.php?id_magang=<?= $row['id_magang'] ?>"><i class="bi bi-pencil-square"></i></a>
                                         <a type="button" onclick="return confirm('Anda yakin menghapus data pengajuan ini ?')" href="02HapusPermohonan.php?id_magang=<?= $row['id_magang'] ?>"class="btn btn-danger"><i class="bi bi-trash-fill"></i></a
                                     </td>
                                 
