@@ -85,8 +85,13 @@
                         $result = $con->query($sql5);
                         while ($row= mysqli_fetch_assoc($result)){
                     ?>
-                    <h5 class="text-black my-3">Detail Buku Tamu <?php echo $row['nama_tamu']?></h5>
+                    <h5 class="text-black my-3 mx-3">Detail Buku Tamu <?php echo $row['nama_tamu']?></h5>
+
+                    <a type="button" class="btn btn-primary mb-3 mx-3" style="background-color: green;" onclick="location.href='https://api.whatsapp.com/send?phone=<?php echo $row['whatsapp_tamu'];?>';"><i class="bi bi-whatsapp"></i> Whatsapp</a>
+
                     <table class="table table-striped table-sm table-bordered mx-3"  id="dataTable" width="100%" cellspacing="0">
+
+                   
                     
                                 <tr>   
                                     <th>ID</th>
@@ -114,11 +119,13 @@
                                     </tr>
                                 
                             </tbody>
+                            
                             <?php
 
                             }
                         ?>
                         </table>
+                        
               
                 </div>   
             </div> 

@@ -44,8 +44,8 @@
                             <tr>
                                 <th class="text-center">ID Pengunjung</th>
                                 <th>Nama</th>
-                                <th>Instansi</th>
                                 <th>No.Whatsapp</th>
+                                <th>Instansi</th>
                                 <th>Tanggal Kunjungan</th>
                                 <th>Kritik dan Saran</th>
                                 
