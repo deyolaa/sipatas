@@ -26,6 +26,7 @@
                     <div class="col-lg-6">
                         <div class="text-center my-5">
                             <h1 class="display-5 fw-bolder text-white mb-2">Pembelian Sapi</h1>
+                            <p class="lead text-white-50 mb-4">Sistem Informasi pembelian bibit sapi adalah suatu cara untuk memberikan kemudahan kepada pembeli untuk membeli bibit sapi  di BPTU-HPT Padang Mengatas</p>
                             <p class="lead text-white-50 mb-4">Silahkan LIhat daftar harga terlebih dahulu sebelum mengisi form</p>
                             <div class="d-grid gap-3 d-sm-flex justify-content-sm-center">
                                 <a class="btn btn-outline-light btn-lg px-4" href="01DaftarHargaSapi.php">Daftar Harga Sapi</a>
