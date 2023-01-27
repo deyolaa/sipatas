@@ -75,7 +75,8 @@
                         $result = $con->query($sql3);
                         while ($row= mysqli_fetch_assoc($result)){
                     ?>
-                    <h5 class="text-black my-3">Permohonan Magang <?php echo $row['asalmg']?></h5>
+                    <h5 class="text-black my-3 mx-3">Permohonan Magang <?php echo $row['asalmg']?></h5>
+                    <a type="button" class="btn btn-primary mb-3 mx-3" style="background-color: green;" onclick="location.href='https://api.whatsapp.com/send?phone=<?php echo $row['nomormg'];?>';"><i class="bi bi-whatsapp"></i> Whatsapp</a>
                     <table class="table table-striped table-sm table-bordered mx-3" id="dataTable" width="100%" cellspacing="0">
                         <tbody>
                                 <tr>   
