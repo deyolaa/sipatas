@@ -84,6 +84,9 @@ $row = mysqli_fetch_array ($sql8);
                                             <input name="surat_kun" type="text" class="form-control form-control-user"
                                                 id="exampleInputEmail" aria-describedby="file" placeholder="file" readonly value="<?php echo $row['surat_kun']?>">
                                                 <br>
+                                            <input name="status_kun" type="text" class="form-control form-control-user"
+                                                id="exampleInputEmail" aria-describedby="status_kun" placeholder="status" value="<?php echo $row['status_kun']?>">
+                                                <br>   
                                         </div>
                                         
                                        
@@ -114,8 +117,10 @@ $row = mysqli_fetch_array ($sql8);
         $instansi_kun    = $_POST["instansi_kun"];
         $tujuan_kun    = $_POST["tujuan_kun"];
         $whatsapp_kun    = $_POST["whatsapp_kun"];
+        $status_kun    = $_POST["status_kun"];
 
-    $sql8 = mysqli_query($con, "UPDATE kunjungan SET email_kun='$email_kun' , nama_kun='$nama_kun' , instansi_kun='$instansi_kun' , tujuan_kun='$tujuan_kun', whatsapp_kun='$whatsapp_kun'
+
+    $sql8 = mysqli_query($con, "UPDATE kunjungan SET email_kun='$email_kun' , nama_kun='$nama_kun' , instansi_kun='$instansi_kun' , tujuan_kun='$tujuan_kun', whatsapp_kun='$whatsapp_kun', status_kun='$status_kun'
     WHERE id_pengajuan='$id_pengajuan' ");
 
     if ($sql8) {

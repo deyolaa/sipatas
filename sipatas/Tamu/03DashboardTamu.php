@@ -1,3 +1,9 @@
+<?php
+  include "../config.php";
+
+?>
+
+
 <html>
     <head>
         <title>SIPATAS</title>
@@ -26,7 +32,11 @@
                         <div class="text-center my-5">
                             <h1 class="display-5 fw-bolder text-white mb-2">Kunjungan Kerja</h1>
                             <p class="lead mb-4 text-white">Sistem yang memberikan informasi terkait dengan kunjungan eduwisata dari pelajar, mahasiswa, dan masyarakat yang ingin melakukan edukasi dibidang perternakan sapi potong dan hijauan pakan ternak. Adapun jadwal pelayanan di BPTU HPT Padang Mengatas bisa dilihat di tabel berikut.</p>
-                            
+                            <?php
+                              $data_tamu = mysqli_query($con,"SELECT * FROM tamu");
+                              $jumlah_tamu = mysqli_num_rows($data_tamu);
+                            ?>
+                            <p class="lead mb-4 text-white">Jumlah tamu yang telah berkunjung : <b><?php echo $jumlah_tamu; ?> Orang</b></p>
 
                             <style>
                                 table, th, td {
@@ -89,11 +99,5 @@
         <footer>
             <div class="container px-5"><p class="m-7 text-center text-white">Copyright &copy; Sistem Informasi Unand</p></div>
         </footer>
-
-        <!-- NAVIGATION BAR END -->
-
-        <!-- FOOTER -->
-
-        <!-- FOOTER END -->
     </body>
 </html>
