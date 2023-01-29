@@ -57,8 +57,11 @@
                                 <a class="btn btn-outline-light btn-lg px-4" href="../magang/02DashboardMagang.php">Magang</a>
                                 <a class="btn btn-outline-light btn-lg px-4" href="../Pengajuan_Pembelian/01DashboardPengPembelian.php">Pembelian Sapi</a>
                                 <a class="btn btn-outline-light btn-lg px-4" href="../Tamu/03DashboardTamu.php">Kunjungan</a>
+                               
                             </div>
+                            <p class="lead my-4 text-white"><span id="tanggalwaktu"></span></p>
                         </div>
+                        
                     </div>
                 </div>
             </div>
@@ -66,5 +69,18 @@
         <footer>
             <div class="container px-5"><p class="m-7 text-center text-white">Copyright &copy; Sistem Informasi Unand</p></div>
         </footer>
+        <script>
+            var tw = new Date();
+            if (tw.getTimezoneOffset() == 0) (a=tw.getTime() + ( 7 *60*60*1000))
+            else (a=tw.getTime());
+            tw.setTime(a);
+            var tahun= tw.getFullYear ();
+            var hari= tw.getDay ();
+            var bulan= tw.getMonth ();
+            var tanggal= tw.getDate ();
+            var hariarray=new Array("Minggu,","Senin,","Selasa,","Rabu,","Kamis,","Jum'at,","Sabtu,");
+            var bulanarray=new Array("Januari","Februari","Maret","April","Mei","Juni","Juli","Agustus","September","Oktober","Nopember","Desember");
+            document.getElementById("tanggalwaktu").innerHTML = hariarray[hari]+" "+tanggal+" "+bulanarray[bulan]+" "+tahun+" Jam " + ((tw.getHours() < 10) ? "0" : "") + tw.getHours() + ":" + ((tw.getMinutes() < 10)? "0" : "") + tw.getMinutes() + (" W.I.B ");
+        </script>
     </body>
 </html>

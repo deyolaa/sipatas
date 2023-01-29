@@ -85,7 +85,7 @@ $row = mysqli_fetch_array ($sql8);
                                                 id="exampleInputEmail" aria-describedby="file" placeholder="file" readonly value="<?php echo $row['surat_kun']?>">
                                                 <br>
                                             <input name="status_kun" type="text" class="form-control form-control-user"
-                                                id="exampleInputEmail" aria-describedby="status_kun" placeholder="status" value="<?php echo $row['status_kun']?>">
+                                                id="exampleInputEmail" aria-describedby="status_kun" placeholder="Konfirmasi Pengajuan" value="<?php echo $row['status_kun']?>">
                                                 <br>   
                                         </div>
                                         

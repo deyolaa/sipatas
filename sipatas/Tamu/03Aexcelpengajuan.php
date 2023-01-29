@@ -52,6 +52,7 @@
                                 <th>No WhatsApp</th>
                                 <th>Tujuan</th>
                                 <th>Tanggal Kunjungan</th>
+                                <th>Status</th>
                               
                             </tr>
                         </thead>
@@ -71,6 +72,7 @@
                                 <td><?php echo $row['whatsapp_kun'];?></td>
                                 <td><?php echo $row['tujuan_kun'];?></td>
                                 <td><?php echo $row['tgl_kun'];?></td>
+                                <td><?php echo $row['status_kun'];?></td>
                             </tr>                
                         </tbody>
                         <?php
