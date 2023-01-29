@@ -128,9 +128,9 @@
                                     <th>Surat Kunjungan</th>
                                     <td><?php echo $row['surat_kun']; ?></td>
                                     </tr>
-                                <tr>
+                                <tr style="background-color: green;" class="text-white">
                                     <th>Status</th>
-                                    <td><?php echo $row['status']; ?></td>
+                                    <td><?php echo $row['status_kun']; ?></td>
                                     </tr>
                                 
                             </tbody>
@@ -139,6 +139,7 @@
                             }
                         ?>
                         </table>
+                        
                
             </div> 
     </body>
