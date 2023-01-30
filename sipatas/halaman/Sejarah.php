@@ -25,7 +25,7 @@
                                 About
                             </a>
                             <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
-                                <li><a class="dropdown-item" href="About.php">Tentang Kami</a></li>
+                                <li><a class="dropdown-item" href="About.php">About Us</a></li>
                                 <li><a class="dropdown-item" href="Sejarah.php">Sejarah</a></li>
                                 <li><a class="dropdown-item" href="VisiMisi.php">Visi Misi</a></li>
                             </ul>

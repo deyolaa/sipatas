@@ -14,7 +14,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                         <li class="nav-item"><a class="nav-link" href="03DashboardTamu.php">Back</a></li>
-                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="../halaman/HomePage.php">Home</a></li>
+                        <li class="nav-item"><a class="nav-link " aria-current="page" href="../halaman/HomePage.php">Home</a></li>
                         <li class="nav-item"><a class="nav-link" href="../halaman/Contact.html">Contact</a></li>
                     </ul>
                 </div>
@@ -28,7 +28,7 @@
                     <p class="lead mb-0 text-white">Silahkan isi form dibawah sebagai tanda anda pernah berkunjung ke BPTU HPT Padang Mengatas</p>
                 </div>
                 <div class="row gx-5 justify-content-center">
-                    <div class="col-lg-6">
+                    <div class="">
                     <?php
                             include "../config.php";
 
@@ -53,6 +53,8 @@
                             }
         
                         ?>
+                        <div  class=" row gx-5 justify-content-center">
+                        <div class="col-lg-6 text-center">
                         <form action="" method="POST" class="parent" id="contactForm" >
                             <div class="form-grup">
                                 <table >
@@ -80,9 +82,11 @@
     
                                 </table>
                                 
-                                <input type="submit"  class="btn btn-primary btn-lg " name="simpan" value="Kirim">
+                                <input type="submit"  class="btn btn-primary btn-lg my-3 " name="simpan" value="Kirim">
                             </div>
                         </form>  
+                        </div>
+                        </div>
             
                     </div>
                     

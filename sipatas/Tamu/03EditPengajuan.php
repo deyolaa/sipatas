@@ -90,7 +90,7 @@ $row = mysqli_fetch_array ($sql8);
                                         </div>
                                         
                                        
-                                        <input class="btn btn-danger " type="submit" name="simpan" value="Simpan">
+                                        <input class="btn btn-primary " type="submit" name="simpan" value="Simpan">
                                         <hr>
                                         <div class="text-center">
                                             <a class="small text-danger" href="03APTamu.php">Kembali</a>

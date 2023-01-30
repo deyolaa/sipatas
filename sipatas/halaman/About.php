@@ -17,15 +17,14 @@
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                         <li class="nav-item"><a class="nav-link" aria-current="page" href="HomePage.php">Home</a></li>
                         <li class="nav-item"><a class="nav-link" href="Contact.html">Contact</a></li>
-                        <li class="nav-item"><a class="nav-link" href="../loginAdmin.php">Admin</a></li>
                         <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
-                            <ul class="navbar-nav">
+                            <ul class="navbar-nav ">
                                 <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <a class="nav-link dropdown-toggle active" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     About
                                 </a>
                                 <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
-                                    <li><a class="dropdown-item" href="About.php">Tentang Kami</a></li>
+                                    <li><a class="dropdown-item" href="About.php">About Us</a></li>
                                     <li><a class="dropdown-item" href="Sejarah.php">Sejarah</a></li>
                                     <li><a class="dropdown-item" href="VisiMisi.php">Visi Misi</a></li>
                                 </ul>
@@ -41,8 +40,8 @@
                 <div class="row gx-5 justify-content-center">
                     <div >
                         <div class="text-center my-5">
-                            <h1 class="display-5 fw-bolder text-white mb-2">TENTANG KAMI</h1>
-                            <p class="lead text-white-50 mb-4">Balai Pembibitan Ternak Unggul dan Hijauan Pakan Ternak (BPTUHPT) Padang Mengatas merupakan salah satu unit pelaksana teknis (UPT) dibawah Direktorat Jenderal Peternakan dan Kesehatan Hewan Kementerian Pertanian. BPTUHPT Padang Mengatas merupakan satu satunya UPT Pembibitan ternak yang dikhususkan untuk memproduksi bibit sapi potong jenis Simental dan Limosin di Indonesia.</p>            
+                            <h1 class="display-5 fw-bolder text-white mb-2">About Us</h1>
+                            <p class="lead text-white mb-4">Balai Pembibitan Ternak Unggul dan Hijauan Pakan Ternak (BPTUHPT) Padang Mengatas merupakan salah satu unit pelaksana teknis (UPT) dibawah Direktorat Jenderal Peternakan dan Kesehatan Hewan Kementerian Pertanian. BPTUHPT Padang Mengatas merupakan satu satunya UPT Pembibitan ternak yang dikhususkan untuk memproduksi bibit sapi potong jenis Simental dan Limosin di Indonesia.</p>            
                             </div>
                         </div>
                     </div>

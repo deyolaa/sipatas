@@ -36,7 +36,7 @@
                         <i class="bi bi-house"></i>
                     <span>Beranda</span></a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item active">
                     <a class="nav-link" href="03APTamu.php">
                         <i class="bi bi-envelope"></i>
                     <span>Pengajuan</span></a>
@@ -78,16 +78,38 @@
 
             <!-- Table-->
             <h5 class="text-black mY-3">List Pengajuan Kunjungan</h5>
+            <form method="post">
+                <table>
+                    <tr>
+                        <td>Dari Tanggal </td>
+                        <td><input type="date" name="dari_tgl" required="required"></td>
+                        <td>Sampai Tanggal </td>
+                        <td><input type="date" name="sampai_tgl" required="required"></td>
+                        <td><input type="submit" class="btn btn-primary" name="filter" value="filter"></td>
+                    </tr>
+                </table>
+            </form>
+            <?php
+                if(isset($_POST['filter'])){
+                    $dari_tgl = mysqli_real_escape_string($con, $_POST['dari_tgl']);
+                    $sampai_tgl = mysqli_real_escape_string($con, $_POST['sampai_tgl']);
+                    $data_tamu = mysqli_query($con, "SELECT * FROM kunjungan WHERE tgl_kun BETWEEN '$dari_tgl' AND '$sampai_tgl'");
+                    echo "Dari Tanggal " .$dari_tgl. " Sampai Tanggal " .$sampai_tgl;
+                } else {
+                    $data_tamu = mysqli_fetch_array($con, "SELECT * FROM kunjungan");
+                }
+                while ($tampil = mysqli_fetch_array($data_tamu))
+            ?>
                     <div class="table-responsive">
-                        <a type="button" href="03CTPengajuan.php" class="btn btn-primary"><i class="bi bi-printer"></i>  Cetak Laporan</a>
-                        <a type="button" href="03Aexcelpengajuan.php" class="btn btn-success"><i class="bi bi-file-earmark-excel"></i></i> Export to Excel</a>
+                        <a type="button" href="03CTPengajuan.php" class="btn btn-primary my-2"><i class="bi bi-printer"></i>  Cetak Laporan</a>
+                        <a type="button" href="03Aexcelpengajuan.php" class="btn btn-success my-2"><i class="bi bi-file-earmark-excel"></i></i> Export to Excel</a>
                         <?php
                               $data_pengajuan = mysqli_query($con,"SELECT * FROM kunjungan");
                               $jumlah_tamu = mysqli_num_rows($data_pengajuan);
                             ?>
-                            <p class="lead my-4 text-black">Jumlah Pengajuan : <b><?php echo $jumlah_tamu; ?> Instansi</b></p>
+                            <p class="lead my-2 text-black">Jumlah Pengajuan : <b><?php echo $jumlah_tamu; ?> Instansi</b></p>
                         
-                    <table class="table table-sm my-2"   width="100%" cellspacing="0">
+                    <table class="table table-striped table-sm table-bordered my-2"   width="100%" cellspacing="0">
                         
                         <thead>
                             <tr>
@@ -102,8 +124,19 @@
                         </thead>
 
                         <?php
-                            $sql1 = "SELECT * FROM kunjungan";
-                            $result = mysqli_query($con, $sql1);
+                            $no = 1;
+                            if(isset($_POST['filter'])){
+                                $dari_tgl = mysqli_real_escape_string($con, $_POST['dari_tgl']);
+                                $sampai_tgl = mysqli_real_escape_string($con, $_POST['sampai_tgl']);
+                                $data_absen = mysqli_query($con, "SELECT * FROM kunjungan WHERE tgl_kun BETWEEN '$dari_tgl' AND '$sampai_tgl'");
+                            
+                            } else {
+                                $data_absen = mysqli_fetch_array($con, "SELECT * FROM kunjungan");
+                            }
+
+                            $sql3 = "SELECT * FROM kunjungan WHERE tgl_kun BETWEEN '$dari_tgl' AND '$sampai_tgl'";
+                            $result = mysqli_query($con, $sql3);
+
                             while ($row= mysqli_fetch_assoc($result)){
                         ?>
 
@@ -117,7 +150,7 @@
                                 <td>
                                     <a type="button" class="btn btn-primary" style="background-color: blue;" onclick="location.href='03DetailPengajuan.php?id_pengajuan=<?php echo $row['id_pengajuan'];?> ';"><i class="bi bi-info-lg"></i></a>
                                     <a type="button" class="btn btn-warning" style="background-color: #E15B29;"  href="03EditPengajuan.php?id_pengajuan=<?= $row['id_pengajuan'] ?>"><i class="bi bi-pencil-square"></i></a>
-                                    <a type="button" onclick="return confirm('Anda yakin menghapus data pengajuan ini ?')" href="03HapusPengajuan.php?id_pengajuan=<?= $row['id_pengajuan'] ?>"class="btn btn-danger"><i class="bi bi-trash-fill"></i></a
+                                    <a type="button" onclick="return confirm('Anda yakin menghapus data pengajuan ini ?')" href="03HapusPengajuan.php?id_pengajuan=<?= $row['id_pengajuan'] ?>"class="btn btn-danger"><i class="bi bi-trash-fill"></i></a>
                                         
                                 </td>
                             </tr>                

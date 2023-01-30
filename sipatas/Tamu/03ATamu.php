@@ -27,7 +27,7 @@
                     <div class="col-lg-6">
                         <div class="text-center my-5">
                             <h1 class="display-5 fw-bolder text-white mb-2">SIPATAS Admin Tamu</h1>
-                            <p class="lead text-white-50 mb-4">Selamat datang admin, ini adalah halaman pengelolaan tamu BPTU HPT Padang Mengatas</p>
+                            <p class="lead text-white mb-4">Selamat datang admin, ini adalah halaman pengelolaan tamu BPTU HPT Padang Mengatas</p>
                             <div class="d-grid gap-3 d-sm-flex justify-content-sm-center">
                                 <a class="btn btn-outline-light btn-lg px-4" href="03APTamu.php">Pengajuan Kunjungan</a>
                                 <a class="btn btn-outline-light btn-lg px-4" href="03ABukuTamu.php">Buku Tamu</a>
@@ -39,7 +39,7 @@
             </div>
         </header>
         <footer>
-            <div class="container px-5"><p class="m-7 text-center text-white">Copyright &copy; Sistem Informasi Unand</p></div>
+            <div class="container px-5"><p class="m-7 my-5 text-center text-white fixed-bottom">Copyright &copy; Sistem Informasi Unand</p></div>
         </footer>
     </body>
 </html>
