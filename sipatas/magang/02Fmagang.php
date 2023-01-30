@@ -36,7 +36,7 @@
                     <?php
                         include "../config.php";
 
-                        if (isset($_POST['kirim'])) {
+                        if (isset($_POST['simpan'])) {
                             $emailmg = $_POST['emailmg'];
                             $asalmg = $_POST['asalmg'];
                             $jurusanmg = $_POST['jurusanmg'];
@@ -48,11 +48,10 @@
                             $selesaimg = $_POST['selesaimg'];
                             $suratmg = $_POST['suratmg'];
 
-                            $sql3 = "INSERT INTO `permohonan_magang`(`id_magang`, `emailmg`, `asalmg`, `jurusanmg`, `perwakilanmg`, `anggotamg`, `nomormg`, `tujuanmg`, `mulaimg`, `selesaimg`, `suratmg`) VALUES (NULL,'$emailmg','$asalmg','$jurusanmg','$perwakilanmg','$anggotamg','$nomormg','$tujuanmg','$mulaimg','$selesaimg','$suratmg')";
+                            $sql3 = "INSERT INTO `permohonan_magang`(`id_magang`, `emailmg`, `asalmg`, `jurusanmg`, `perwakilanmg`, `anggotamg`, `nomormg`, `tujuanmg`, `mulaimg`, `selesaimg`, `suratmg`) VALUES (NULL, '$emailmg','$asalmg','$jurusanmg','$perwakilanmg','$anggotamg','$nomormg','$tujuanmg','$mulaimg','$selesaimg','$suratmg')";
                             
                             $result = mysqli_query($con,$sql3);
                         }
-
                     ?>
                                 <form action="" method="POST" class="parent" id="contactForm" >
                                     <div class="form-grup">
@@ -62,8 +61,7 @@
                                                 <label for="floatingInput">Email</label>
                                             </div>
                                             <div class="form-floating mb-3">
-                                                <input type="text" class="form-control"  name="asalmg"
-                                                placeholder="instansi" required>
+                                                <input type="text" class="form-control" placeholder="instansi" name="asalmg" required>
                                                 <label for="floatingInput">Nama Sekolah/Universitas</label>
                                             </div>
                                             <div class="form-floating mb-3">

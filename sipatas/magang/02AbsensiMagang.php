@@ -23,7 +23,7 @@
             <div class="container px-5 my-5 px-5">
                 <div class="text-center mb-5">
                     
-                    <h2 class="display-5 fw-bolder text-white mb-2">Form Pendaftaran Magang</h2>
+                    <h2 class="display-5 fw-bolder text-white mb-2">Form Absensi Magang</h2>
                     <p class="lead text-white-50 mb-4">Silahkan daftarkan diri anda dan jangan lupa untuk melihat persyaratan magang di BPTU HPT Padang Mengatas pada halaman sebelumnya</Main></p>
                 </div>
                 <div class="row gx-5 justify-content-center">

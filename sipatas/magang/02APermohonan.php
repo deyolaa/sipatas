@@ -59,29 +59,47 @@
                 <div id="content" class="mx-4">
             
                     <!-- Topbar -->
-                    <nav class="nnavbar navbar-expand-lg navbar-light bg-light my-2">
+                    <nav class="navbar-expand-lg navbar-light bg-light my-2">
                         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
                           <span class="navbar-toggler-icon"></span>
                         </button>
                         <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
                           <a class="navbar-brand fw-bolder" href="02APermohonan.php">Permohonan Magang BPTU HPT Padang Mengatas</a>
                           <ul class="navbar-nav mr-auto mt-2 mt-lg-0"></ul>
-                          <form class="form-inline my-2 mr-auto mx-5">
-                            <input class="form-control mr-sm-2 me-2" type="search" placeholder="Search" aria-label="Search" >
-                            <button class=" btn btn-outline-success" type="submit">Search</button>
-                          </form>
                         </div>
                     </nav>
-            
-
             <!-- Table-->
-            <h5 class="text-black my-3">List Permohonan Magang</h5>
-                    <div class="table-responsive">
+            <h5 class="text-black">List Permohonan Magang</h5>
+            <form method="post">
+                <table>
+                    <tr>
+                        <td>Dari Tanggal </td>
+                        <td><input type="date" name="dari_tgl" required="required"></td>
+                        <td>Sampai Tanggal </td>
+                        <td><input type="date" name="sampai_tgl" required="required"></td>
+                        <td><input type="submit" class="btn btn-primary" name="filter" value="filter"</td>
+                    </tr>
+                </table>
+            </form>
+            <?php
+                if(isset($_POST['filter'])){
+                    $dari_tgl = mysqli_real_escape_string($con, $_POST['dari_tgl']);
+                    $sampai_tgl = mysqli_real_escape_string($con, $_POST['sampai_tgl']);
+                    $data_magang = mysqli_query($con, "SELECT * FROM permohonan_magang WHERE tglmagang BETWEEN '$dari_tgl' AND '$sampai_tgl'");
+                    echo "Dari Tanggal " .$dari_tgl. " Sampai Tanggal " .$sampai_tgl;
+                } else {
+                    $data_absen = mysqli_fetch_array($con, "SELECT * FROM permohonan_magang");
+                }
+                while ($tampil = mysqli_fetch_array($data_magang))
+            ?>
+                    <div class="table-responsive my-3">
                     <a type="button" href="02CetakPermohonan.php" class="btn btn-primary"><i class="bi bi-printer"></i>  Cetak Laporan</a>
                     <a type="button" href="02ExcelPermohonan.php" class="btn btn-success"><i class="bi bi-file-earmark-excel"></i></i> Export to Excel</a>
                         <table class="table table-striped table-sm table-bordered my-3"  id="dataTable" width="100%" cellspacing="0">
                             <thead>
                                 <tr>
+                                    <th>NO</th>
+                                    <th>Tanggal Permohonan</th>
                                     <th>ID</th>
                                     <th>email</th>
                                     <th>Sekolah/Universitas</th>
@@ -92,13 +110,26 @@
                             </thead>
 
                             <?php
-                            $sql3 = "SELECT * FROM permohonan_magang";
+                            $no = 1;
+                            if(isset($_POST['filter'])){
+                                $dari_tgl = mysqli_real_escape_string($con, $_POST['dari_tgl']);
+                                $sampai_tgl = mysqli_real_escape_string($con, $_POST['sampai_tgl']);
+                                $data_absen = mysqli_query($con, "SELECT * FROM permohonan_magang WHERE tglmagang BETWEEN '$dari_tgl' AND '$sampai_tgl'");
+                            
+                            } else {
+                                $data_absen = mysqli_fetch_array($con, "SELECT * FROM permohonan_magang");
+                            }
+
+                            $sql3 = "SELECT * FROM permohonan_magang WHERE tglmagang BETWEEN '$dari_tgl' AND '$sampai_tgl'";
                             $result = mysqli_query($con, $sql3);
+
                             while ($row= mysqli_fetch_assoc($result)){
                         ?>
 
                             <tbody>
                                 <tr>
+                                    <td class="text-center" ><?php echo $no++;?></td>
+                                    <td><?php echo $row['tglmagang'];?></td>
                                     <td class="text-center"><?php echo $row['id_magang'];?></td>
                                     <td><?php echo $row['emailmg'];?></td>
                                     <td><?php echo $row['asalmg'];?></td>

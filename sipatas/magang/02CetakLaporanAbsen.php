@@ -22,13 +22,15 @@
                         </button>
 
                         <form method="post">
-                            <table>
-                                <tr>
-                                    <td>Pilih Tanggal</td>
-                                    <td><input type="date" name="tgl" required="required"></td>
-                                    <td><input type="submit" class="btn btn-primary" name="filter" value="filter"</td>
-                                </tr>
-                            </table>
+                        <table>
+                            <tr>
+                                <td>Dari Tanggal </td>
+                                <td><input type="date" name="dari_tgl" required="required"></td>
+                                <td>Sampai Tanggal </td>
+                                <td><input type="date" name="sampai_tgl" required="required"></td>
+                                <td><input type="submit" class="btn btn-primary" name="filter" value="filter"</td>
+                            </tr>
+                        </table>
                         </form>
                     </nav>
             
@@ -36,10 +38,15 @@
             
             <?php
                 if(isset($_POST['filter'])){
-                    $tgl = mysqli_real_escape_string($con, $_POST['tgl']);
-                    echo "Absensi Peserta Magang Tanggal " .$tgl;
+                    $dari_tgl = mysqli_real_escape_string($con, $_POST['dari_tgl']);
+                    $sampai_tgl = mysqli_real_escape_string($con, $_POST['sampai_tgl']);
+                    $data_absen = mysqli_query($con, "SELECT * FROM absenmg WHERE tglabs BETWEEN '$dari_tgl' AND '$sampai_tgl'");
+                    echo "Dari Tanggal " .$dari_tgl. " Sampai Tanggal " .$sampai_tgl;
+                } else {
+                    $data_absen = mysqli_fetch_array($con, "SELECT * FROM absenmg");
                 }
-            ?>
+            while ($tampil = mysqli_fetch_array($data_absen))
+                ?>
             <br>
                     <div class="table-responsive">
                     <table class="table table-striped table-sm table-bordered my-3"  id="dataTable" width="100%" cellspacing="0">
@@ -54,26 +61,33 @@
 
                             <?php
 
-                            $sql3 = "SELECT * FROM absenmg WHERE tglabs = '$tgl'";
-                            $result = mysqli_query($con, $sql3);
-                            
+                            $no = 1;
+                            if (isset($_POST['filter'])) {
+                                $dari_tgl = mysqli_real_escape_string($con, $_POST['dari_tgl']);
+                                $sampai_tgl = mysqli_real_escape_string($con, $_POST['sampai_tgl']);
+                                $data_absen = mysqli_query($con, "SELECT * FROM absenmg WHERE tglabs BETWEEN '$dari_tgl' AND '$sampai_tgl'");
 
-                            while ($row= mysqli_fetch_assoc($result)){
-                        ?>
+                            } else {
+                                $data_absen = mysqli_fetch_array($con, "SELECT * FROM absenmg");
+                            }
+
+                            $sql3 = "SELECT * FROM absenmg WHERE tglabs BETWEEN '$dari_tgl' AND '$sampai_tgl'";
+                            $result = mysqli_query($con, $sql3);
+
+                            while ($row = mysqli_fetch_assoc($result)) {
+                                ?>
                             <script>window.print()</script>
                             <tbody>
                                 <tr>
-                                    <td class="text-center"><?php echo $row['id_magang'];?></td>
-                                    <td><?php echo $row['namaabs'];?></td>
-                                    <td><?php echo $row['asalabs']  ;?></td>
-                                    <td><?php echo $row['tglabs']  ;?></td>
+                                    <td class="text-center"><?php echo $row['id_magang']; ?></td>
+                                    <td><?php echo $row['namaabs']; ?></td>
+                                    <td><?php echo $row['asalabs']; ?></td>
+                                    <td><?php echo $row['tglabs']; ?></td>
                                 </tr>                
                             </tbody>
                         <?php
-
-                            }
+                            } 
                         ?>
-                            </tbody>
                         </table>  
                     </div> 
                 </div>   

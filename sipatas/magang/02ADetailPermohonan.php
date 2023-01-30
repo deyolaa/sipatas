@@ -80,6 +80,11 @@
                     <table class="table table-striped table-sm table-bordered mx-3" id="dataTable" width="100%" cellspacing="0">
                         <tbody>
                                 <tr>   
+                                    <th>Tanggal</th>
+                                    <td><?php echo $row['tglmagang']?></td>
+                                    </tr>
+                                <tr>
+                                <tr>   
                                     <th>ID</th>
                                     <td><?php echo $row['id_magang']?></td>
                                     </tr>

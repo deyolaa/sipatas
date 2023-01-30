@@ -23,21 +23,29 @@
                         </button>
 
                         <form method="post">
-                            <table>
-                                <tr>
-                                    <td>Pilih Tanggal</td>
-                                    <td><input type="date" name="tgl" required="required"></td>
-                                    <td><input type="submit" class="btn btn-primary" name="filter" value="filter"</td>
-                                </tr>
-                            </table>
+                        <table>
+                            <tr>
+                                <td>Dari Tanggal </td>
+                                <td><input type="date" name="dari_tgl" required="required"></td>
+                                <td>Sampai Tanggal </td>
+                                <td><input type="date" name="sampai_tgl" required="required"></td>
+                                <td><input type="submit" class="btn btn-primary" name="filter" value="filter"</td>
+                            </tr>
+                        </table>
                         </form>
                     </nav>
             
             <!-- Table-->
             <?php
                 if(isset($_POST['filter'])){
-                    $tgl = mysqli_real_escape_string($con, $_POST['tgl']);
+                    $dari_tgl = mysqli_real_escape_string($con, $_POST['dari_tgl']);
+                    $sampai_tgl = mysqli_real_escape_string($con, $_POST['sampai_tgl']);
+                    $data_absen = mysqli_query($con, "SELECT * FROM absenmg WHERE tglabs BETWEEN '$dari_tgl' AND '$sampai_tgl'");
+                    echo "Dari Tanggal " .$dari_tgl. " Sampai Tanggal " .$sampai_tgl;
+                } else {
+                    $data_absen = mysqli_fetch_array($con, "SELECT * FROM absenmg");
                 }
+                while ($tampil = mysqli_fetch_array($data_absen))
             ?>
             <br>
                     <div class="table-responsive">
@@ -49,17 +57,21 @@
                                     <th>Nama</th>
                                     <th>Sekolah/Universitas</th>
                                     <th>Tanggal</th>
-                                    <th>Action</th>
                                 </tr>
                             </thead>
                         
                             <?php
+                            $no = 1;
                             if(isset($_POST['filter'])){
-                                $tgl = mysqli_real_escape_string($con, $_POST['tgl']);
-                            }
+                                $dari_tgl = mysqli_real_escape_string($con, $_POST['dari_tgl']);
+                                $sampai_tgl = mysqli_real_escape_string($con, $_POST['sampai_tgl']);
+                                $data_absen = mysqli_query($con, "SELECT * FROM absenmg WHERE tglabs BETWEEN '$dari_tgl' AND '$sampai_tgl'");
                             
+                            } else {
+                                $data_absen = mysqli_fetch_array($con, "SELECT * FROM absenmg");
+                            }
 
-                            $sql3 = "SELECT * FROM absenmg WHERE tglabs = '$tgl'";
+                            $sql3 = "SELECT * FROM absenmg WHERE tglabs BETWEEN '$dari_tgl' AND '$sampai_tgl'";
                             $result = mysqli_query($con, $sql3);
 
                             while ($row= mysqli_fetch_assoc($result)){
@@ -77,11 +89,6 @@
                                     <td><?php echo $row['namaabs'];?></td>
                                     <td><?php echo $row['asalabs']  ;?></td>
                                     <td><?php echo $row['tglabs']  ;?></td>
-                                    <td>
-                                        <a type="button" class="btn btn-primary" style="background-color: blue;" onclick="location.href='02ADetailAbsen.php?id_magang=<?php echo $row['id_magang'];?> ';"><i class="bi bi-info-lg"></i></a>
-                                        <a type="button" class="btn btn-warning" style="background-color: #E15B29;" href="02AEditPermohonan.php"><i class="bi bi-pencil-square"></i></a>
-                                        <a type="button" onclick="return confirm('Anda yakin menghapus data barang ini ?')" href=""class="btn btn-danger"><i class="bi bi-trash-fill"></i></a>
-                                    </td>
                                 
                                 </tr>                
                             </tbody>

@@ -63,39 +63,46 @@
                 <div id="content" class="mx-4">
             
                     <!-- Topbar -->
-                    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                    <nav class="navbar-expand-lg navbar-light bg-light my-2">
                         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
                           <span class="navbar-toggler-icon"></span>
                         </button>
                         <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-                          <a class="navbar-brand fw-bolder my-2" href="02AAbsen.php">Absensi Peserta Magang</a>
+                          <a class="navbar-brand fw-bolder" href="02APermohonan.php">Absensi Magang BPTU HPT Padang Mengatas</a>
                           <ul class="navbar-nav mr-auto mt-2 mt-lg-0"></ul>
                         </div>
                     </nav>
-            
             <!-- Table-->
+            <h5 class="text-black">List Absensi Magang</h5>
             <form method="post">
                 <table>
                     <tr>
-                        <td>Pilih Tanggal</td>
-                        <td><input type="date" name="tgl" required="required"></td>
+                        <td>Dari Tanggal </td>
+                        <td><input type="date" name="dari_tgl" required="required"></td>
+                        <td>Sampai Tanggal </td>
+                        <td><input type="date" name="sampai_tgl" required="required"></td>
                         <td><input type="submit" class="btn btn-primary" name="filter" value="filter"</td>
                     </tr>
                 </table>
             </form>
             <?php
                 if(isset($_POST['filter'])){
-                    $tgl = mysqli_real_escape_string($con, $_POST['tgl']);
-                    echo "Tanggal " .$tgl;
+                    $dari_tgl = mysqli_real_escape_string($con, $_POST['dari_tgl']);
+                    $sampai_tgl = mysqli_real_escape_string($con, $_POST['sampai_tgl']);
+                    $data_absen = mysqli_query($con, "SELECT * FROM absenmg WHERE tglabs BETWEEN '$dari_tgl' AND '$sampai_tgl'");
+                    echo "Dari Tanggal " .$dari_tgl. " Sampai Tanggal " .$sampai_tgl;
+                } else {
+                    $data_absen = mysqli_fetch_array($con, "SELECT * FROM absenmg");
                 }
-            ?>
-            <br>
-                    <div class="table-responsive">
+                while ($tampil = mysqli_fetch_array($data_absen))
+            ?>    
+                <div class="table-responsive">
                     <a type="button" id="cetak" href="02CetakLaporanAbsen.php" class="btn btn-primary"><i class="bi bi-printer"></i>  Cetak Laporan</a>
                     <a type="button" id="excel" href="02ExcelAbsen.php" class="btn btn-success"><i class="bi bi-file-earmark-excel"></i></i> Export to Excel</a>
                     <table class="table table-striped table-sm table-bordered my-3"  id="dataTable" width="100%" cellspacing="0">
                             <thead>
                                 <tr>
+                                    <th>NO</th>
                                     <th>ID</th>
                                     <th>Nama</th>
                                     <th>Sekolah/Universitas</th>
@@ -105,11 +112,17 @@
                             </thead>
 
                             <?php
+                            $no = 1;
                             if(isset($_POST['filter'])){
-                                $tgl = mysqli_real_escape_string($con, $_POST['tgl']);
+                                $dari_tgl = mysqli_real_escape_string($con, $_POST['dari_tgl']);
+                                $sampai_tgl = mysqli_real_escape_string($con, $_POST['sampai_tgl']);
+                                $data_absen = mysqli_query($con, "SELECT * FROM absenmg WHERE tglabs BETWEEN '$dari_tgl' AND '$sampai_tgl'");
+                            
+                            } else {
+                                $data_absen = mysqli_fetch_array($con, "SELECT * FROM absenmg");
                             }
 
-                            $sql3 = "SELECT * FROM absenmg WHERE tglabs = '$tgl'";
+                            $sql3 = "SELECT * FROM absenmg WHERE tglabs BETWEEN '$dari_tgl' AND '$sampai_tgl'";
                             $result = mysqli_query($con, $sql3);
 
                             while ($row= mysqli_fetch_assoc($result)){
@@ -117,6 +130,7 @@
 
                             <tbody>
                                 <tr>
+                                    <td class="text-center" ><?php echo $no++;?></td>
                                     <td class="text-center"><?php echo $row['id_magang'];?></td>
                                     <td><?php echo $row['namaabs'];?></td>
                                     <td><?php echo $row['asalabs']  ;?></td>
