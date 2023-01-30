@@ -37,7 +37,7 @@
             <!-- Table-->
             <h5 class="text-black mx-5 mb-3">Laporan Buku Tamu BPTU HPT Padang Mengatas</h5>
                     <div class="table-responsive">
-                    <button type="button" id="downloadexcel" class="btn btn-success"><i class="bi bi-file-earmark-excel"></i></i>Download Excel</button>
+                    <button type="button" id="downloadexcel" class="btn btn-success"><i class="bi bi-file-earmark-excel"></i></i> Download Excel</button>
                     <table class="table table-sm my-3"  id="bukutamu" width="100%" cellspacing="0">
                         
                         <thead>

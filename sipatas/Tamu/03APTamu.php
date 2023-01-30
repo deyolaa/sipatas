@@ -81,14 +81,22 @@
                     <div class="table-responsive">
                         <a type="button" href="03CTPengajuan.php" class="btn btn-primary"><i class="bi bi-printer"></i>  Cetak Laporan</a>
                         <a type="button" href="03Aexcelpengajuan.php" class="btn btn-success"><i class="bi bi-file-earmark-excel"></i></i> Export to Excel</a>
+                        <?php
+                              $data_pengajuan = mysqli_query($con,"SELECT * FROM kunjungan");
+                              $jumlah_tamu = mysqli_num_rows($data_pengajuan);
+                            ?>
+                            <p class="lead my-4 text-black">Jumlah Pengajuan : <b><?php echo $jumlah_tamu; ?> Instansi</b></p>
+                        
                     <table class="table table-sm my-2"   width="100%" cellspacing="0">
                         
                         <thead>
                             <tr>
                                 <th class="text-center">ID Pengajuan</th>
                                 <th>Instansi</th>
-                                <th>Tujuan</th>
                                 <th>Tanggal Kunjungan</th>
+                                <th>Status</th>
+                                
+
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -103,8 +111,9 @@
                             <tr>
                                 <td class="text-center"><?php echo $row['id_pengajuan'];?></td>
                                 <td><?php echo $row['instansi_kun'];?></td>
-                                <td><?php echo $row['tujuan_kun'];?></td>
+                                
                                 <td><?php echo $row['tgl_kun'];?></td>
+                                <td><?php echo $row['status_kun'];?></td>
                                 <td>
                                     <a type="button" class="btn btn-primary" style="background-color: blue;" onclick="location.href='03DetailPengajuan.php?id_pengajuan=<?php echo $row['id_pengajuan'];?> ';"><i class="bi bi-info-lg"></i></a>
                                     <a type="button" class="btn btn-warning" style="background-color: #E15B29;"  href="03EditPengajuan.php?id_pengajuan=<?= $row['id_pengajuan'] ?>"><i class="bi bi-pencil-square"></i></a>

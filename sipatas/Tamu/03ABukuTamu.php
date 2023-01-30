@@ -87,6 +87,11 @@
                         <a type="button" href="03CTBukuTamu.php" class="btn btn-primary"><i class="bi bi-printer"></i>  Cetak Laporan</a>
                         <a type="button" href="03Aexcelbukutamu.php" class="btn btn-success"><i class="bi bi-file-earmark-excel"></i></i> Export to Excel</a>
                         <table class="table table-sm my-2"  id="bukutamu" width="100%" cellspacing="0">
+                        <?php
+                              $data_tamu = mysqli_query($con,"SELECT * FROM tamu");
+                              $jumlah_tamu = mysqli_num_rows($data_tamu);
+                            ?>
+                            <p class="lead my-4 text-black">Jumlah tamu : <b><?php echo $jumlah_tamu; ?> Orang</b></p>
                         
                         <thead>
                             <tr>
