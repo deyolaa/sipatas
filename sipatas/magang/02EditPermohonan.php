@@ -81,7 +81,7 @@ $row = mysqli_fetch_array ($sql3);
 
             <div class="col-xl-5 col-lg 1 col-md-15">
 
-                <div class="card o-hidden border-1 shadow-lg my-5 bg-gray-200">
+                <div class="card  shadow-lg my-5 bg-gray-200">
                     <div class="card-body p-1">
                         <!-- Nested Row within Card Body -->
                         <div class="row">
@@ -89,11 +89,11 @@ $row = mysqli_fetch_array ($sql3);
                             <div class="col-lg 6">
                                 <div class="p-5">
                                     <div class="text-center">
-                                        <h1 class="h4 text-gray-900 mb-4">Edit Data Permohonan (<?php echo $row['id_magang']?>) </h1>
+                                        <h1 class="h4 text-gray-900 mb-4">Edit Data Permohonan (<?php echo $row['asalmg']?>) </h1>
                                     </div>
                                     
                                     <form class="user" method="POST">
-                                        <div class="form-group">
+                                        <div class="form-group text-center">
                                             <input name="id_magang" type="text" class="form-control form-control-user"
                                                 id="exampleInputEmail" aria-describedby="id_magang" placeholder="id_magang" readonly value="<?php echo $row['id_magang']?>">
                                             <br>    
@@ -127,11 +127,11 @@ $row = mysqli_fetch_array ($sql3);
                                             <input name="suratmg" type="text" class="form-control form-control-user"
                                                 id="exampleInputEmail" aria-describedby="file" placeholder="file" readonly value="<?php echo $row['suratmg']?>">
                                                 <br>
+                                            
+                                            <input class="btn btn-primary" type="submit" name="simpan" value="Simpan">
                                         </div>
                                         
                                        
-                                        <input class="btn btn-danger " type="submit" name="simpan" value="Simpan">
-                                        <hr>
                                         <div class="text-center">
                                             <a class="small text-danger" href="02APermohonan.php">Kembali</a>
                                         </div>

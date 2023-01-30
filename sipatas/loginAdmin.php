@@ -62,8 +62,6 @@ include('config.php');
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                         <li class="nav-item"><a class="nav-link" href="halaman/HomePage.php">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="halaman/About.php">About</a></li>
-                        <li class="nav-item"><a class="nav-link" href="halaman/Contact.html">Contact</a></li>
                         <li class="nav-item"><a class="nav-link active" href="../sipatas/loginAdmin.php">Admin</a></li>
                     </ul>
                 </div>
@@ -74,22 +72,22 @@ include('config.php');
             <div class="row gx-5 justify-content-center">
                 <div class="col-lg-6 text-center my-5">
                     <div class="display-5 fw-bolder text-white mb-2">ADMIN LOGIN</div>
-                    <p class="lead text-white-50 mb-1">Masukkan id dan password anda</p>
+                    <p class="lead text-white mb-lg-0">Masukkan id dan password anda</p>
             </div>      
-                <div  class="panel-body center" >            
+                <div  class="panel-body text-center center" >            
                     <form id="loginform" class="form-horizontal " action="" method="post" role="form">       
-                    <div class="form-floating mb-3">
-                        <input type="text" class="form-control"  name="id_admin"
-                            placeholder="instansi" required>
-                        <label for="floatingInput">Username</label>
-                    </div>
-                    <div class="form-floating mb-3">
-                        <input type="password" class="form-control"  name="password"
-                            placeholder="instansi" required>
-                        <label for="floatingInput">Username</label>
-                    </div>
-                        
-                        <input class="submit btn btn-success col-md-5 col-sm-5" style="margin-top: 20px;" type="submit" value="Login" name="login">
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control"  name="id_admin"
+                                placeholder="instansi" required>
+                            <label for="floatingInput">Username</label>
+                        </div>
+                        <div class="form-floating mb-1">
+                            <input type="password" class="form-control"  name="password"
+                                placeholder="instansi" required>
+                            <label for="floatingInput">Password</label>
+                        </div>
+                            
+                            <input class="submit btn btn-success col-md-5 col-sm-5 mb-4" style="margin-top: 20px;" type="submit" value="Login" name="login">
 
                     </form>    
                 </div>                    

@@ -12,11 +12,4 @@ $con = mysqli_connect($host, $user, $pass, $db);
 	die("koneksi gagal");
     } 
 
-function selectAllData(){
-	$sql3 = "SELECT * FROM permohonan_magang";
-	$result = $con->query($sql3);
-	return $result;
-                   
-}	
-
  ?>

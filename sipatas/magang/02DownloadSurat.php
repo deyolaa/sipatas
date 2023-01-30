@@ -1,21 +1,26 @@
 <?php
 include '../config.php';
 
-if (empty($_GET['suratmg'])) {
-    $suratmg = basename($_GET['suratmg']);
-    $filePath    ="files/".$suratmg;
+    $uploads    = 'uploads/';
+    $suratmg    = @$_GET['suratmg'];
+    $attachment = $uploads . $suratmg;
+ 
+    if (file_exists($attachment) && $suratmg) {
+        header('Content-Description: File Transfer');
+        header('Content-Type: application/octet-stream');
+        header('Content-Disposition: attachment; suratmg$suratmg='.basename($attachment));
+        header('Content-Transfer-Encoding: binary');
+        header('Expires: 0');
+        header('Cache-Control: private');
+        header('Pragma: private');
+        header('Content-Length: ' . filesize($attachment));
 
-    if (!empty($suratmg) && file_exists($filePath)) { /*check keberadaan file*/
-        header("Content-Control:public");
-        header("Content-Description: File Transfer");
-        header("Content-Disposition:attachment; suratmg=$suratmg");
-        header("Content-Type: application/zip");
-        header("Content-Transfer-Encoding:binary");
-
-        readfile($filePath);
+        ob_clean();
+        flush();
+        readfile($attachment);
+        
         exit;
     } else {
-        echo "The File does not exist.";
+        echo 'File Not Found!';
     }
-}
 ?>

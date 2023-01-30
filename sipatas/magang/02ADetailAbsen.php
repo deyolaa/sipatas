@@ -1,6 +1,10 @@
 <?php
     include "../config.php";
+    include "function.php";
     $id_magang = $_GET['id_magang'];
+?>
+<?php
+$tampil=tampil_buktiabs();
 ?>
 
 <html>
@@ -54,30 +58,25 @@
                         <i class="bi bi-door-closed"></i>
                     <span>Logout</span></a>
                 </li>
-
-                
- 
             </ul>
             <div id="content-wrapper" class="d-flex flex-column ">
 
                 <!-- Main Content -->
-                <div id="content" class="col-md-9  col-lg-10 px-md-4 mb-5">
-            
+                <div id="content" class="col-md-9  col-lg-10 px-md-4 mb-5">        
                     <!-- Topbar -->
-                    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                    <nav class="navbar-expand-lg navbar-light bg-light my-2">
                         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
                           <span class="navbar-toggler-icon"></span>
                         </button>
                         <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-                          <a class="navbar-brand fw-bolder" href="#">Absensi Peserta Magang BPTU HPT Padang Mengatas</a>
+                          <a class="navbar-brand fw-bolder" href="#">Detail Absensi Magang BPTU HPT Padang Mengatas</a>
                           <ul class="navbar-nav mr-auto mt-2 mt-lg-0"></ul>
-                         
                         </div>
                     </nav>
             
                     <?php
                         $sql3 = "SELECT * FROM absenmg WHERE id_magang = '$id_magang'" ;
-                        $result = $con->query($sql3);
+                        $result = $con->query($sql3, $tampil_buktiabs);
                         while ($row= mysqli_fetch_assoc($result)){
                     ?>
                     <!-- Table-->
@@ -117,14 +116,17 @@
 
                                 <tr>
                                     <th>Bukti Foto</th>
-                                    <td><?php echo $row['buktiabs']; ?></td>
+                                    <td><?php echo "<img src='gambar/$row[buktiabs]' width='300' height='300' />"; ?></td>
                                 </tr>
+
+
+                                <a type="button" class="btn btn-primary mb-2" style="background-color: blue;" onclick="location.href='02CetakAbsen.php?id_magang=<?php echo $row['id_magang'];?> ';"><i class="bi bi-printer"></i>  Cetak Absen</a>
 
                                 <?php
                                   }
                                 ?>
                         </table>
-                        <a type="button" href="02CTAbsen.html" class="btn btn-primary"><i class="bi bi-printer"></i>  Cetak Absen</a>
+                        
                 </div>   
             </div> 
             </div>
