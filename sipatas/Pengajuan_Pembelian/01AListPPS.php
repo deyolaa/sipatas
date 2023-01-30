@@ -99,7 +99,7 @@ include "../config.php";
                 while ($tampil = mysqli_fetch_array($data_magang))
             ?>
             <div class="table-responsive my-3">
-            <a type="button" href="01CLPengajuan.php" class="btn btn-primary"><i class="bi bi-printer"></i>  Cetak Laporan</a>
+            <a type="button" href="01CLPengajuan.php" class="btn btn-primary my-3"><i class="bi bi-printer "></i>  Cetak Laporan</a>
             <a type="button" href="01ExcelPengajuan.php" class="btn btn-success"><i class="bi bi-file-earmark-excel"></i></i> Export to Excel</a>
                     <div class="table-responsive">
                         <table class="table table-striped table-sm table-bordered"  id="dataTable" width="100%" cellspacing="0">

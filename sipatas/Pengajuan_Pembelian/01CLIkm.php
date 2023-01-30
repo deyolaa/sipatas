@@ -52,12 +52,17 @@
                         <table class="table table-striped table-sm table-bordered"  id="dataTable" width="100%" cellspacing="0">
                             <thead>
                                 <tr>
+                                    <th>Nomor</th>
                                     <th>ID</th>
                                     <th>Tanggal</th>
                                     <th>Nama</th>
                                     <th>Instansi / Organisasi</th>
                                     <th>Telepon</th>
                                     <th>Umur</th>
+                                    <th>Jenis Kelamin</th>
+                                    <th>Pendidikan Terakhir</th>
+                                    <th>Pekerjaan</th>
+                                    <th>Kritik dan Saran</th>
 
                                 </tr>
                             </thead>
@@ -78,6 +83,7 @@
                              <script>window.print()</script>
                         <tbody>
                             <tr>
+                            <td class="text-center" ><?php echo $no++;?></td>
                                 <td class="text-center"><?php echo $row['id_ikm'];?></td>
 
                                 <td><?php echo $row['tanggal_ikm'];?></td>
@@ -85,6 +91,10 @@
                                 <td><?php echo $row['instansi_ikm'];?></td>
                                 <td><?php echo $row['nomor_ikm'];?></td>
                                 <td><?php echo $row['umur_ikm'];?></td>
+                                <td><?php echo $row['jeniskelamin_ikm'];?></td>
+                                <td><?php echo $row['pendidikan_ikm'];?></td>
+                                <td><?php echo $row['pekerjaan_ikm'];?></td>
+                                <td><?php echo $row['kritik_ikm'];?></td>
                                 
                                
                             </tr>                

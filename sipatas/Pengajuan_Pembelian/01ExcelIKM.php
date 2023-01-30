@@ -54,7 +54,10 @@ include "../config.php";
                         <table class="table table-striped table-sm table-bordered my-3"  id="dataTable" width="100%" cellspacing="0">
                             <thead>
                                 <tr>
+                                <th>Nomor</th>
+                                <th>Tanggal</th>
                                 <th>ID</th>
+                                
                                     <th>Nama</th>
                                     <th>Instansi / Organisasi</th>
                                     <th>Telepon</th>
@@ -104,7 +107,9 @@ include "../config.php";
                             <tr>
                                 
                             <td class="text-center" ><?php echo $no++;?></td>
+                            <td><?php echo $row['tanggal_ikm'];?></td>
                             <td class="text-center"><?php echo $row['id_ikm'];?></td>
+                                
                                 <td><?php echo $row['nama_ikm'];?></td>
                                 <td><?php echo $row['instansi_ikm'];?></td>
                                 <td><?php echo $row['nomor_ikm'];?></td>
