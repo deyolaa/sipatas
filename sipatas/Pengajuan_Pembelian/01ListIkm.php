@@ -42,7 +42,7 @@
                 </li>
     
                 <!-- Nav Item - Tables -->
-                <li class="nav-item">
+                <li class="nav-item active">
                     <a class="nav-link" href="01listIkm.php">
                         <i class="bi bi-book"></i>
                     <span>List IKM</span></a>
@@ -60,22 +60,45 @@
             <div id="content-wrapper" class="d-flex flex-column ">
 
                 <!-- Main Content -->
-                <div id="content" class="col-md-9  col-lg-10 px-md-4 mb-5">
+                <div id="content" class="mx-4">
             
                     <!-- Topbar -->
-                    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                    <nav class="navbar-expand-lg navbar-light bg-light my-2">
                         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
                           <span class="navbar-toggler-icon"></span>
                         </button>
                         <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-                          <a class="navbar-brand fw-bolder" href="#">Indeks Kepuasan Masyarakat</a>
+                          <a class="navbar-brand fw-bolder" href="">Indeks Kepuasan Masyarakat</a>
                           <ul class="navbar-nav mr-auto mt-2 mt-lg-0"></ul>
-                         
                         </div>
                     </nav>
             
+            
 
-                    <h5 class="text-black mx-5 mb-3">List IKM</h5>
+                    <h5 class="text-black mb-3">List IKM</h5>
+                    <form method="post">
+                <table>
+                    <tr>
+                        <td>Dari Tanggal </td>
+                        <td><input type="date" name="dari_tgl" required="required"></td>
+                        <td>Sampai Tanggal </td>
+                        <td><input type="date" name="sampai_tgl" required="required"></td>
+                        <td><input type="submit" class="btn btn-primary" name="filter" value="filter"</td>
+                    </tr>
+                </table>
+            </form>
+            <?php
+                if(isset($_POST['filter'])){
+                    $dari_tgl = mysqli_real_escape_string($con, $_POST['dari_tgl']);
+                    $sampai_tgl = mysqli_real_escape_string($con, $_POST['sampai_tgl']);
+                    $data_magang = mysqli_query($con, "SELECT * FROM db_ikm WHERE tanggal_ikm BETWEEN '$dari_tgl' AND '$sampai_tgl'");
+                    echo "Dari Tanggal " .$dari_tgl. " Sampai Tanggal " .$sampai_tgl;
+                } else {
+                    $data_absen = mysqli_fetch_array($con, "SELECT * FROM db_ikm");
+                }
+                while ($tampil = mysqli_fetch_array($data_magang))
+            ?>
+            <div class="table-responsive my-3">
                     <a type="button" href="01CLIkm.php" class="btn btn-primary"><i class="bi bi-printer"></i>  Cetak Laporan</a>
                     <a type="button" href="01ExcelIKM.php" class="btn btn-success"><i class="bi bi-file-earmark-excel"></i></i> Export to Excel</a>
                     <div class="table-responsive">
@@ -83,6 +106,7 @@
                             <thead>
                                 <tr>
                                     <th>ID</th>
+                                    <th>Tanggal</th>
                                     <th>Nama</th>
                                     <th>Instansi / Organisasi</th>
                                     <th>Telepon</th>
@@ -92,14 +116,25 @@
                                 </tr>
                             </thead>
                             <?php
-                            $sql1 = "SELECT * FROM db_ikm";
-                            $result = mysqli_query($con, $sql1);
-                            while ($row= mysqli_fetch_assoc($result)){
+                             $no = 1;
+                             if(isset($_POST['filter'])){
+                                 $dari_tgl = mysqli_real_escape_string($con, $_POST['dari_tgl']);
+                                 $sampai_tgl = mysqli_real_escape_string($con, $_POST['sampai_tgl']);
+                                 $data_absen = mysqli_query($con, "SELECT * FROM db_ikm WHERE id_ikm BETWEEN '$dari_tgl' AND '$sampai_tgl'");
+                             
+                             } else {
+                                 $data_absen = mysqli_fetch_array($con, "SELECT * FROM db_ikm");
+                             }
+                             $sql1 = "SELECT * FROM db_ikm WHERE tanggal_ikm BETWEEN '$dari_tgl' AND '$sampai_tgl'";
+                             $result = mysqli_query($con, $sql1);
+                             while ($row= mysqli_fetch_assoc($result)){
                         ?>
 
                         <tbody>
                             <tr>
                                 <td class="text-center"><?php echo $row['id_ikm'];?></td>
+
+                                <td><?php echo $row['tanggal_ikm'];?></td>
                                 <td><?php echo $row['nama_ikm'];?></td>
                                 <td><?php echo $row['instansi_ikm'];?></td>
                                 <td><?php echo $row['nomor_ikm'];?></td>

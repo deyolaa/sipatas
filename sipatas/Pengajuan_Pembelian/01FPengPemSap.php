@@ -15,7 +15,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                         <li class="nav-item"><a class="nav-link" href="01DashboardPengPembelian.php">Back</a></li>
-                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="../halaman/HomePage.php">Home</a></li>
+                        <li class="nav-item"><a class="nav-link " aria-current="page" href="../halaman/HomePage.php">Home</a></li>
                         <li class="nav-item"><a class="nav-link" href="../halaman/Contact.html">Contact</a></li>
                     </ul>
                 </div>
@@ -36,7 +36,7 @@
                     <?php
                             include "../config.php";
 
-                            if (isset($_POST['simpan'])) {
+                            if (isset($_POST['kirim'])) {
                                 $email_pengajuan = $_POST['email_pengajuan'];
                                 $instansi_pengajuan = $_POST['instansi_pengajuan'];
                                 $nama_pengajuan = $_POST['nama_pengajuan'];
@@ -60,7 +60,7 @@
 
 
                     <div class=" row gx-5 justify-content-center">
-                            <div class="col-lg-6 text-center my-5">
+                            <div class="col-lg-6 text-center ">
                                 <form action="" method="POST" class="parent" id="contactForm" >
                                     <div class="form-grup">
                                         <table >
@@ -161,7 +161,7 @@
                                                 <label for="floatingInput">Upload Surat</label>
                                             </div>
                                         </table>
-                                        <input type="submit"  class="btn btn-primary btn-lg " name="simpan" value="Simpan">
+                                        <input type="submit"  class="btn btn-primary btn-lg " name="kirim" value="Kirim">
                                     </div>
                                 </form>
                             </div>

@@ -1,5 +1,5 @@
 <?php
-    include "../config.php";
+include "../config.php";
 ?>
 
 <html>
@@ -13,33 +13,48 @@
     </head>
     <body  style="background-color: white;">
 
-        <!-- SIDEBAR -->
-        <div id="wrapper">
-            <div id="content-wrapper" class="d-flex flex-column ">
-
                 <!-- Main Content -->
-                <div id="content" class="col-md-9  col-lg-10 px-md-4 mb-5">
+                <div id="content" class="mx-4">
             
                     <!-- Topbar -->
-                    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-                          <span class="navbar-toggler-icon"></span>
-                        </button>
-                        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-                          <a class="navbar-brand fw-bolder" href="#">Indeks Kepuasan Masyarakat</a>
-                          <ul class="navbar-nav mr-auto mt-2 mt-lg-0"></ul>
-                         
-                        </div>
-                    </nav>
-            
+                    <nav class="navbar-expand-lg navbar-light bg-light my-2">
+                   
+                    
+                    <form method="post">
+                  <table>
+                    <tr>
+                        <td>Dari Tanggal </td>
+                        <td><input type="date" name="dari_tgl" required="required"></td>
+                        <td>Sampai Tanggal </td>
+                        <td><input type="date" name="sampai_tgl" required="required"></td>
+                        <td><input type="submit" class="btn btn-primary" name="filter" value="filter"</td>
+                    </tr>
+                  </table>
+                 </form>
+                </nav>
 
-                    <h5 class="text-black mx-5 mb-3">List IKM</h5>
-                    <div class="table-responsive">
-                    <button type="button" id="downloadexcel" class="btn btn-success"><i class="bi bi-file-earmark-excel"></i></i>Download Excel</button>
-                        <table class="table table-striped table-sm table-bordered"  id="ikmm" width="100%" cellspacing="0">
+                <?php
+                if(isset($_POST['filter'])){
+                    $dari_tgl = mysqli_real_escape_string($con, $_POST['dari_tgl']);
+                    $sampai_tgl = mysqli_real_escape_string($con, $_POST['sampai_tgl']);
+                    $data_magang = mysqli_query($con, "SELECT * FROM db_ikm WHERE tanggal_ikm BETWEEN '$dari_tgl' AND '$sampai_tgl'");
+                    echo "Dari Tanggal " .$dari_tgl. " Sampai Tanggal " .$sampai_tgl;
+                } else {
+                    $data_absen = mysqli_fetch_array($con, "SELECT * FROM db_ikm");
+                }
+                while ($tampil = mysqli_fetch_array($data_magang))
+            ?>
+           
+
+            <!-- Table-->
+            <h5 class="text-black my-3">List Pengajuan Pembelian</h5>
+          `       <div class="table-responsive">
+                        <button type="button" id="downloadexcel"  class="btn btn-success "><i class="bi bi-file-earmark-excel"></i></i> Download Excel</button>
+                         
+                        <table class="table table-striped table-sm table-bordered my-3"  id="dataTable" width="100%" cellspacing="0">
                             <thead>
                                 <tr>
-                                    <th>ID</th>
+                                <th>ID</th>
                                     <th>Nama</th>
                                     <th>Instansi / Organisasi</th>
                                     <th>Telepon</th>
@@ -62,19 +77,34 @@
                                     <th>14</th>
                                     <th>Kritik & Saran</th>
 
-
-                                    
                                 </tr>
                             </thead>
+
                             <?php
-                            $sql1 = "SELECT * FROM db_ikm";
+                             $no = 1;
+                             if(isset($_POST['filter'])){
+                                 $dari_tgl = mysqli_real_escape_string($con, $_POST['dari_tgl']);
+                                 $sampai_tgl = mysqli_real_escape_string($con, $_POST['sampai_tgl']);
+                                 $data_absen = mysqli_query($con, "SELECT * FROM db_ikm WHERE id_ikm BETWEEN '$dari_tgl' AND '$sampai_tgl'");
+                             
+                             } else {
+                                 $data_absen = mysqli_fetch_array($con, "SELECT * FROM db_ikm");
+                             }
+                            $sql1 = "SELECT * FROM db_ikm WHERE tanggal_ikm BETWEEN '$dari_tgl' AND '$sampai_tgl'";
                             $result = mysqli_query($con, $sql1);
                             while ($row= mysqli_fetch_assoc($result)){
                         ?>
-
+                         <script>
+                            document.getElementById('downloadexcel');addEventListener('click',function () {
+                                var table2excel = new Table2Excel();
+                                table2excel.export(document.querySelectorAll("#dataTable"));
+                            })
+                        </script> 
                         <tbody>
                             <tr>
-                                <td class="text-center"><?php echo $row['id_ikm'];?></td>
+                                
+                            <td class="text-center" ><?php echo $no++;?></td>
+                            <td class="text-center"><?php echo $row['id_ikm'];?></td>
                                 <td><?php echo $row['nama_ikm'];?></td>
                                 <td><?php echo $row['instansi_ikm'];?></td>
                                 <td><?php echo $row['nomor_ikm'];?></td>
@@ -96,24 +126,16 @@
                                 <td><?php echo $row['pertanyaan13'];?></td>
                                 <td><?php echo $row['pertanyaan14'];?></td>
                                 <td><?php echo $row['kritik_ikm'];?></td>
-                                
-                               
+                                    
                             </tr>                
                         </tbody>
                         <?php
                             }
                         ?>
-
-
                         </table>  
-              
+                        </div>
+                    </div> 
                 </div>   
             </div> 
-            <script>
-                 document.getElementById('downloadexcel');addEventListener('click',function () {
-                    var table2excel = new Table2Excel();
-                    table2excel.export(document.querySelectorAll("#ikmm"));
-                })
-        </script>
     </body>
 </html>

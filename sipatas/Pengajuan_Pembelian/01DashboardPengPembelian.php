@@ -14,7 +14,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                         <li class="nav-item"><a class="nav-link" href="../halaman/HomePage.php">Back</a></li>
-                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="../halaman/HomePage.php">Home</a></li>
+                        <li class="nav-item"><a class="nav-link " aria-current="page" href="../halaman/HomePage.php">Home</a></li>
                         <li class="nav-item"><a class="nav-link" href="../halaman/Contact.html">Contact</a></li>
                     </ul>
                 </div>
@@ -26,8 +26,8 @@
                     <div class="col-lg-6">
                         <div class="text-center my-5">
                             <h1 class="display-5 fw-bolder text-white mb-2">Pembelian Sapi</h1>
-                            <p class="lead text-white-50 mb-4">Sistem Informasi pembelian bibit sapi adalah suatu cara untuk memberikan kemudahan kepada pembeli untuk membeli bibit sapi  di BPTU-HPT Padang Mengatas</p>
-                            <p class="lead text-white-50 mb-4">Silahkan LIhat daftar harga terlebih dahulu sebelum mengisi form</p>
+                            <p class="lead text-white mb-4">Sistem Informasi pembelian bibit sapi adalah suatu cara untuk memberikan kemudahan kepada pembeli untuk membeli bibit sapi  di BPTU-HPT Padang Mengatas</p>
+                            <p class="lead text-white mb-4">Silahkan Lihat daftar harga terlebih dahulu sebelum mengisi form</p>
                             <div class="d-grid gap-3 d-sm-flex justify-content-sm-center">
                                 <a class="btn btn-outline-light btn-lg px-4" href="01DaftarHargaSapi.php">Daftar Harga Sapi</a>
                                 <a class="btn btn-outline-light btn-lg px-4" href="01FPengPemSap.php">Form Pengajuan Pembelian Sapi</a>
@@ -38,7 +38,7 @@
             </div>
         </header>
         <footer>
-            <div class="container px-5"><p class="m-7 text-center text-white">Copyright &copy; Sistem Informasi Unand</p></div>
+            <div class="container px-5"><p class="fixed-bottom text-center text-white">Copyright &copy; Sistem Informasi Unand</p></div>
         </footer>
 
         <!-- NAVIGATION BAR END -->

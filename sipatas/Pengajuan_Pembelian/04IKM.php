@@ -24,7 +24,7 @@
             <div class="container px-5 my-5 px-5">
                 <div class="text-center mb-5">
                     
-                    <h2 class="fw-bolder text-white">Form Indeks Kepuasan Masyarakat</h2>
+                    <h2 class="fw-bolder text-white ">Form Indeks Kepuasan Masyarakat</h2>
                     <p class="lead mb-0 text-white">Demi meningkatkan kualitas pelayanan kami silahkan berikan kritikan dan saran anda pada kolom dibawah agar BPTU-HPT padang Mengatas selalu memberikan pelayanan yang terbaik bagi anda</p>
                 </div>
                 <div class="row gx-5 justify-content-center">
@@ -33,7 +33,7 @@
                     <?php
                             include "../config.php";
 
-                            if (isset($_POST['simpan'])) {
+                            if (isset($_POST['kirim'])) {
                                 $nama_ikm = $_POST['nama_ikm'];
                                 $instansi_ikm = $_POST['instansi_ikm'];
                                 $nomor_ikm = $_POST['nomor_ikm'];
@@ -69,7 +69,7 @@
         
                         ?>
                         <form action="" method="POST" class="parent" id="contactForm" >
-                            <div class="form-grup">
+                            <div class="p-3 border bg-light form-grup">
                                 <table >
                                             <div class="form-floating mb-3">
                                                 <input type="text" class="form-control"  name="nama_ikm"
@@ -89,12 +89,12 @@
                                                 <label for="floatingInput">Umur</label>
                                             </div>
 
-                                            <div class="text-white mb-3">
+                                            <div class="mb-3">
                                                  <b> Jenis Kelamin : </b><br>
                                                       <input type ="radio" name =jeniskelamin_ikm value = "Laki - Laki"> Laki - Laki <br>
                                                       <input type ="radio" name =jeniskelamin_ikm value = "Perempuan"> Perempuan <br>
                                             </div>  
-                                            <div class="text-white mb-3">
+                                            <div class="mb-3">
                                                   <b> Pendidikan Terakhir : </b><br>
                                                       <input type ="radio" name =pendidikan_ikm value = "SD Kebawah"> SD Kebawah <br>
                                                      <input type ="radio" name =pendidikan_ikm value = "SLTP"> SLTP <br>
@@ -103,7 +103,7 @@
                                                      <input type ="radio" name =pendidikan_ikm value = "S1"> S1 <br>
                                                      <input type ="radio" name =pendidikan_ikm value = "S2 Keatas"> S2 Keatas<br>
                                             </div>  
-                                            <div class="text-white mb-3">
+                                            <div class=" mb-3">
                                                   <b> Pekerjaan Utama : </b><br>
                                                       <input type ="radio" name =pekerjaan_ikm value = "PNS/TNI/POLRI"> PNS/TNI/POLRI <br>
                                                      <input type ="radio" name =pekerjaan_ikm value = "Pegawai Swasta"> Pegawai Swasta <br>
@@ -111,7 +111,7 @@
                                                      <input type ="radio" name =pekerjaan_ikm value = "Pelajar/Mahasiswa"> Pelajar/Mahasiswa <br>
                                                      <input type ="radio" name =pekerjaan_ikm value = "Lainnya"> Lainnya <br>
                                             </div>  
-                                            <div class="text-white mb-3 ">
+                                            <div class="mb-3 ">
                                                   <b> Bagaimana Pemahaman Saudara Tentang Kemudahan Pelayanan di BPTU-HPT Padang Mengatas : </b><br>
                                                       <input type ="radio" name =pertanyaan1 value = "Tidak Mudah"> Tidak Mudah <br>
                                                      <input type ="radio" name =pertanyaan1 value = "Kurang Mudah"> Kurang Mudah <br>
@@ -119,7 +119,7 @@
                                                      <input type ="radio" name =pertanyaan1 value = "Sangat Mudah"> Sangat Mudah <br>
                                                    
                                             </div>  
-                                            <div class="text-white mb-3">
+                                            <div class="mb-3">
                                                   <b> Bagaimana Pendapat Saudara Tentang Kewajaran Persyaratan Teknis dan Administratif dalam Memperoleh Pelayanan : </b><br>
                                                       <input type ="radio" name =pertanyaan2 value = "Tidak Wajar"> Tidak Wajar <br>
                                                      <input type ="radio" name =pertanyaan2 value = "Kurang Wajar"> Kurang Wajar <br>
@@ -127,7 +127,7 @@
                                                      <input type ="radio" name =pertanyaan2 value = "Sangat Wajar"> Sangat Wajar <br>
                                                      
                                             </div>  
-                                            <div class="text-white mb-3">
+                                            <div class="mb-3">
                                                   <b> Bagaimana Pendapat Saudara Tentang Jaminan Keberadaan dan Kepastian Pelaksana : </b><br>
                                                       <input type ="radio" name =pertanyaan3 value = "Tidak Terjamin"> Tidak Terjamin <br>
                                                      <input type ="radio" name =pertanyaan3 value = "Kurang Terjamin"> Kurang Terjamin <br>
@@ -135,7 +135,7 @@
                                                      <input type ="radio" name =pertanyaan3 value = "Sangat Terjamin"> Sangat Terjamin <br>
                                                      
                                             </div>  
-                                            <div class="text-white mb-3">
+                                            <div class="mb-3">
                                                   <b> Bagaimana Pendapat Saudara Tentang Konsistensi Waktu Kerja Pelayanan (Kedisiplinan Pelaksana) : </b><br>
                                                       <input type ="radio" name =pertanyaan4 value = "Tidak Konsisten"> Tidak Konsisten <br>
                                                      <input type ="radio" name =pertanyaan4 value = "Kurang Konsisten"> Kurang Konsisten <br>
@@ -143,7 +143,7 @@
                                                      <input type ="radio" name =pertanyaan4 value = "Sangat Wajar"> Wajar <br>
                                                      
                                             </div>  
-                                            <div class="text-white mb-3">
+                                            <div class="mb-3">
                                                   <b> Bagaimana Pendapat Saudara Tentang Kejelasan Tanggung Jawab Pelaksana Dalam Memberikan Pelayanan: </b><br>
                                                       <input type ="radio" name =pertanyaan5 value = "Tidak Jelas"> Tidak Jelas <br>
                                                      <input type ="radio" name =pertanyaan5 value = "Kurang Jelas"> Kurang Jelas <br>
@@ -151,7 +151,7 @@
                                                      <input type ="radio" name =pertanyaan5 value = "Sangat Jelas"> Sangat Jelas <br>
                                                      
                                             </div>  
-                                            <div class="text-white mb-3">
+                                            <div class="mb-3">
                                                   <b> Bagaimana Pendapat Saudara Tentang Kemampuan Pelaksana Dalam Memberikan Pelayanan: </b><br>
                                                       <input type ="radio" name =pertanyaan6 value = "Tidak Mampu"> Tidak Mampu <br>
                                                      <input type ="radio" name =pertanyaan6 value = "Kurang Mampu"> Kurang Mampu <br>
@@ -159,7 +159,7 @@
                                                      <input type ="radio" name =pertanyaan6 value = "Sangat Mampu"> Sangat Mampu <br>
                                                      
                                             </div>  
-                                            <div class="text-white mb-3">
+                                            <div class="mb-3">
                                                   <b> Bagaimana Pendapat Saudara Tentang Kecepatan Pelayanan: </b><br>
                                                       <input type ="radio" name =pertanyaan7 value = "Tidak Cepat"> Tidak Cepat <br>
                                                      <input type ="radio" name =pertanyaan7 value = "Kurang Cepat"> Kurang Cepat <br>
@@ -167,7 +167,7 @@
                                                      <input type ="radio" name =pertanyaan7 value = "Sangat Cepat"> Sangat Cepat <br>
                                                      
                                             </div>  
-                                            <div class="text-white mb-3">
+                                            <div class="mb-3">
                                                   <b> Bagaimana pendapat Saudara tentang perlakuan pelaksana dalam memberikan pelayanan: </b><br>
                                                       <input type ="radio" name =pertanyaan8 value = "Sangat Membedakan"> Sangat Membedakan <br>
                                                      <input type ="radio" name =pertanyaan8 value = "Membedakan"> Membedakan <br>
@@ -176,7 +176,7 @@
                                                      
                                             </div>  
                                             </div>  
-                                            <div class="text-white mb-3">
+                                            <div class="mb-3">
                                                   <b> Bagaimana pendapat Saudara tentang kesopanan dan keramahan pelaksana dalam memberikan pelayanan: </b><br>
                                                       <input type ="radio" name =pertanyaan9 value = "Tidak Sopan dan Tidak Ramah"> Tidak Sopan dan Tidak Ramah <br>
                                                      <input type ="radio" name =pertanyaan9 value = "Kurang Sopan dan Kurang Ramah"> Kurang Sopan dan Kurang Ramah <br>
@@ -184,7 +184,7 @@
                                                      <input type ="radio" name =pertanyaan9 value = "Sangat Sopan dan Ramah"> Sangat Sopan dan Ramah <br>
                                                      
                                             </div>  
-                                            <div class="text-white mb-3">
+                                            <div class="mb-3">
                                                   <b> Bagaimana pendapat Saudara tentang kewajaran biaya pelayanan : </b><br>
                                                       <input type ="radio" name =pertanyaan10 value = "Tidak Wajar"> Tidak Wajar<br>
                                                      <input type ="radio" name =pertanyaan10 value = "Kurang Wajar"> Kurang Wajar <br>
@@ -192,7 +192,7 @@
                                                      <input type ="radio" name =pertanyaan10 value = "Sangat Wajar"> Sangat Wajar <br>
                                                      
                                             </div>  
-                                            <div class="text-white mb-3">
+                                            <div class="mb-3">
                                                   <b> Bagaimana pendapat Saudara tentang kepastian biaya pelayanan: </b><br>
                                                       <input type ="radio" name =pertanyaan11 value = "Tidak Pasti"> Tidak Pasti <br>
                                                      <input type ="radio" name =pertanyaan11 value = "Kurang Pasti"> Kurang Pasti<br>
@@ -200,7 +200,7 @@
                                                      <input type ="radio" name =pertanyaan11 value = "Sangat Pasti"> Sangat Pasti <br>
                                                      
                                             </div>  
-                                            <div class="text-white mb-3">
+                                            <div class="mb-3">
                                                   <b> Bagaimana pendapat Saudara tentang ketepatan waktu pemberian pelayanan: </b><br>
                                                       <input type ="radio" name =pertanyaan12 value = "Tidak Tepat"> Tidak Tepat <br>
                                                      <input type ="radio" name =pertanyaan12 value = "Kurang Tepat"> Kurang Tepat<br>
@@ -208,7 +208,7 @@
                                                      <input type ="radio" name =pertanyaan12 value = "Sangat Tepat"> Sangat Tepat <br>
                                                      
                                             </div>  
-                                            <div class="text-white mb-3">
+                                            <div class="mb-3">
                                                   <b> Bagaimana pendapat Saudara tentang kenyamanan lingkungan pelayanan: </b><br>
                                                       <input type ="radio" name =pertanyaan13 value = "Tidak Nyaman"> Tidak Nyaman <br>
                                                      <input type ="radio" name =pertanyaan13 value = "Kurang Nyaman"> Kurang Nyaman<br>
@@ -216,7 +216,7 @@
                                                      <input type ="radio" name =pertanyaan13 value = "Sangat Nyaman"> Sangat Nyaman <br>
                                                      
                                             </div>  
-                                            <div class="text-white mb-3">
+                                            <div class="mb-3">
                                                   <b> Bagaimana pendapat Saudara tentang keamanan pelayanan: </b><br>
                                                       <input type ="radio" name =pertanyaan14 value = "Tidak Aman"> Tidak Aman <br>
                                                      <input type ="radio" name =pertanyaan14 value = "Kurang Aman"> Kurang Aman<br>
@@ -234,7 +234,7 @@
                   
     
                                 </table>
-                                <input type="submit"  class="btn btn-primary btn-lg " name="simpan" value="Simpan">
+                                <input type="submit"  class="btn btn-primary btn-lg " name="kirim" value="Kirim">
                             </div>
                         </form>
 

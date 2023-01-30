@@ -35,8 +35,8 @@
                         <i class="bi bi-house"></i>
                     <span>Beranda</span></a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="01AListPPS.php">
+                <li class="nav-item active">
+                    <a class="nav-link active" href="01AListPPS.php">
                         <i class="bi bi-envelope"></i>
                     <span>Pengajuan</span></a>
                 </li>
@@ -60,10 +60,10 @@
             <div id="content-wrapper" class="d-flex flex-column ">
 
                 <!-- Main Content -->
-                <div id="content" class="col-md-9  col-lg-10 px-md-4 mb-5">
+                <div id="content" class="mx-4">
             
                     <!-- Topbar -->
-                    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                    <nav class="navbar navbar-expand-lg navbar-light bg-light my-2">
                         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
                           <span class="navbar-toggler-icon"></span>
                         </button>

@@ -42,7 +42,7 @@
                 </li>
     
                 <!-- Nav Item - Tables -->
-                <li class="nav-item">
+                <li class="nav-item active">
                     <a class="nav-link" href="01listIkm.php">
                         <i class="bi bi-book"></i>
                     <span>List IKM</span></a>
@@ -116,62 +116,6 @@
                                     <th>Pekerjaan</th>
                                     <td><?php echo $row['pekerjaan_ikm']; ?></td>
                                     </tr>
-                                <tr>
-                                    <th>Pertanyaan 1</th>
-                                    <td><?php echo $row['pertanyaan1']; ?></td>
-                                    </tr>
-                                <tr>
-                                    <th>Pertanyaan 2</th>
-                                    <td><?php echo $row['pertanyaan2']; ?></td>
-                                    </tr>
-                                <tr>
-                                    <th>Pertanyaan 3</th>
-                                    <td><?php echo $row['pertanyaan3']; ?></td>
-                                    </tr>
-                                <tr>
-                                    <th>Pertanyaan 4</th>
-                                    <td><?php echo $row['pertanyaan4']; ?></td>
-                                    </tr>
-                                <tr>
-                                    <th>Pertanyaan 5</th>
-                                    <td><?php echo $row['pertanyaan5']; ?></td>
-                                    </tr>
-                                <tr>
-                                    <th>Pertanyaan 6</th>
-                                    <td><?php echo $row['pertanyaan6']; ?></td>
-                                    </tr>
-                                    <tr>
-                                    <th>Pertanyaan 7</th>
-                                    <td><?php echo $row['pertanyaan7']; ?></td>
-                                    </tr>
-                                    <tr>
-                                    <th>Pertanyaan 8</th>
-                                    <td><?php echo $row['pertanyaan8']; ?></td>
-                                    </tr>
-                                    <tr>
-                                    <th>Pertanyaan 9</th>
-                                    <td><?php echo $row['pertanyaan9']; ?></td>
-                                    </tr>
-                                    <tr>
-                                    <th>Pertanyaan 10</th>
-                                    <td><?php echo $row['pertanyaan10']; ?></td>
-                                    </tr>
-                                    <tr>
-                                    <th>Pertanyaan 11</th>
-                                    <td><?php echo $row['pertanyaan11']; ?></td>
-                                    </tr>
-                                    <tr>
-                                    <th>Pertanyaan 12</th>
-                                    <td><?php echo $row['pertanyaan12']; ?></td>
-                                    </tr>
-                                    <tr>
-                                    <th>Pertanyaan 13</th>
-                                    <td><?php echo $row['pertanyaan13']; ?></td>
-                                    </tr> <tr>
-                                    <th>Pertanyaan 14</th>
-                                    <td><?php echo $row['pertanyaan14']; ?></td>
-                                    </tr>
-
                                 <tr>
                                     <th>Kritik dan Saran </th>
                                     <td><?php echo $row['kritik_ikm']; ?></td>

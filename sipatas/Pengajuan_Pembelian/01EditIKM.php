@@ -74,58 +74,21 @@ $row = mysqli_fetch_array ($sql8);
                                                 id="exampleInputEmail" aria-describedby="jeniskelamin_ikm" placeholder="jeniskelamin_ikm"  value="<?php echo $row['jeniskelamin_ikm']?>">
                                                 <br>
                                             <input name="pendidikan_ikm" type="timestamp" class="form-control form-control-user"
-                                                id="exampleInputEmail" aria-describedby="pendidikan_ikm" placeholder="pendidikan_ikm" readonly value="<?php echo $row['pendidikan_ikm']?>">
+                                                id="exampleInputEmail" aria-describedby="pendidikan_ikm" placeholder="pendidikan_ikm"  value="<?php echo $row['pendidikan_ikm']?>">
                                                 <br>
                                             <input name="pekerjaan_ikm" type="text" class="form-control form-control-user"
                                                 id="exampleInputEmail" aria-describedby="file" placeholder="pekerjaan_ikm" readonly value="<?php echo $row['pekerjaan_ikm']?>">
                                                 <br>
-                                            <input name="pertanyaan1" type="text" class="form-control form-control-user"
-                                                id="exampleInputEmail" aria-describedby="file" placeholder="pertanyaan1" readonly value="<?php echo $row['pertanyaan1']?>">
+                                            <input name="pekerjaan_ikm" type="text" class="form-control form-control-user"
+                                                id="exampleInputEmail" aria-describedby="file" placeholder="kritik_ikm" readonly value="<?php echo $row['kritik_ikm']?>">
                                                 <br>
-                                            <input name="pertanyaan2" type="text" class="form-control form-control-user"
-                                                id="exampleInputEmail" aria-describedby="file" placeholder="pertanyaan2" readonly value="<?php echo $row['pertanyaan2']?>">
-                                                <br>
-                                            <input name="pertanyaan3" type="text" class="form-control form-control-user"
-                                                id="exampleInputEmail" aria-describedby="file" placeholder="pertanyaan3" readonly value="<?php echo $row['pertanyaan3']?>">
-                                                <br>
-                                            <input name="pertanyaan4" type="text" class="form-control form-control-user"
-                                                id="exampleInputEmail" aria-describedby="file" placeholder="pertanyaan4" readonly value="<?php echo $row['pertanyaan4']?>">
-                                                <br>
-                                            <input name="pertanyaan5" type="text" class="form-control form-control-user"
-                                                id="exampleInputEmail" aria-describedby="file" placeholder="pertanyaan5" readonly value="<?php echo $row['pertanyaan5']?>">
-                                                <br>
-                                            <input name="pertanyaan6" type="text" class="form-control form-control-user"
-                                                id="exampleInputEmail" aria-describedby="file" placeholder="pertanyaan6" readonly value="<?php echo $row['pertanyaan6']?>">
-                                                <br>
-                                            <input name="pertanyaan7" type="text" class="form-control form-control-user"
-                                                id="exampleInputEmail" aria-describedby="file" placeholder="pertanyaan7" readonly value="<?php echo $row['pertanyaan7']?>">
-                                                <br>
-                                            <input name="pertanyaan8" type="text" class="form-control form-control-user"
-                                                id="exampleInputEmail" aria-describedby="file" placeholder="pertanyaan8" readonly value="<?php echo $row['pertanyaan8']?>">
-                                                <br>
-                                            <input name="pertanyaan9" type="text" class="form-control form-control-user"
-                                                id="exampleInputEmail" aria-describedby="file" placeholder="pertanyaan9" readonly value="<?php echo $row['pertanyaan9']?>">
-                                                <br>
-                                            <input name="pertanyaan10" type="text" class="form-control form-control-user"
-                                                id="exampleInputEmail" aria-describedby="file" placeholder="pertanyaan10" readonly value="<?php echo $row['pertanyaan10']?>">
-                                                <br>
-                                            <input name="pertanyaan11" type="text" class="form-control form-control-user"
-                                                id="exampleInputEmail" aria-describedby="file" placeholder="pertanyaan11" readonly value="<?php echo $row['pertanyaan11']?>">
-                                                <br>
-                                            <input name="pertanyaan12" type="text" class="form-control form-control-user"
-                                                id="exampleInputEmail" aria-describedby="file" placeholder="pertanyaan12" readonly value="<?php echo $row['pertanyaan12']?>">
-                                                <br>
-                                            <input name="pertanyaan13" type="text" class="form-control form-control-user"
-                                                id="exampleInputEmail" aria-describedby="file" placeholder="pertanyaan13" readonly value="<?php echo $row['pertanyaan13']?>">
-                                                <br> 
-                                            <input name="pertanyaan14" type="text" class="form-control form-control-user"
-                                                id="exampleInputEmail" aria-describedby="file" placeholder="pertanyaan14" readonly value="<?php echo $row['pertanyaan14']?>">
-                                                <br>
+                                            
+                                            
 
                                         </div>
                                         
                                        
-                                        <input class="btn btn-danger " type="submit" name="simpan" value="Simpan">
+                                        <input class="btn btn-primary " type="submit" name="simpan" value="Simpan">
                                         <hr>
                                         <div class="text-center">
                                             <a class="small text-danger" href="01ListIkm.php">Kembali</a>

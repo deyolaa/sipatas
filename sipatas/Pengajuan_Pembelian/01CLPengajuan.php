@@ -13,63 +13,84 @@ include "../config.php";
     </head>
     <body  style="background-color: white;">
 
-        <!-- SIDEBAR -->
-        <div id="wrapper">
-            
-            <div id="content-wrapper" class="d-flex flex-column ">
-
                 <!-- Main Content -->
-                <div id="content" class="col-md-9  col-lg-10 px-md-4 mb-5">
+                <div id="content" class="mx-4">
             
                     <!-- Topbar -->
-                    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-                          <span class="navbar-toggler-icon"></span>
-                        </button>
-                        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-                          <a class="navbar-brand fw-bolder" href="#">Pengajuan Pembelian Sapi</a>
-                          <ul class="navbar-nav mr-auto mt-2 mt-lg-0"></ul>
-
-                          
-                        </div>
-                    </nav>
-            
+                    <nav class="navbar navbar-expand-lg navbar-light bg-light my-2">
+                    <form method="post">
+                        <table>
+                            <tr>
+                                <td>Dari Tanggal </td>
+                                <td><input type="date" name="dari_tgl" required="required"></td>
+                                <td>Sampai Tanggal </td>
+                                <td><input type="date" name="sampai_tgl" required="required"></td>
+                                <td><input type="submit" class="btn btn-primary" name="filter" value="filter"</td>
+                            </tr>
+                        </table>
+               </form>
+                </nav>
 
             <!-- Table-->
-            <h5 class="text-black mx-5 mb-3">List Pengajuan Pembelian</h5>
-                    <div class="table-responsive">
-                        <table class="table table-striped table-sm table-bordered"  id="dataTable" width="80%" cellspacing="0">
+            <h5 class="text-black my-3">List Pengajuan Pembelian</h5>
+            <?php
+                if(isset($_POST['filter'])){
+                    $dari_tgl = mysqli_real_escape_string($con, $_POST['dari_tgl']);
+                    $sampai_tgl = mysqli_real_escape_string($con, $_POST['sampai_tgl']);
+                    $data_magang = mysqli_query($con, "SELECT * FROM pengajuan_sapi WHERE tanggal_pengajuan BETWEEN '$dari_tgl' AND '$sampai_tgl'");
+                    echo "Dari Tanggal " .$dari_tgl. " Sampai Tanggal " .$sampai_tgl;
+                } else {
+                    $data_absen = mysqli_fetch_array($con, "SELECT * FROM pengajuan_sapi");
+                }
+                while ($tampil = mysqli_fetch_array($data_magang))
+            ?>
+           
+                
+                     <div class="table-responsive">
+                        <table class="table table-striped table-sm table-bordered"  id="dataTable" width="100%" cellspacing="0">
                             <thead>
                                 <tr>
-                                    <th>ID Pengajuan</th>
+                                    <th>No</th>
+                                    <th>Tanggal Pengajuan</th>
+                                    <th>ID</th>
                                     <th>Nama Perwakilan</th>
                                     <th>Instansi / Organisasi</th>
-                                   
-                                    <th>No. Telepon</th>
+                                    <th>Nomor Telepon</th>
                                     <th>Jenis Sapi</th>
                                     <th>Jumlah</th>
-                                    <th>Alasan Pembelian</th>
-                                    
+                                    <th>Alasan Pengajuan</th>
                                 </tr>
                             </thead>
 
                             <?php
-                            $sql1 = "SELECT * FROM pengajuan_sapi";
+                             $no = 1;
+                             if(isset($_POST['filter'])){
+                                 $dari_tgl = mysqli_real_escape_string($con, $_POST['dari_tgl']);
+                                 $sampai_tgl = mysqli_real_escape_string($con, $_POST['sampai_tgl']);
+                                 $data_absen = mysqli_query($con, "SELECT * FROM pengajuan_sapi WHERE id_pengajuan BETWEEN '$dari_tgl' AND '$sampai_tgl'");
+                             
+                             } else {
+                                 $data_absen = mysqli_fetch_array($con, "SELECT * FROM pengajuan_sapi");
+                             }
+                            $sql1 = "SELECT * FROM pengajuan_sapi WHERE tanggal_pengajuan BETWEEN '$dari_tgl' AND '$sampai_tgl'";
                             $result = mysqli_query($con, $sql1);
                             while ($row= mysqli_fetch_assoc($result)){
                         ?>
-
+                        <script>window.print()</script>
                         <tbody>
                             <tr>
+                                
+                            <td class="text-center" ><?php echo $no++;?></td>
+                                <td><?php echo $row['tanggal_pengajuan'];?></td>
                                 <td class="text-center"><?php echo $row['id_pengajuan'];?></td>
                                 <td><?php echo $row['nama_pengajuan'];?></td>
                                 <td><?php echo $row['instansi_pengajuan'];?></td>
-                                
                                 <td><?php echo $row['nomor_pengajuan'];?></td>
                                 <td><?php echo $row['sapi_pengajuan'];?></td>
                                 <td><?php echo $row['jumlah_pengajuan'];?></td>
                                 <td><?php echo $row['alasan_pengajuan'];?></td>
                                 
+                                    
                             </tr>                
                         </tbody>
                         <?php
@@ -80,8 +101,5 @@ include "../config.php";
                     </div> 
                 </div>   
             </div> 
-            <script>
-                window.print()
-            </script>
     </body>
 </html>
