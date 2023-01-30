@@ -1,3 +1,9 @@
+<?php
+  include "../config.php";
+  include "function.php";
+?>
+?>
+
 <html>
     <head>
         <title>SIPATAS</title>
@@ -7,7 +13,9 @@
         <!-- NAVIGATION BAR -->
         <nav class="navbar navbar-expand-lg navbar-dark">
             <div class="container px-5">
-                <img src="../halaman/img/bptu.png" height="60px" align="left"/>               
+                <img src="../halaman/img/peternakan.png" height="60px" align="left"/> 
+                <img src="../halaman/img/PKH.png" height="60px" align="left"/> 
+                <img src="../halaman/img/bptu.png" height="60px" align="left"/>                
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
@@ -24,7 +32,7 @@
                 <div class="text-center mb-5">
                     
                     <h2 class="display-5 fw-bolder text-white mb-2">Form Absensi Magang</h2>
-                    <p class="lead text-white-50 mb-4">Silahkan daftarkan diri anda dan jangan lupa untuk melihat persyaratan magang di BPTU HPT Padang Mengatas pada halaman sebelumnya</Main></p>
+                    <p class="lead text-white mb-4">Silahkan daftarkan diri anda dan jangan lupa untuk melihat persyaratan magang di BPTU HPT Padang Mengatas pada halaman sebelumnya</Main></p>
                 </div>
                 <div class="row gx-5 justify-content-center">
                     <div class="col-lg-6">
@@ -33,6 +41,7 @@
                         include "../config.php";
 
                         if (isset($_POST['kirim'])) {
+                            
                             $id_magang = $_POST['id_magang'];
                             $tglabs = $_POST['tglabs'];
                             $namaabs = $_POST['namaabs'];
@@ -45,12 +54,16 @@
                             $sql3 = "INSERT INTO `absenmg`(`id_magang`, `tglabs`, `namaabs`, `asalabs`, `pembimbingabs`, `bidangabs`, `outputabs`, `buktiabs`) VALUES ('$id_magang','$tglabs','$namaabs','$asalabs','$pembimbingabs','$bidangabs','$outputabs','$buktiabs')";
                             
                             $result = mysqli_query($con,$sql3);
+                            if($result){
+                                echo "<script>alert('Data Berhasil Dikirim, Terima kasih');window.location='02DashboardMagang.php';</script>";
+                                } else {
+                                echo mysqli_error($con);
+                            }
                         }
 
                     ?>
-
-                        <form action="" method="POST" class="parent" id="contactForm" >
-                                    <div class="form-grup">
+                                <form action="" method="POST" class="parent" id="contactForm">
+                                    <div class="form-grup text-center">
                                         <table >
                                         <div class="form-floating mb-3">
                                                 <input type="number" class="form-control"  name="id_magang"
@@ -84,8 +97,8 @@
                                                 <label for="floatingTextarea2">Output</label>
                                             </div>
                                             <div class="form-floating mb-3">
-                                                <input type="file" class="form-control"  name="buktiabs" required>
-                                                <label for="floatingInput">Upload Foto menggunakan open camera</label>
+                                                <input type="file" class="form-control"  name="buktiabs" id="buktiabs" required="">
+                                                <label for="floatingInput">Upload bukti menggunakan open camera</label>
                                             </div>
                                         </table>
                                         <input type="submit"  class="btn btn-primary btn-lg " name="kirim" value="Simpan">

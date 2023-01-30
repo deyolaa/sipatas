@@ -82,8 +82,7 @@
                                 <tr>   
                                     <th>Tanggal</th>
                                     <td><?php echo $row['tglmagang']?></td>
-                                    </tr>
-                                <tr>
+                                </tr>
                                 <tr>   
                                     <th>ID</th>
                                     <td><?php echo $row['id_magang']?></td>
@@ -126,7 +125,7 @@
                                     </tr>
                                 <tr>
                                     <th>Surat</th>
-                                    <td><button onclick="location.href='02DownloadSurat.php?suratmg=<?php echo $row['suratmg'] ?> ';"> Download</button><br /></td>
+                                    <td><a href="02DownloadSurat.php?suratmg=<?php echo $row['suratmg'] ?> ';">Download</a></td>
                                     </tr>
 
                             <?php }

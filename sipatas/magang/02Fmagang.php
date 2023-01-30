@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -9,7 +11,7 @@
         <!-- NAVIGATION BAR -->
         <nav class="navbar navbar-expand-lg navbar-dark">
             <div class="container px-5">
-            <img src="../halaman/img/peternakan.png" height="60px" align="left"/> 
+                <img src="../halaman/img/peternakan.png" height="60px" align="left"/> 
                 <img src="../halaman/img/PKH.png" height="60px" align="left"/> 
                 <img src="../halaman/img/bptu.png" height="60px" align="left"/>                
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
@@ -35,8 +37,7 @@
 
                     <?php
                         include "../config.php";
-
-                        if (isset($_POST['simpan'])) {
+                        if (isset($_POST['kirim'])) {
                             $emailmg = $_POST['emailmg'];
                             $asalmg = $_POST['asalmg'];
                             $jurusanmg = $_POST['jurusanmg'];
@@ -51,10 +52,15 @@
                             $sql3 = "INSERT INTO `permohonan_magang`(`id_magang`, `emailmg`, `asalmg`, `jurusanmg`, `perwakilanmg`, `anggotamg`, `nomormg`, `tujuanmg`, `mulaimg`, `selesaimg`, `suratmg`) VALUES (NULL, '$emailmg','$asalmg','$jurusanmg','$perwakilanmg','$anggotamg','$nomormg','$tujuanmg','$mulaimg','$selesaimg','$suratmg')";
                             
                             $result = mysqli_query($con,$sql3);
+                            if($result){
+                                echo "<script>alert('Data Berhasil Dikirim, Terima kasih');window.location='02DashboardMagang.php';</script>";
+                                } else {
+                                echo mysqli_error($con);
+                            }
                         }
                     ?>
-                                <form action="" method="POST" class="parent" id="contactForm" >
-                                    <div class="form-grup">
+                                <form action="" method="POST" class="parent" id="contactForm" enctype="multipart/form-data">
+                                    <div class="form-grup text-center">
                                         <table >
                                             <div class="form-floating mb-3 ">
                                                 <input type="email" class="form-control" placeholder="name@example.com" name="emailmg" required>
@@ -97,7 +103,7 @@
                                                 <label for="floatingInput">Upload Surat</label>
                                             </div>
                                         </table>
-                                        <input type="submit"  class="btn btn-primary btn-lg " name="simpan" value="Simpan">
+                                        <input type="submit"  class="btn btn-primary btn-lg " name="kirim" value="Simpan">
                                     </div>
                                 </form>
                     </div>

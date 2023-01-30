@@ -36,7 +36,7 @@
                         <i class="bi bi-house"></i>
                     <span>Beranda</span></a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item active">
                     <a class="nav-link" href="03APTamu.php">
                         <i class="bi bi-envelope"></i>
                     <span>Pengajuan</span></a>
@@ -64,16 +64,17 @@
                 <div id="content" class="col-md-9  col-lg-10 px-md-4 mb-5">
             
                     <!-- Topbar -->
-                    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                    <nav class="nnavbar navbar-expand-lg navbar-light bg-light my-2">
                         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
                           <span class="navbar-toggler-icon"></span>
                         </button>
                         <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
                           <a class="navbar-brand fw-bolder" href="#">Pengajuan Kunjungan BPTU HPT Patas</a>
                           <ul class="navbar-nav mr-auto mt-2 mt-lg-0"></ul>
-                         
+                          
                         </div>
                     </nav>
+                    
             
 
             

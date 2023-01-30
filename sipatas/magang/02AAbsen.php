@@ -96,7 +96,7 @@
                 }
                 while ($tampil = mysqli_fetch_array($data_absen))
             ?>    
-                <div class="table-responsive">
+                <div class="table-responsive my-2">
                     <a type="button" id="cetak" href="02CetakLaporanAbsen.php" class="btn btn-primary"><i class="bi bi-printer"></i>  Cetak Laporan</a>
                     <a type="button" id="excel" href="02ExcelAbsen.php" class="btn btn-success"><i class="bi bi-file-earmark-excel"></i></i> Export to Excel</a>
                     <table class="table table-striped table-sm table-bordered my-3"  id="dataTable" width="100%" cellspacing="0">

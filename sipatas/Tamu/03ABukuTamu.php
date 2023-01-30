@@ -47,7 +47,7 @@
                 </li>
     
                 <!-- Nav Item - Tables -->
-                <li class="nav-item">
+                <li class="nav-item active">
                     <a class="nav-link" href="03ABukuTamu.php">
                         <i class="bi bi-book"></i>
                     <span>Buku Tamu</span></a>
@@ -83,15 +83,37 @@
                    
                 <!-- Table-->
                 <h5 class="text-black my-3">List Pengunjung</h5>
+                <form method="post">
+                <table>
+                    <tr>
+                        <td>Dari Tanggal </td>
+                        <td><input type="date" name="dari_tgl" required="required"></td>
+                        <td>Sampai Tanggal </td>
+                        <td><input type="date" name="sampai_tgl" required="required"></td>
+                        <td><input type="submit" class="btn btn-primary" name="filter" value="filter"></td>
+                    </tr>
+                </table>
+            </form>
+            <?php
+                if(isset($_POST['filter'])){
+                    $dari_tgl = mysqli_real_escape_string($con, $_POST['dari_tgl']);
+                    $sampai_tgl = mysqli_real_escape_string($con, $_POST['sampai_tgl']);
+                    $data_tamu = mysqli_query($con, "SELECT * FROM tamu WHERE tgl_tamu BETWEEN '$dari_tgl' AND '$sampai_tgl'");
+                    echo "Dari Tanggal " .$dari_tgl. " Sampai Tanggal " .$sampai_tgl;
+                } else {
+                    $data_tamu = mysqli_fetch_array($con, "SELECT * FROM tamu");
+                }
+                while ($tampil = mysqli_fetch_array($data_tamu))
+            ?>
                 <div class="table-responsive">
-                        <a type="button" href="03CTBukuTamu.php" class="btn btn-primary"><i class="bi bi-printer"></i>  Cetak Laporan</a>
-                        <a type="button" href="03Aexcelbukutamu.php" class="btn btn-success"><i class="bi bi-file-earmark-excel"></i></i> Export to Excel</a>
-                        <table class="table table-sm my-2"  id="bukutamu" width="100%" cellspacing="0">
+                        <a type="button" href="03CTBukuTamu.php" class="btn btn-primary my-3"><i class="bi bi-printer"></i>  Cetak Laporan</a>
+                        <a type="button" href="03Aexcelbukutamu.php" class="btn btn-success my-3"><i class="bi bi-file-earmark-excel"></i></i> Export to Excel</a>
+                        <table class="table table-striped table-sm table-bordered my-2"  id="bukutamu" width="100%" cellspacing="0">
                         <?php
                               $data_tamu = mysqli_query($con,"SELECT * FROM tamu");
                               $jumlah_tamu = mysqli_num_rows($data_tamu);
                             ?>
-                            <p class="lead my-4 text-black">Jumlah tamu : <b><?php echo $jumlah_tamu; ?> Orang</b></p>
+                            <p class="lead my-2 text-black">Jumlah tamu : <b><?php echo $jumlah_tamu; ?> Orang</b></p>
                         
                         <thead>
                             <tr>
@@ -103,11 +125,22 @@
                             </tr>
                         </thead>
                         <?php
-                            $sql1 = "SELECT * FROM tamu";
-                            $result = mysqli_query($con, $sql1);
+                            $no = 1;
+                            if(isset($_POST['filter'])){
+                                $dari_tgl = mysqli_real_escape_string($con, $_POST['dari_tgl']);
+                                $sampai_tgl = mysqli_real_escape_string($con, $_POST['sampai_tgl']);
+                                $data_absen = mysqli_query($con, "SELECT * FROM tamu WHERE tgl_tamu BETWEEN '$dari_tgl' AND '$sampai_tgl'");
+                            
+                            } else {
+                                $data_absen = mysqli_fetch_array($con, "SELECT * FROM tamu");
+                            }
+
+                            $sql3 = "SELECT * FROM tamu WHERE tgl_tamu BETWEEN '$dari_tgl' AND '$sampai_tgl'";
+                            $result = mysqli_query($con, $sql3);
+
                             while ($row= mysqli_fetch_assoc($result)){
                         ?>
-                      
+
 
                         <tbody>
                             <tr>

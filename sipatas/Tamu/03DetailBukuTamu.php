@@ -45,7 +45,7 @@
                 </li>
     
                 <!-- Nav Item - Tables -->
-                <li class="nav-item">
+                <li class="nav-item active">
                     <a class="nav-link" href="03ABukuTamu.php">
                         <i class="bi bi-book"></i>
                     <span>Buku Tamu</span></a>

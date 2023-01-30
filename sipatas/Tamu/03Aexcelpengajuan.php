@@ -26,22 +26,36 @@
             
                     <!-- Topbar -->
                     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-                          <span class="navbar-toggler-icon"></span>
-                        </button>
-                        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-                          
-                          <ul class="navbar-nav mr-auto mt-2 mt-lg-0"></ul>
-                         
-                        </div>
+                    <form method="post">
+                        <table>
+                            <tr>
+                                <td>Dari Tanggal </td>
+                                <td><input type="date" name="dari_tgl" required="required"></td>
+                                <td>Sampai Tanggal </td>
+                                <td><input type="date" name="sampai_tgl" required="required"></td>
+                                <td><input type="submit" class="btn btn-primary" name="filter" value="filter"</td>
+                            </tr>
+                        </table>
+                        </form>
                     </nav>
             
 
+                    <?php
+                            if(isset($_POST['filter'])){
+                                $dari_tgl = mysqli_real_escape_string($con, $_POST['dari_tgl']);
+                                $sampai_tgl = mysqli_real_escape_string($con, $_POST['sampai_tgl']);
+                                $data_magang = mysqli_query($con, "SELECT * FROM kunjungan WHERE tgl_kun BETWEEN '$dari_tgl' AND '$sampai_tgl'");
+                                echo "Dari Tanggal " .$dari_tgl. " Sampai Tanggal " .$sampai_tgl;
+                            } else {
+                                $data_absen = mysqli_fetch_array($con, "SELECT * FROM kunjungan");
+                            }
+                        while ($tampil = mysqli_fetch_array($data_magang))
+                    ?>
             <!-- Table-->
-            <h5 class="text-black mx-5 mb-3">Laporan Pengajuan Kunjungan BPTU HPT Padang Mengatas</h5>
+            <h5 class="text-black  mb-3">Laporan Pengajuan Kunjungan BPTU HPT Padang Mengatas</h5>
                     <div class="table-responsive">
-                    <button type="button" id="downloadexcel" class="btn btn-success"><i class="bi bi-file-earmark-excel"></i></i>Download Excel</button>
-                    <table class="table table-sm my-3"  id="pengajuan" width="100%" cellspacing="0">
+                    <button type="button" id="downloadexcel" class="btn btn-success"><i class="bi bi-file-earmark-excel"></i></i> Download Excel</button>
+                    <table class="table table-striped table-sm table-bordered my-3"  id="pengajuan" width="100%" cellspacing="0">
                         
                         <thead>
                             <tr>
@@ -58,10 +72,27 @@
                         </thead>
 
                         <?php
-                            $sql1 = "SELECT * FROM kunjungan";
-                            $result = mysqli_query($con, $sql1);
+                            $no = 1;
+                            if(isset($_POST['filter'])){
+                                $dari_tgl = mysqli_real_escape_string($con, $_POST['dari_tgl']);
+                                $sampai_tgl = mysqli_real_escape_string($con, $_POST['sampai_tgl']);
+                                $data_absen = mysqli_query($con, "SELECT * FROM kunjungan WHERE tgl_kun BETWEEN '$dari_tgl' AND '$sampai_tgl'");
+                            
+                            } else {
+                                $data_absen = mysqli_fetch_array($con, "SELECT * FROM kunjungan");
+                            }
+
+                            $sql3 = "SELECT * FROM kunjungan WHERE tgl_kun BETWEEN '$dari_tgl' AND '$sampai_tgl'";
+                            $result = mysqli_query($con, $sql3);
+
                             while ($row= mysqli_fetch_assoc($result)){
                         ?>
+                        <script>
+                            document.getElementById('downloadexcel');addEventListener('click',function () {
+                                var table2excel = new Table2Excel();
+                                table2excel.export(document.querySelectorAll("#pengajuan"));
+                            })
+                        </script> 
 
                         <tbody>
                             <tr>
@@ -84,13 +115,7 @@
                     </div> 
                 </div>   
             </div> 
-            <script>
-                document.getElementById('downloadexcel');addEventListener('click',function () {
-                    var table2excel = new Table2Excel();
-                    table2excel.export(document.querySelectorAll("#pengajuan"));
-                })
-            </script>
-            
+           
             
     </body>
 </html>

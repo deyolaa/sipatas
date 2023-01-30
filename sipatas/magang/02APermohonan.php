@@ -88,7 +88,7 @@
                     $data_magang = mysqli_query($con, "SELECT * FROM permohonan_magang WHERE tglmagang BETWEEN '$dari_tgl' AND '$sampai_tgl'");
                     echo "Dari Tanggal " .$dari_tgl. " Sampai Tanggal " .$sampai_tgl;
                 } else {
-                    $data_absen = mysqli_fetch_array($con, "SELECT * FROM permohonan_magang");
+                    $data_magang = mysqli_fetch_array($con, "SELECT * FROM permohonan_magang");
                 }
                 while ($tampil = mysqli_fetch_array($data_magang))
             ?>
