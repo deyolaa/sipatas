@@ -39,7 +39,7 @@
             </div>
         </header>
         <footer>
-            <div class="container px-5"><p class="m-7 my-5 text-center text-white">Copyright &copy; Sistem Informasi Unand</p></div>
+            <div class="container px-5"><p class="m-7 my-5 text-center text-white fixed-bottom">Copyright &copy; Sistem Informasi Unand</p></div>
         </footer>
     </body>
 </html>

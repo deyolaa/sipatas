@@ -36,7 +36,7 @@
                         <i class="bi bi-house"></i>
                     <span>Beranda</span></a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item active">
                     <a class="nav-link" href="03APTamu.php">
                         <i class="bi bi-envelope"></i>
                     <span>Pengajuan</span></a>
@@ -101,8 +101,8 @@
                 while ($tampil = mysqli_fetch_array($data_tamu))
             ?>
                     <div class="table-responsive">
-                        <a type="button" href="03CTPengajuan.php" class="btn btn-primary my-3"><i class="bi bi-printer"></i>  Cetak Laporan</a>
-                        <a type="button" href="03Aexcelpengajuan.php" class="btn btn-success my-3"><i class="bi bi-file-earmark-excel"></i></i> Export to Excel</a>
+                        <a type="button" href="03CTPengajuan.php" class="btn btn-primary my-2"><i class="bi bi-printer"></i>  Cetak Laporan</a>
+                        <a type="button" href="03Aexcelpengajuan.php" class="btn btn-success my-2"><i class="bi bi-file-earmark-excel"></i></i> Export to Excel</a>
                         <?php
                               $data_pengajuan = mysqli_query($con,"SELECT * FROM kunjungan");
                               $jumlah_tamu = mysqli_num_rows($data_pengajuan);
