@@ -26,22 +26,41 @@
             
                     <!-- Topbar -->
                     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-                          <span class="navbar-toggler-icon"></span>
-                        </button>
-                        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-                          
-                          <ul class="navbar-nav mr-auto mt-2 mt-lg-0"></ul>
-                         
-                        </div>
+                        
+                        
+                    <form method="post">
+                            <table>
+                                <tr>
+                                    <td>Dari Tanggal </td>
+                                    <td><input type="date" name="dari_tgl" required="required"></td>
+                                    <td>Sampai Tanggal </td>
+                                    <td><input type="date" name="sampai_tgl" required="required"></td>
+                                    <td><input type="submit" class="btn btn-primary" name="filter" value="filter"</td>
+                                </tr>
+                            </table>
+                        </form>
                     </nav>
+
+                  
             
 
             <!-- Table-->
-            <h5 class="text-black mx-5 mb-3">Laporan Pengajuan Kunjungan BPTU HPT Padang Mengatas</h5>
+            <h5 class="text-black  my-3 mb-3">Laporan Pengajuan Kunjungan BPTU HPT Padang Mengatas</h5>
+            <?php
+                            if(isset($_POST['filter'])){
+                                $dari_tgl = mysqli_real_escape_string($con, $_POST['dari_tgl']);
+                                $sampai_tgl = mysqli_real_escape_string($con, $_POST['sampai_tgl']);
+                                $data_magang = mysqli_query($con, "SELECT * FROM kunjungan WHERE tgl_kun BETWEEN '$dari_tgl' AND '$sampai_tgl'");
+                                echo "Dari Tanggal " .$dari_tgl. " Sampai Tanggal " .$sampai_tgl;
+                            } else {
+                                $data_absen = mysqli_fetch_array($con, "SELECT * FROM kunjungan");
+                            }
+                        while ($tampil = mysqli_fetch_array($data_magang))
+                    ?>
+            
                     <div class="table-responsive">
-                    <table class="table table-sm"  id="dataTable" width="100%" cellspacing="0">
-                        
+                    <table class="table table-bordered"  id="dataTable" width="100%" cellspacing="0">
+                    
                         <thead>
                             <tr>
                                 
@@ -56,11 +75,22 @@
                         </thead>
 
                         <?php
-                            $sql1 = "SELECT * FROM kunjungan";
-                            $result = mysqli_query($con, $sql1);
+                            $no = 1;
+                            if(isset($_POST['filter'])){
+                                $dari_tgl = mysqli_real_escape_string($con, $_POST['dari_tgl']);
+                                $sampai_tgl = mysqli_real_escape_string($con, $_POST['sampai_tgl']);
+                                $data_absen = mysqli_query($con, "SELECT * FROM kunjungan WHERE tgl_kun BETWEEN '$dari_tgl' AND '$sampai_tgl'");
+                            
+                            } else {
+                                $data_absen = mysqli_fetch_array($con, "SELECT * FROM kunjungan");
+                            }
+
+                            $sql3 = "SELECT * FROM kunjungan WHERE tgl_kun BETWEEN '$dari_tgl' AND '$sampai_tgl'";
+                            $result = mysqli_query($con, $sql3);
+
                             while ($row= mysqli_fetch_assoc($result)){
                         ?>
-
+                        <script>window.print()</script>
                         <tbody>
                             <tr>
                                 
@@ -82,9 +112,7 @@
                     </div> 
                 </div>   
             </div> 
-            <script>
-                window.print()
-            </script>
+            
             
     </body>
 </html>
