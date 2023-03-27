@@ -80,6 +80,7 @@
                         while ($row= mysqli_fetch_assoc($result)){
                     ?>
                     <h5 class="text-black my-3">Detail Pengajuan <?php echo $row['instansi_pengajuan']?></h5>
+                    <a type="button" class="btn btn-primary mb-3 mx-3" style="background-color: green;" onclick="location.href='https://api.whatsapp.com/send?phone=<?php echo $row['nomor_pengajuan'];?>';"><i class="bi bi-whatsapp"></i> Whatsapp</a>
                     <table class="table text-black table-sm table-bordered mx-3"  id="dataTable" width="100%" cellspacing="0">
                     
                                 <tr>   
